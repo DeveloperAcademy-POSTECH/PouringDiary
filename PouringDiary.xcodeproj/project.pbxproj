@@ -14,9 +14,21 @@
 		E215CF2928596AFB00198F26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1528596AFB00198F26 /* ContentView.swift */; };
 		E215CF2A28596AFB00198F26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1528596AFB00198F26 /* ContentView.swift */; };
 		E215CF2B28596AFB00198F26 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1628596AFB00198F26 /* Persistence.swift */; };
-		E215CF2C28596AFB00198F26 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1628596AFB00198F26 /* Persistence.swift */; };
 		E215CF2D28596AFB00198F26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E215CF1728596AFB00198F26 /* Assets.xcassets */; };
 		E215CF2E28596AFB00198F26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E215CF1728596AFB00198F26 /* Assets.xcassets */; };
+		E21CBB4D2859CC24008CEDC3 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */; };
+		E21CBB502859D3E4008CEDC3 /* Tag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4E2859D3E4008CEDC3 /* Tag+CoreDataClass.swift */; };
+		E21CBB512859D3E4008CEDC3 /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4F2859D3E4008CEDC3 /* Tag+CoreDataProperties.swift */; };
+		E29A754C2859B767007379FD /* Tag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A754B2859B767007379FD /* Tag+Extension.swift */; };
+		E29BE5E12863AD9E00628801 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FE3FB22862BC6F004F4626 /* NSManagedObjectContext+Extensions.swift */; };
+		E2AC03562863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AC03552863F9470005FFD2 /* CoffeeBean+Extension.swift */; };
+		E2AC03572863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AC03552863F9470005FFD2 /* CoffeeBean+Extension.swift */; };
+		E2FE3FAC2862A304004F4626 /* Tag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A754B2859B767007379FD /* Tag+Extension.swift */; };
+		E2FE3FAE2862A304004F4626 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */; };
+		E2FE3FAF2862A304004F4626 /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4F2859D3E4008CEDC3 /* Tag+CoreDataProperties.swift */; };
+		E2FE3FB02862A304004F4626 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1628596AFB00198F26 /* Persistence.swift */; };
+		E2FE3FB12862A304004F4626 /* Tag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4E2859D3E4008CEDC3 /* Tag+CoreDataClass.swift */; };
+		E2FE3FB32862BC6F004F4626 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FE3FB22862BC6F004F4626 /* NSManagedObjectContext+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +40,12 @@
 		E215CF1C28596AFB00198F26 /* PouringDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PouringDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E215CF2228596AFB00198F26 /* PouringDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PouringDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E215CF2428596AFB00198F26 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
+		E21CBB4E2859D3E4008CEDC3 /* Tag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataClass.swift"; sourceTree = "<group>"; };
+		E21CBB4F2859D3E4008CEDC3 /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E29A754B2859B767007379FD /* Tag+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+Extension.swift"; sourceTree = "<group>"; };
+		E2AC03552863F9470005FFD2 /* CoffeeBean+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoffeeBean+Extension.swift"; sourceTree = "<group>"; };
+		E2FE3FB22862BC6F004F4626 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,11 +78,10 @@
 		E215CF1128596AFB00198F26 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				E215CF1428596AFB00198F26 /* PouringDiaryApp.swift */,
-				E215CF1528596AFB00198F26 /* ContentView.swift */,
-				E215CF1628596AFB00198F26 /* Persistence.swift */,
-				E215CF1728596AFB00198F26 /* Assets.xcassets */,
-				E215CF1228596AFB00198F26 /* PouringDiary.xcdatamodeld */,
+				E2FE3FAA2862A042004F4626 /* App */,
+				E2FE3FA92862A035004F4626 /* Views */,
+				E21CBB4B2859CC18008CEDC3 /* Environment */,
+				E29A754028599F35007379FD /* Model */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -86,6 +103,69 @@
 			path = macOS;
 			sourceTree = "<group>";
 		};
+		E21CBB4B2859CC18008CEDC3 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				E215CF1728596AFB00198F26 /* Assets.xcassets */,
+				E215CF1228596AFB00198F26 /* PouringDiary.xcdatamodeld */,
+				E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */,
+				E215CF1628596AFB00198F26 /* Persistence.swift */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		E21CBB522859D43D008CEDC3 /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				E21CBB4E2859D3E4008CEDC3 /* Tag+CoreDataClass.swift */,
+				E21CBB4F2859D3E4008CEDC3 /* Tag+CoreDataProperties.swift */,
+				E29A754B2859B767007379FD /* Tag+Extension.swift */,
+			);
+			path = Tag;
+			sourceTree = "<group>";
+		};
+		E29A754028599F35007379FD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E2AC03582863F9590005FFD2 /* CoffeeBean */,
+				E21CBB522859D43D008CEDC3 /* Tag */,
+				E2FE3FA82862A020004F4626 /* Extensions */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E2AC03582863F9590005FFD2 /* CoffeeBean */ = {
+			isa = PBXGroup;
+			children = (
+				E2AC03552863F9470005FFD2 /* CoffeeBean+Extension.swift */,
+			);
+			path = CoffeeBean;
+			sourceTree = "<group>";
+		};
+		E2FE3FA82862A020004F4626 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E2FE3FB22862BC6F004F4626 /* NSManagedObjectContext+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E2FE3FA92862A035004F4626 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				E215CF1528596AFB00198F26 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		E2FE3FAA2862A042004F4626 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E215CF1428596AFB00198F26 /* PouringDiaryApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -96,6 +176,7 @@
 				E215CF1828596AFB00198F26 /* Sources */,
 				E215CF1928596AFB00198F26 /* Frameworks */,
 				E215CF1A28596AFB00198F26 /* Resources */,
+				E2AC03542863F7B40005FFD2 /* Run Swiftlint Script */,
 			);
 			buildRules = (
 			);
@@ -131,7 +212,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					E215CF1B28596AFB00198F26 = {
 						CreatedOnToolsVersion = 13.3.1;
@@ -179,15 +260,42 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		E2AC03542863F7B40005FFD2 /* Run Swiftlint Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Swiftlint Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E215CF1828596AFB00198F26 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E21CBB502859D3E4008CEDC3 /* Tag+CoreDataClass.swift in Sources */,
+				E29A754C2859B767007379FD /* Tag+Extension.swift in Sources */,
 				E215CF2728596AFB00198F26 /* PouringDiaryApp.swift in Sources */,
 				E215CF2B28596AFB00198F26 /* Persistence.swift in Sources */,
 				E215CF2528596AFB00198F26 /* PouringDiary.xcdatamodeld in Sources */,
+				E21CBB512859D3E4008CEDC3 /* Tag+CoreDataProperties.swift in Sources */,
 				E215CF2928596AFB00198F26 /* ContentView.swift in Sources */,
+				E2AC03562863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */,
+				E21CBB4D2859CC24008CEDC3 /* AppEnvironment.swift in Sources */,
+				E2FE3FB32862BC6F004F4626 /* NSManagedObjectContext+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -196,9 +304,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				E215CF2828596AFB00198F26 /* PouringDiaryApp.swift in Sources */,
-				E215CF2C28596AFB00198F26 /* Persistence.swift in Sources */,
+				E2FE3FB02862A304004F4626 /* Persistence.swift in Sources */,
 				E215CF2628596AFB00198F26 /* PouringDiary.xcdatamodeld in Sources */,
+				E2FE3FAC2862A304004F4626 /* Tag+Extension.swift in Sources */,
+				E2FE3FB12862A304004F4626 /* Tag+CoreDataClass.swift in Sources */,
 				E215CF2A28596AFB00198F26 /* ContentView.swift in Sources */,
+				E2FE3FAF2862A304004F4626 /* Tag+CoreDataProperties.swift in Sources */,
+				E2AC03572863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */,
+				E2FE3FAE2862A304004F4626 /* AppEnvironment.swift in Sources */,
+				E29BE5E12863AD9E00628801 /* NSManagedObjectContext+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,6 +495,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -409,6 +524,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;

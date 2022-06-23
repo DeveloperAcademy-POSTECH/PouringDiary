@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="CoffeeBean" representedClassName=".CoffeeBean" syncable="YES" codeGenerationType="class">
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="explanation" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="beans" inverseEntity="Tag"/>
+    </entity>
+    <entity name="Tag" representedClassName=".Tag" syncable="YES">
+        <attribute name="color" optional="YES" attributeType="Integer 16" valueTransformerName="NSSecureUnarchiveFromDataTransformerName" defaultValueString="0" usesScalarValueType="YES" customClassName=".UIColor"/>
+        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="beans" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CoffeeBean" inverseName="tags" inverseEntity="CoffeeBean"/>
+    </entity>
+    <elements>
+        <element name="CoffeeBean" positionX="-78.63671875" positionY="18.19140625" width="128" height="104"/>
+        <element name="Tag" positionX="-60.92578125" positionY="-139.19140625" width="128" height="104"/>
+    </elements>
+</model>
