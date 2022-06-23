@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Send an e-mail the developer
+    url: mailto:isaac@oomool.io
+    about: 기능 요청이나 버그 리포트는 이슈를 통해서 해주세요.
