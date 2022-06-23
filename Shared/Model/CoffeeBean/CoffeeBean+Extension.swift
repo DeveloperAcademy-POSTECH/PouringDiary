@@ -11,19 +11,17 @@ extension CoffeeBean {
     struct Input {
         let name: String
         let explanation: String
+        let image: Data
     }
 
     static func register(input: Input, context: NSManagedObjectContext) {
-        do {
-            let newBean = CoffeeBean(context: context)
-            newBean.id = UUID()
-            newBean.name = input.name
-            newBean.explanation = input.explanation
-            newBean.created = Date()
-            try context.save()
-        } catch {
-
-        }
+        let newBean = CoffeeBean(context: context)
+        newBean.id = UUID()
+        newBean.name = input.name
+        newBean.explanation = input.explanation
+        newBean.created = Date()
+        newBean.image = input.image
+        context.saveContext()
     }
 
     static func delete(beans: [CoffeeBean], context: NSManagedObjectContext) {

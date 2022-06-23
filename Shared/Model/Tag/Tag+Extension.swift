@@ -49,16 +49,12 @@ extension Tag {
     }
 
     static func register(input: Tag.Input, context: NSManagedObjectContext) {
-        do {
-            let newTag = Tag(context: context)
-            newTag.id = UUID()
-            newTag.color = Int16(input.color.rawValue)
-            newTag.content = input.content
-            newTag.created = Date()
-            try context.save()
-        } catch {
-
-        }
+        let newTag = Tag(context: context)
+        newTag.id = UUID()
+        newTag.color = Int16(input.color.rawValue)
+        newTag.content = input.content
+        newTag.created = Date()
+        context.saveContext()
     }
 
     static func delete(tags: [Tag], context: NSManagedObjectContext) {
