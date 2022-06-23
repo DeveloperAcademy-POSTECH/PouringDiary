@@ -4,6 +4,7 @@
         <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="explanation" optional="YES" attributeType="String"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="beans" inverseEntity="Tag"/>
     </entity>
@@ -15,7 +16,7 @@
         <relationship name="beans" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CoffeeBean" inverseName="tags" inverseEntity="CoffeeBean"/>
     </entity>
     <elements>
-        <element name="CoffeeBean" positionX="-78.63671875" positionY="18.19140625" width="128" height="104"/>
+        <element name="CoffeeBean" positionX="-78.63671875" positionY="18.19140625" width="128" height="119"/>
         <element name="Tag" positionX="-60.92578125" positionY="-139.19140625" width="128" height="104"/>
     </elements>
 </model>
