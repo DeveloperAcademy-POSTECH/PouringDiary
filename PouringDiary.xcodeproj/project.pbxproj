@@ -13,7 +13,7 @@
 		E215CF2828596AFB00198F26 /* PouringDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1428596AFB00198F26 /* PouringDiaryApp.swift */; };
 		E215CF2928596AFB00198F26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1528596AFB00198F26 /* ContentView.swift */; };
 		E215CF2A28596AFB00198F26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1528596AFB00198F26 /* ContentView.swift */; };
-		E215CF2B28596AFB00198F26 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1628596AFB00198F26 /* Persistence.swift */; };
+		E215CF2B28596AFB00198F26 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1628596AFB00198F26 /* PersistenceController.swift */; };
 		E215CF2D28596AFB00198F26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E215CF1728596AFB00198F26 /* Assets.xcassets */; };
 		E215CF2E28596AFB00198F26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E215CF1728596AFB00198F26 /* Assets.xcassets */; };
 		E21CBB4D2859CC24008CEDC3 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */; };
@@ -26,7 +26,7 @@
 		E2FE3FAC2862A304004F4626 /* Tag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A754B2859B767007379FD /* Tag+Extension.swift */; };
 		E2FE3FAE2862A304004F4626 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */; };
 		E2FE3FAF2862A304004F4626 /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4F2859D3E4008CEDC3 /* Tag+CoreDataProperties.swift */; };
-		E2FE3FB02862A304004F4626 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1628596AFB00198F26 /* Persistence.swift */; };
+		E2FE3FB02862A304004F4626 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1628596AFB00198F26 /* PersistenceController.swift */; };
 		E2FE3FB12862A304004F4626 /* Tag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4E2859D3E4008CEDC3 /* Tag+CoreDataClass.swift */; };
 		E2FE3FB32862BC6F004F4626 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FE3FB22862BC6F004F4626 /* NSManagedObjectContext+Extensions.swift */; };
 /* End PBXBuildFile section */
@@ -35,7 +35,7 @@
 		E215CF1328596AFB00198F26 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		E215CF1428596AFB00198F26 /* PouringDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouringDiaryApp.swift; sourceTree = "<group>"; };
 		E215CF1528596AFB00198F26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
-		E215CF1628596AFB00198F26 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		E215CF1628596AFB00198F26 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		E215CF1728596AFB00198F26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E215CF1C28596AFB00198F26 /* PouringDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PouringDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E215CF2228596AFB00198F26 /* PouringDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PouringDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -109,7 +109,7 @@
 				E215CF1728596AFB00198F26 /* Assets.xcassets */,
 				E215CF1228596AFB00198F26 /* PouringDiary.xcdatamodeld */,
 				E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */,
-				E215CF1628596AFB00198F26 /* Persistence.swift */,
+				E215CF1628596AFB00198F26 /* PersistenceController.swift */,
 			);
 			path = Environment;
 			sourceTree = "<group>";
@@ -289,7 +289,7 @@
 				E21CBB502859D3E4008CEDC3 /* Tag+CoreDataClass.swift in Sources */,
 				E29A754C2859B767007379FD /* Tag+Extension.swift in Sources */,
 				E215CF2728596AFB00198F26 /* PouringDiaryApp.swift in Sources */,
-				E215CF2B28596AFB00198F26 /* Persistence.swift in Sources */,
+				E215CF2B28596AFB00198F26 /* PersistenceController.swift in Sources */,
 				E215CF2528596AFB00198F26 /* PouringDiary.xcdatamodeld in Sources */,
 				E21CBB512859D3E4008CEDC3 /* Tag+CoreDataProperties.swift in Sources */,
 				E215CF2928596AFB00198F26 /* ContentView.swift in Sources */,
@@ -304,7 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E215CF2828596AFB00198F26 /* PouringDiaryApp.swift in Sources */,
-				E2FE3FB02862A304004F4626 /* Persistence.swift in Sources */,
+				E2FE3FB02862A304004F4626 /* PersistenceController.swift in Sources */,
 				E215CF2628596AFB00198F26 /* PouringDiary.xcdatamodeld in Sources */,
 				E2FE3FAC2862A304004F4626 /* Tag+Extension.swift in Sources */,
 				E2FE3FB12862A304004F4626 /* Tag+CoreDataClass.swift in Sources */,
