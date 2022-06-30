@@ -19,10 +19,18 @@
 		E21CBB4D2859CC24008CEDC3 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */; };
 		E21CBB502859D3E4008CEDC3 /* Tag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4E2859D3E4008CEDC3 /* Tag+CoreDataClass.swift */; };
 		E21CBB512859D3E4008CEDC3 /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4F2859D3E4008CEDC3 /* Tag+CoreDataProperties.swift */; };
+		E26960B8286502FC00862F8E /* CoffeeBeanForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960B7286502FC00862F8E /* CoffeeBeanForm.swift */; };
+		E26960BB2865156E00862F8E /* TagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960BA2865156E00862F8E /* TagItem.swift */; };
 		E29A754C2859B767007379FD /* Tag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A754B2859B767007379FD /* Tag+Extension.swift */; };
 		E29BE5E12863AD9E00628801 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FE3FB22862BC6F004F4626 /* NSManagedObjectContext+Extensions.swift */; };
 		E2AC03562863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AC03552863F9470005FFD2 /* CoffeeBean+Extension.swift */; };
 		E2AC03572863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AC03552863F9470005FFD2 /* CoffeeBean+Extension.swift */; };
+		E2B481D428653DC100FBA847 /* TagPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B481D328653DC100FBA847 /* TagPicker.swift */; };
+		E2B481D528653DC100FBA847 /* TagPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B481D328653DC100FBA847 /* TagPicker.swift */; };
+		E2B481D628653DC900FBA847 /* TagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960BA2865156E00862F8E /* TagItem.swift */; };
+		E2B481D728653DDA00FBA847 /* CoffeeBeanForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960B7286502FC00862F8E /* CoffeeBeanForm.swift */; };
+		E2B481D92865453300FBA847 /* TagForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B481D82865453300FBA847 /* TagForm.swift */; };
+		E2B481DA2865453300FBA847 /* TagForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B481D82865453300FBA847 /* TagForm.swift */; };
 		E2FE3FAC2862A304004F4626 /* Tag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A754B2859B767007379FD /* Tag+Extension.swift */; };
 		E2FE3FAE2862A304004F4626 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */; };
 		E2FE3FAF2862A304004F4626 /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4F2859D3E4008CEDC3 /* Tag+CoreDataProperties.swift */; };
@@ -43,8 +51,12 @@
 		E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		E21CBB4E2859D3E4008CEDC3 /* Tag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E21CBB4F2859D3E4008CEDC3 /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		E26960B7286502FC00862F8E /* CoffeeBeanForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanForm.swift; sourceTree = "<group>"; };
+		E26960BA2865156E00862F8E /* TagItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagItem.swift; sourceTree = "<group>"; };
 		E29A754B2859B767007379FD /* Tag+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+Extension.swift"; sourceTree = "<group>"; };
 		E2AC03552863F9470005FFD2 /* CoffeeBean+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoffeeBean+Extension.swift"; sourceTree = "<group>"; };
+		E2B481D328653DC100FBA847 /* TagPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPicker.swift; sourceTree = "<group>"; };
+		E2B481D82865453300FBA847 /* TagForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagForm.swift; sourceTree = "<group>"; };
 		E2FE3FB22862BC6F004F4626 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,10 +90,10 @@
 		E215CF1128596AFB00198F26 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				E2FE3FAA2862A042004F4626 /* App */,
-				E2FE3FA92862A035004F4626 /* Views */,
 				E21CBB4B2859CC18008CEDC3 /* Environment */,
+				E2FE3FAA2862A042004F4626 /* App */,
 				E29A754028599F35007379FD /* Model */,
+				E2FE3FA92862A035004F4626 /* Views */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -124,6 +136,24 @@
 			path = Tag;
 			sourceTree = "<group>";
 		};
+		E26960B5286502D100862F8E /* CoffeeBean */ = {
+			isa = PBXGroup;
+			children = (
+				E26960B7286502FC00862F8E /* CoffeeBeanForm.swift */,
+			);
+			path = CoffeeBean;
+			sourceTree = "<group>";
+		};
+		E26960B92865155400862F8E /* Tag */ = {
+			isa = PBXGroup;
+			children = (
+				E26960BA2865156E00862F8E /* TagItem.swift */,
+				E2B481D328653DC100FBA847 /* TagPicker.swift */,
+				E2B481D82865453300FBA847 /* TagForm.swift */,
+			);
+			path = Tag;
+			sourceTree = "<group>";
+		};
 		E29A754028599F35007379FD /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -153,6 +183,8 @@
 		E2FE3FA92862A035004F4626 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E26960B92865155400862F8E /* Tag */,
+				E26960B5286502D100862F8E /* CoffeeBean */,
 				E215CF1528596AFB00198F26 /* ContentView.swift */,
 			);
 			path = Views;
@@ -286,7 +318,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2B481D92865453300FBA847 /* TagForm.swift in Sources */,
 				E21CBB502859D3E4008CEDC3 /* Tag+CoreDataClass.swift in Sources */,
+				E26960B8286502FC00862F8E /* CoffeeBeanForm.swift in Sources */,
 				E29A754C2859B767007379FD /* Tag+Extension.swift in Sources */,
 				E215CF2728596AFB00198F26 /* PouringDiaryApp.swift in Sources */,
 				E215CF2B28596AFB00198F26 /* PersistenceController.swift in Sources */,
@@ -294,8 +328,10 @@
 				E21CBB512859D3E4008CEDC3 /* Tag+CoreDataProperties.swift in Sources */,
 				E215CF2928596AFB00198F26 /* ContentView.swift in Sources */,
 				E2AC03562863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */,
+				E2B481D428653DC100FBA847 /* TagPicker.swift in Sources */,
 				E21CBB4D2859CC24008CEDC3 /* AppEnvironment.swift in Sources */,
 				E2FE3FB32862BC6F004F4626 /* NSManagedObjectContext+Extensions.swift in Sources */,
+				E26960BB2865156E00862F8E /* TagItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,16 +339,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2B481DA2865453300FBA847 /* TagForm.swift in Sources */,
 				E215CF2828596AFB00198F26 /* PouringDiaryApp.swift in Sources */,
 				E2FE3FB02862A304004F4626 /* PersistenceController.swift in Sources */,
+				E2B481D728653DDA00FBA847 /* CoffeeBeanForm.swift in Sources */,
 				E215CF2628596AFB00198F26 /* PouringDiary.xcdatamodeld in Sources */,
 				E2FE3FAC2862A304004F4626 /* Tag+Extension.swift in Sources */,
+				E2B481D528653DC100FBA847 /* TagPicker.swift in Sources */,
 				E2FE3FB12862A304004F4626 /* Tag+CoreDataClass.swift in Sources */,
 				E215CF2A28596AFB00198F26 /* ContentView.swift in Sources */,
 				E2FE3FAF2862A304004F4626 /* Tag+CoreDataProperties.swift in Sources */,
 				E2AC03572863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */,
 				E2FE3FAE2862A304004F4626 /* AppEnvironment.swift in Sources */,
 				E29BE5E12863AD9E00628801 /* NSManagedObjectContext+Extensions.swift in Sources */,
+				E2B481D628653DC900FBA847 /* TagItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
