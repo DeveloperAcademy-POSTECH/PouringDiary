@@ -8,8 +8,9 @@
 import CoreData
 
 struct PersistenceController {
+    static let keyForPreset: String = "KEY_FOR_PRESET_DATA"
     static let shared: PersistenceController = {
-        let result = PersistenceController(inMemory: true)
+        let result = PersistenceController()
         generateTagPreset(context: result.container.viewContext)
         return result
     }()
@@ -23,8 +24,13 @@ struct PersistenceController {
     let container: NSPersistentCloudKitContainer
 
     static func generateTagPreset(context: NSManagedObjectContext) {
-        for tagInput in Tag.presets {
-            Tag.register(input: tagInput, context: context)
+        let defaults = UserDefaults.standard
+
+        if defaults.value(forKey: self.keyForPreset) == nil {
+            for tagInput in Tag.presets {
+                Tag.register(input: tagInput, context: context)
+            }
+            defaults.set(true, forKey: self.keyForPreset)
         }
     }
 
