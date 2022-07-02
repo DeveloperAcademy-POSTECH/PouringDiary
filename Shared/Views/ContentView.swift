@@ -10,7 +10,22 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         NavigationView {
-            CoffeeBeanForm()
+            CoffeeBeanList()
+                .navigationTitle("원두 목록")
+                .toolbar(content: toolBar)
+        }
+    }
+}
+
+extension ContentView {
+    @ViewBuilder fileprivate func toolBar() -> some View {
+        HStack {
+            EditButton()
+            NavigationLink(destination: {
+                CoffeeBeanForm()
+            }, label: {
+                Image(systemName: "plus")
+            })
         }
     }
 }
