@@ -55,3 +55,5 @@ extension CoffeeBean {
         return tags
     }
 }
+
+extension CoffeeBean: UUIDObject { }

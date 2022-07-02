@@ -86,6 +86,8 @@ extension Tag {
     ]
 }
 
+extension Tag: UUIDObject {}
+
 enum TagError: Error {
     case notExist
     case unexpected(Error)

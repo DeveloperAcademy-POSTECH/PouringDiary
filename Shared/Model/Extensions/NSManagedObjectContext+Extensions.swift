@@ -7,6 +7,10 @@
 
 import CoreData
 
+protocol UUIDObject: NSManagedObject {
+    var id: UUID? { get }
+}
+
 extension NSManagedObjectContext {
     func saveContext() {
         do {
@@ -17,28 +21,21 @@ extension NSManagedObjectContext {
         }
     }
 
-    func delete(_ tags: [Tag]) {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Tag")
-        request.predicate = NSPredicate(format: "id IN %@", tags.map { $0.id.uuidString })
+    /**
+     * Object를 삭제하기 위한 함수입니다. Discussion 항목 필독.
+     * - [⚠️ 중요 ⚠️]이 함수는 NSManagedObject의 extension에서만 사용해야 합니다. View에서는 각 엔티티에서 선언되어 있는 삭제 함수를 사용해서 삭제를 구현해주세요
+     */
+    func delete<T: UUIDObject>(_ elements: [T]) {
+        guard let entityName = T.entity().name else { return }
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        request.predicate = NSPredicate(format: "id IN %@", elements.map { $0.id?.uuidString ?? "" })
         do {
-            let results = (try fetch(request) as? [Tag]) ?? []
+            let results = (try fetch(request) as? [T]) ?? []
             results.forEach { delete($0) }
         } catch {
             print("Failed removing provided objects")
             return
         }
         saveContext()
-    }
-
-    func delete(_ beans: [CoffeeBean]) {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "CoffeeBean")
-        request.predicate = NSPredicate(format: "id IN %@", beans.map { $0.id!.uuidString })
-        do {
-            let results = (try fetch(request) as? [Tag]) ?? []
-            results.forEach { delete($0) }
-        } catch {
-            print("Failed removing provided objects")
-            return
-        }
     }
 }
