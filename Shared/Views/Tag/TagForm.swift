@@ -7,28 +7,13 @@
 
 import SwiftUI
 
+/**
+ 새로운 태그를 등록하기 위한 뷰입니다
+ */
 struct TagForm: View {
     @Environment(\.managedObjectContext) private var viewContext
     @State var input: Tag.Input = Tag.Input(content: "", color: .red)
     @Binding var isPresent: Bool
-
-    @ViewBuilder
-    private func colorPicker(tagColor: Binding<Tag.Color>) -> some View {
-        HStack {
-            ForEach(Tag.Color.allCases, id: \.rawValue) { color in
-                Button(action: {
-                    tagColor.wrappedValue = color
-                }, label: {
-                    Rectangle()
-                        .fill(color.color.opacity(color == input.color ? 1 : 0.3))
-                        .frame(width: 24, height: 24)
-                        .cornerRadius(12)
-                })
-            }
-            Spacer()
-        }
-        .padding(.top)
-    }
 
     var body: some View {
         VStack {
@@ -46,6 +31,27 @@ struct TagForm: View {
         }
         .navigationTitle("새로운 태그")
         .navigationBarTitleDisplayMode(.large)
+    }
+}
+
+// MARK: ViewBuilders
+extension TagForm {
+    @ViewBuilder
+    private func colorPicker(tagColor: Binding<Tag.Color>) -> some View {
+        HStack {
+            ForEach(Tag.Color.allCases, id: \.rawValue) { color in
+                Button(action: {
+                    tagColor.wrappedValue = color
+                }, label: {
+                    Rectangle()
+                        .fill(color.color.opacity(color == input.color ? 1 : 0.3))
+                        .frame(width: 24, height: 24)
+                        .cornerRadius(12)
+                })
+            }
+            Spacer()
+        }
+        .padding(.top)
     }
 }
 

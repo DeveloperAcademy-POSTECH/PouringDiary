@@ -7,6 +7,8 @@
 
 import SwiftUI
 
+/// 각각의 태그를 표현하기 위한 뷰.
+/// 별도의 액션을 담고있지 않습니다.
 struct TagItem: View {
     let tag: Tag.Input
     var body: some View {
