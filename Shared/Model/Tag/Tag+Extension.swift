@@ -68,7 +68,7 @@ extension Tag {
 
     /// Tag 엔티티를 삭제합니다.
     static func delete(tags: [Tag], context: NSManagedObjectContext) {
-        context.delete(tags, entityName: "Tag")
+        context.delete(tags)
     }
 }
 

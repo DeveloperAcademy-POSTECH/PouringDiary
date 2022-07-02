@@ -34,7 +34,7 @@ extension CoffeeBean {
     }
 
     static func delete(beans: [CoffeeBean], context: NSManagedObjectContext) {
-        context.delete(beans, entityName: "CoffeeBean")
+        context.delete(beans)
     }
 
     static func get(by objectId: NSManagedObjectID, context: NSManagedObjectContext) -> CoffeeBean? {
