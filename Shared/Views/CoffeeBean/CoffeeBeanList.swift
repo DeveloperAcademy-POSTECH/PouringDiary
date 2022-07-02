@@ -12,11 +12,30 @@ struct CoffeeBeanList: View {
     private var beans: FetchedResults<CoffeeBean>
 
     var body: some View {
-        List(beans, id: \.objectID) { bean in
+        NavigationView {
+            List(beans, id: \.objectID) { bean in
+                NavigationLink(destination: {
+                    CoffeeBeanForm(bean)
+                }, label: {
+                    Text(bean.name ?? "")
+                })
+            }
+            .navigationTitle("원두 목록")
+            .toolbar(content: toolBar)
+            // iPad NavigationView를 위한 Placeholder
+            Text("원두 목록에서 원두를 선택하거나\n새로운 원두를 등록해주세요")
+        }
+    }
+}
+
+extension CoffeeBeanList {
+    @ViewBuilder fileprivate func toolBar() -> some View {
+        HStack {
+            EditButton()
             NavigationLink(destination: {
-                CoffeeBeanForm(bean)
+                CoffeeBeanForm()
             }, label: {
-                Text(bean.name ?? "")
+                Image(systemName: "plus")
             })
         }
     }
