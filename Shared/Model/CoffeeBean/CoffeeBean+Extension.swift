@@ -14,13 +14,22 @@ extension CoffeeBean {
         var image: Data?
     }
 
-    static func register(input: Input, context: NSManagedObjectContext) {
+    static func register(input: Input, tags: [Tag], context: NSManagedObjectContext) {
         let newBean = CoffeeBean(context: context)
         newBean.id = UUID()
         newBean.name = input.name
         newBean.explanation = input.explanation
         newBean.created = Date()
         newBean.image = input.image
+        newBean.tags = NSSet(array: tags)
+        context.saveContext()
+    }
+
+    static func save(objectId: NSManagedObjectID, input: Input, tags: [Tag], context: NSManagedObjectContext) {
+        guard let current = context.object(with: objectId) as? CoffeeBean else { return }
+        current.name = input.name
+        current.explanation = input.explanation
+        current.tags = NSSet(array: tags)
         context.saveContext()
     }
 
@@ -28,11 +37,13 @@ extension CoffeeBean {
         context.delete(beans)
     }
 
-    static func addTagsToCoffeeBean(tags: [Tag], bean: CoffeeBean, context: NSManagedObjectContext) {
-        for tag in tags {
-            tag.addToBeans(bean)
+    static func get(by objectId: NSManagedObjectID, context: NSManagedObjectContext) -> CoffeeBean? {
+        do {
+            guard let bean = try context.existingObject(with: objectId) as? CoffeeBean else { return nil }
+            return bean
+        } catch {
+            return nil
         }
-        context.saveContext()
     }
 
     var input: Input {
