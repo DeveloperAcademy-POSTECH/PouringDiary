@@ -15,7 +15,7 @@ extension Tag {
         return NSFetchRequest<Tag>(entityName: "Tag")
     }
 
-    @NSManaged public var id: UUID
+    @NSManaged public var id: UUID?
     @NSManaged public var color: Int16
     @NSManaged public var created: Date
     @NSManaged public var content: String?

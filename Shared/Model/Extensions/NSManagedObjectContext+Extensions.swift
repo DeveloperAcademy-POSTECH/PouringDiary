@@ -7,6 +7,10 @@
 
 import CoreData
 
+protocol UUIDObject {
+    var id: UUID? { get }
+}
+
 extension NSManagedObjectContext {
     func saveContext() {
         do {
@@ -17,9 +21,9 @@ extension NSManagedObjectContext {
         }
     }
 
-    func delete(_ tags: [Tag]) {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "Tag")
-        request.predicate = NSPredicate(format: "id IN %@", tags.map { $0.id.uuidString })
+    func delete<T: UUIDObject>(_ elements: [T], entityName: String) {
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: entityName)
+        request.predicate = NSPredicate(format: "id IN %@", elements.map { $0.id?.uuidString ?? "" })
         do {
             let results = (try fetch(request) as? [Tag]) ?? []
             results.forEach { delete($0) }
@@ -28,17 +32,5 @@ extension NSManagedObjectContext {
             return
         }
         saveContext()
-    }
-
-    func delete(_ beans: [CoffeeBean]) {
-        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "CoffeeBean")
-        request.predicate = NSPredicate(format: "id IN %@", beans.map { $0.id!.uuidString })
-        do {
-            let results = (try fetch(request) as? [Tag]) ?? []
-            results.forEach { delete($0) }
-        } catch {
-            print("Failed removing provided objects")
-            return
-        }
     }
 }

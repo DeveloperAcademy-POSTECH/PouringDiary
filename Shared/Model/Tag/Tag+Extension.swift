@@ -68,7 +68,7 @@ extension Tag {
 
     /// Tag 엔티티를 삭제합니다.
     static func delete(tags: [Tag], context: NSManagedObjectContext) {
-        context.delete(tags)
+        context.delete(tags, entityName: "Tag")
     }
 }
 
@@ -85,6 +85,8 @@ extension Tag {
         Tag.Input(content: "오리가미 세라믹", color: .red)
     ]
 }
+
+extension Tag: UUIDObject {}
 
 enum TagError: Error {
     case notExist

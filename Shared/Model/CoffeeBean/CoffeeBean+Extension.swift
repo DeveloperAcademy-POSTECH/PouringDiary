@@ -34,7 +34,7 @@ extension CoffeeBean {
     }
 
     static func delete(beans: [CoffeeBean], context: NSManagedObjectContext) {
-        context.delete(beans)
+        context.delete(beans, entityName: "CoffeeBean")
     }
 
     static func get(by objectId: NSManagedObjectID, context: NSManagedObjectContext) -> CoffeeBean? {
@@ -55,3 +55,5 @@ extension CoffeeBean {
         return tags
     }
 }
+
+extension CoffeeBean: UUIDObject { }
