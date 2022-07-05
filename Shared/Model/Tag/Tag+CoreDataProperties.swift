@@ -20,6 +20,8 @@ extension Tag {
     @NSManaged public var created: Date
     @NSManaged public var content: String?
     @NSManaged public var beans: NSSet?
+    @NSManaged public var equipments: NSSet?
+    @NSManaged public var recipes: NSSet?
 }
 
 // MARK: Generated accessors for beans
