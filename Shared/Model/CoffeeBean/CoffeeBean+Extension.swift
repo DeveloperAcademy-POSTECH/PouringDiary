@@ -38,12 +38,7 @@ extension CoffeeBean {
     }
 
     static func get(by objectId: NSManagedObjectID, context: NSManagedObjectContext) -> CoffeeBean? {
-        do {
-            guard let bean = try context.existingObject(with: objectId) as? CoffeeBean else { return nil }
-            return bean
-        } catch {
-            return nil
-        }
+        return context.get(by: objectId)
     }
 
     var input: Input {
