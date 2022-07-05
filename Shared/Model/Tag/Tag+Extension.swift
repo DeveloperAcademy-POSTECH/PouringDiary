@@ -16,6 +16,23 @@ extension Tag {
     public struct Input {
         var content: String
         var color: Color
+        var category: Category = .regular
+    }
+
+    public enum Category: Int, CaseIterable {
+        case regular
+        case equipment
+
+        init(from int16: Int16) {
+            switch int16 {
+            case Int16(Category.regular.rawValue):
+                self = .regular
+            case Int16(Category.equipment.rawValue):
+                self = .equipment
+            default:
+                self = .regular
+            }
+        }
     }
 
     /// 태그의 색상 리스트를 관리합니다.
@@ -53,7 +70,11 @@ extension Tag {
     }
 
     public var input: Tag.Input {
-        return Tag.Input(content: self.content ?? "", color: Color(rawValue: Int(self.color)) ?? .blue)
+        return Tag.Input(
+            content: self.content ?? "",
+            color: Color(rawValue: Int(self.color)) ?? .blue,
+            category: Category(from: self.category)
+        )
     }
 
     /// `Tag.Input`을 활용해서 새로운 원두를 등록합니다
@@ -63,6 +84,7 @@ extension Tag {
         newTag.color = Int16(input.color.rawValue)
         newTag.content = input.content
         newTag.created = Date()
+        newTag.category = Int16(input.category.rawValue)
         context.saveContext()
     }
 

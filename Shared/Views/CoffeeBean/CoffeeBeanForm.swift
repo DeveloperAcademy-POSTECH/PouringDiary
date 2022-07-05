@@ -52,7 +52,9 @@ struct CoffeeBeanForm: View {
             tagSection
         }
         .toolbar(content: toolbar)
-        .sheet(isPresented: $isTagListShow) { TagPicker(selected: $selectedTags) }
+        .sheet(isPresented: $isTagListShow) {
+            TagPicker(with: .regular, selected: $selectedTags)
+        }
         .navigationTitle(isEditing ? "원두 수정" : "원두 등록")
         .task(prepareTags)
     }

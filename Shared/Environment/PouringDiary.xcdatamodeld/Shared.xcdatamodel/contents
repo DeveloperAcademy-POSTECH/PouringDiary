@@ -20,6 +20,7 @@
         <relationship name="recipeTags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="recipes" inverseEntity="Tag"/>
     </entity>
     <entity name="Tag" representedClassName=".Tag" syncable="YES" codeGenerationType="class">
+        <attribute name="category" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="color" optional="YES" attributeType="Integer 16" valueTransformerName="NSSecureUnarchiveFromDataTransformerName" defaultValueString="0" usesScalarValueType="YES" customClassName=".UIColor"/>
         <attribute name="content" optional="YES" attributeType="String"/>
         <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -30,7 +31,7 @@
     </entity>
     <elements>
         <element name="CoffeeBean" positionX="-78.63671875" positionY="18.19140625" width="128" height="148"/>
-        <element name="Tag" positionX="-60.92578125" positionY="-139.19140625" width="128" height="148"/>
         <element name="Recipe" positionX="114.0703125" positionY="-84.03515625" width="128" height="163"/>
+        <element name="Tag" positionX="-60.92578125" positionY="-139.19140625" width="128" height="149"/>
     </elements>
 </model>

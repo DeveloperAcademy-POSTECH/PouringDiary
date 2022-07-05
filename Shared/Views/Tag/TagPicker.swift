@@ -11,16 +11,33 @@ import SwiftUI
  `@Binding var selected: [Tag]`를 통해서 태그들을 선택해주는 컴포넌트입니다.
  */
 struct TagPicker: View {
+    // Variables /w property wrapper
     @Environment(\.managedObjectContext) private var viewContext
-
-    @FetchRequest(sortDescriptors: [
-        NSSortDescriptor(keyPath: \Tag.color, ascending: true)
-    ])
-    private var allTags: FetchedResults<Tag>
-
+    @FetchRequest private var allTags: FetchedResults<Tag>
     @State var searchQuery: String = ""
     @State var isTagFormShow: Bool = false
     @Binding var selected: [Tag]
+
+    // Internal variables & getters
+    private var category: Tag.Category
+    private var navigationTitle: String {
+        switch category {
+        case .regular:
+            return "태그 선택"
+        case .equipment:
+            return "장비 선택"
+        }
+    }
+
+    // Initializers
+    init(with category: Tag.Category, selected: Binding<[Tag]>) {
+        self.category = category
+        self._allTags = FetchRequest(
+            sortDescriptors: [NSSortDescriptor(keyPath: \Tag.color, ascending: true)],
+            predicate: NSPredicate(format: "category == %i", Int16(category.rawValue))
+        )
+        self._selected = selected
+    }
 
     var body: some View {
         NavigationView {
@@ -50,7 +67,7 @@ struct TagPicker: View {
                 )
             }
             .toolbar(content: toolbar)
-            .navigationTitle("태그 선택")
+            .navigationTitle(navigationTitle)
             .navigationBarTitleDisplayMode(.large)
         }
     }
@@ -104,7 +121,7 @@ extension TagPicker {
                 NavigationLink(
                     isActive: $isTagFormShow,
                     destination: {
-                        TagForm(isPresent: $isTagFormShow)
+                        TagForm(with: $isTagFormShow, category: .regular)
                     },
                     label: {
                         Image(systemName: "plus")
@@ -118,7 +135,7 @@ extension TagPicker {
 
 struct TagPicker_Previews: PreviewProvider {
     static var previews: some View {
-        TagPicker(selected: .constant([]))
+        TagPicker(with: .regular, selected: .constant([]))
             .modifier(AppEnvironment(inMemory: true))
     }
 }

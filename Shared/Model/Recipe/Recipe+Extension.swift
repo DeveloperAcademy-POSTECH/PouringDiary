@@ -10,9 +10,9 @@ import CoreData
 
 extension Recipe {
     struct Input {
-        var title: String
-        var information: String
-        var steps: String
+        var title: String = ""
+        var information: String = ""
+        var steps: String = ""
     }
 
     static func register(
