@@ -74,7 +74,7 @@ extension CoffeeBeanForm {
     @ViewBuilder
     private var explanationSection: some View {
         Section("원두 설명") {
-            TextEditor(text: $input.explanation)
+            TextEditor(text: $input.information)
                 .font(.body)
                 .submitLabel(.return)
         }
