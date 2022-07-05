@@ -19,7 +19,7 @@
         <relationship name="equipmentTags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="equipments" inverseEntity="Tag"/>
         <relationship name="recipeTags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="recipes" inverseEntity="Tag"/>
     </entity>
-    <entity name="Tag" representedClassName=".Tag" syncable="YES">
+    <entity name="Tag" representedClassName=".Tag" syncable="YES" codeGenerationType="class">
         <attribute name="color" optional="YES" attributeType="Integer 16" valueTransformerName="NSSecureUnarchiveFromDataTransformerName" defaultValueString="0" usesScalarValueType="YES" customClassName=".UIColor"/>
         <attribute name="content" optional="YES" attributeType="String"/>
         <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
