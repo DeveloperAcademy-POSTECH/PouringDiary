@@ -51,7 +51,7 @@ struct CoffeeBeanForm: View {
             explanationSection
             tagSection
         }
-        .toolbar { toolbar }
+        .toolbar(content: toolbar)
         .sheet(isPresented: $isTagListShow) { TagPicker(selected: $selectedTags) }
         .navigationTitle(isEditing ? "원두 수정" : "원두 등록")
         .task(prepareTags)
@@ -62,7 +62,7 @@ struct CoffeeBeanForm: View {
 extension CoffeeBeanForm {
     /// 원두 이름 입력 Form Section
     @ViewBuilder
-    fileprivate var nameSection: some View {
+    private var nameSection: some View {
         Section("원두 이름") {
             TextField(text: $input.name) { EmptyView() }
                 .font(.body)
@@ -72,7 +72,7 @@ extension CoffeeBeanForm {
 
     /// 원두 설명 입력 Form Section
     @ViewBuilder
-    fileprivate var explanationSection: some View {
+    private var explanationSection: some View {
         Section("원두 설명") {
             TextEditor(text: $input.explanation)
                 .font(.body)
@@ -82,7 +82,7 @@ extension CoffeeBeanForm {
 
     /// 태그 입력 Form Section
     @ViewBuilder
-    fileprivate var tagSection: some View {
+    private var tagSection: some View {
         Section {
             if selectedTags.isEmpty {
                 Button(action: {
@@ -119,27 +119,28 @@ extension CoffeeBeanForm {
     }
 
     /// 등록 / 수정여부에 따라 적절한 툴바를 표시합니다
-    @ViewBuilder
-    fileprivate var toolbar: some View {
-        Button(action: {
-            if isEditing {
-                CoffeeBean.save(
-                    objectId: beanId!,
-                    input: input,
-                    tags: selectedTags,
-                    context: viewContext
-                )
-            } else {
-                CoffeeBean.register(
-                    input: input,
-                    tags: selectedTags,
-                    context: viewContext
-                )
-            }
-            presentationMode.wrappedValue.dismiss()
-        }, label: {
-            Text(isEditing ? "저장" : "등록")
-        })
+    private func toolbar() -> some ToolbarContent {
+        ToolbarItem(placement: .automatic) {
+            Button(action: {
+                if isEditing {
+                    CoffeeBean.save(
+                        objectId: beanId!,
+                        input: input,
+                        tags: selectedTags,
+                        context: viewContext
+                    )
+                } else {
+                    CoffeeBean.register(
+                        input: input,
+                        tags: selectedTags,
+                        context: viewContext
+                    )
+                }
+                presentationMode.wrappedValue.dismiss()
+            }, label: {
+                Text(isEditing ? "저장" : "등록")
+            })
+        }
     }
 }
 

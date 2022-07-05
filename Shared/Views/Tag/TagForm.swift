@@ -22,13 +22,7 @@ struct TagForm: View {
             Spacer()
         }
         .padding()
-        .toolbar {
-            Button("저장하기") {
-                Tag.register(input: input, context: viewContext)
-                isPresent.toggle()
-            }
-            .disabled(input.content.isEmpty)
-        }
+        .toolbar(content: toolbar)
         .navigationTitle("새로운 태그")
         .navigationBarTitleDisplayMode(.large)
     }
@@ -36,6 +30,15 @@ struct TagForm: View {
 
 // MARK: ViewBuilders
 extension TagForm {
+    private func toolbar() -> some ToolbarContent {
+        return ToolbarItem(placement: .automatic) {
+            Button("저장하기") {
+                Tag.register(input: input, context: viewContext)
+                isPresent.toggle()
+            }
+            .disabled(input.content.isEmpty)
+        }
+    }
     @ViewBuilder
     private func colorPicker(tagColor: Binding<Tag.Color>) -> some View {
         HStack {

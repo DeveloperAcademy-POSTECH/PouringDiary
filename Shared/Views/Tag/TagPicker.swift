@@ -49,20 +49,7 @@ struct TagPicker: View {
                     prompt: "태그를 검색해보세요"
                 )
             }
-            .toolbar {
-                HStack {
-                    EditButton()
-                    NavigationLink(
-                        isActive: $isTagFormShow,
-                        destination: {
-                            TagForm(isPresent: $isTagFormShow)
-                        },
-                        label: {
-                            Image(systemName: "plus")
-                        }
-                    )
-                }
-            }
+            .toolbar(content: toolbar)
             .navigationTitle("태그 선택")
             .navigationBarTitleDisplayMode(.large)
         }
@@ -108,6 +95,23 @@ extension TagPicker {
     private func deleteItems(indexSet: IndexSet) {
         let tags = indexSet.map { notSelected()[$0] }
         Tag.delete(tags: tags, context: viewContext)
+    }
+
+    private func toolbar() -> some ToolbarContent {
+        ToolbarItem(placement: .automatic) {
+            HStack {
+                EditButton()
+                NavigationLink(
+                    isActive: $isTagFormShow,
+                    destination: {
+                        TagForm(isPresent: $isTagFormShow)
+                    },
+                    label: {
+                        Image(systemName: "plus")
+                    }
+                )
+            }
+        }
     }
 
 }

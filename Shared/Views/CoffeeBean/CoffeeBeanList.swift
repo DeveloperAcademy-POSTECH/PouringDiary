@@ -41,14 +41,16 @@ extension CoffeeBeanList {
 }
 
 extension CoffeeBeanList {
-    @ViewBuilder fileprivate func toolBar() -> some View {
-        HStack {
-            EditButton()
-            NavigationLink(destination: {
-                CoffeeBeanForm()
-            }, label: {
-                Image(systemName: "plus")
-            })
+    private func toolBar() -> some ToolbarContent {
+        return ToolbarItem(placement: .automatic) {
+            HStack {
+                EditButton()
+                NavigationLink(destination: {
+                    CoffeeBeanForm()
+                }, label: {
+                    Image(systemName: "plus")
+                })
+            }
         }
     }
 }
