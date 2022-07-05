@@ -11,14 +11,12 @@
 		E215CF2628596AFB00198F26 /* PouringDiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1228596AFB00198F26 /* PouringDiary.xcdatamodeld */; };
 		E215CF2728596AFB00198F26 /* PouringDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1428596AFB00198F26 /* PouringDiaryApp.swift */; };
 		E215CF2828596AFB00198F26 /* PouringDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1428596AFB00198F26 /* PouringDiaryApp.swift */; };
-		E215CF2928596AFB00198F26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1528596AFB00198F26 /* ContentView.swift */; };
-		E215CF2A28596AFB00198F26 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1528596AFB00198F26 /* ContentView.swift */; };
+		E215CF2928596AFB00198F26 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1528596AFB00198F26 /* MainTabView.swift */; };
+		E215CF2A28596AFB00198F26 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1528596AFB00198F26 /* MainTabView.swift */; };
 		E215CF2B28596AFB00198F26 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1628596AFB00198F26 /* PersistenceController.swift */; };
 		E215CF2D28596AFB00198F26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E215CF1728596AFB00198F26 /* Assets.xcassets */; };
 		E215CF2E28596AFB00198F26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E215CF1728596AFB00198F26 /* Assets.xcassets */; };
 		E21CBB4D2859CC24008CEDC3 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */; };
-		E21CBB502859D3E4008CEDC3 /* Tag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4E2859D3E4008CEDC3 /* Tag+CoreDataClass.swift */; };
-		E21CBB512859D3E4008CEDC3 /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4F2859D3E4008CEDC3 /* Tag+CoreDataProperties.swift */; };
 		E21F3FC0286F396900BFB481 /* CoffeeBeanList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F3FBF286F396900BFB481 /* CoffeeBeanList.swift */; };
 		E21F3FC1286F396900BFB481 /* CoffeeBeanList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F3FBF286F396900BFB481 /* CoffeeBeanList.swift */; };
 		E26960B8286502FC00862F8E /* CoffeeBeanForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960B7286502FC00862F8E /* CoffeeBeanForm.swift */; };
@@ -26,7 +24,7 @@
 		E29A754C2859B767007379FD /* Tag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A754B2859B767007379FD /* Tag+Extension.swift */; };
 		E29BE5E12863AD9E00628801 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FE3FB22862BC6F004F4626 /* NSManagedObjectContext+Extensions.swift */; };
 		E29D02562877CC7F00A84A5D /* CoffeeBeanPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D02552877CC7F00A84A5D /* CoffeeBeanPicker.swift */; };
-		E29D02572877CC7F00A84A5D /* CoffeeBeanPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D02552877CC7F00A84A5D /* CoffeeBeanPicker.swift */; };
+		E29E86D32874D73F009A07EB /* RecipeForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF0545287425FC00C737EE /* RecipeForm.swift */; };
 		E2AC03562863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AC03552863F9470005FFD2 /* CoffeeBean+Extension.swift */; };
 		E2AC03572863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AC03552863F9470005FFD2 /* CoffeeBean+Extension.swift */; };
 		E2B481D428653DC100FBA847 /* TagPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B481D328653DC100FBA847 /* TagPicker.swift */; };
@@ -37,26 +35,24 @@
 		E2B481DA2865453300FBA847 /* TagForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B481D82865453300FBA847 /* TagForm.swift */; };
 		E2FE3FAC2862A304004F4626 /* Tag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A754B2859B767007379FD /* Tag+Extension.swift */; };
 		E2FE3FAE2862A304004F4626 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */; };
-		E2FE3FAF2862A304004F4626 /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4F2859D3E4008CEDC3 /* Tag+CoreDataProperties.swift */; };
 		E2FE3FB02862A304004F4626 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1628596AFB00198F26 /* PersistenceController.swift */; };
-		E2FE3FB12862A304004F4626 /* Tag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4E2859D3E4008CEDC3 /* Tag+CoreDataClass.swift */; };
 		E2FE3FB32862BC6F004F4626 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FE3FB22862BC6F004F4626 /* NSManagedObjectContext+Extensions.swift */; };
 		E2FF05402874175800C737EE /* Recipe+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF053F2874175800C737EE /* Recipe+Extension.swift */; };
 		E2FF05412874175C00C737EE /* Recipe+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF053F2874175800C737EE /* Recipe+Extension.swift */; };
+		E2FF0544287425EE00C737EE /* RecipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF0543287425EE00C737EE /* RecipeList.swift */; };
+		E2FF0546287425FC00C737EE /* RecipeForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF0545287425FC00C737EE /* RecipeForm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E215CF1328596AFB00198F26 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		E215CF1428596AFB00198F26 /* PouringDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouringDiaryApp.swift; sourceTree = "<group>"; };
-		E215CF1528596AFB00198F26 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E215CF1528596AFB00198F26 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		E215CF1628596AFB00198F26 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		E215CF1728596AFB00198F26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E215CF1C28596AFB00198F26 /* PouringDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PouringDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E215CF2228596AFB00198F26 /* PouringDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PouringDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E215CF2428596AFB00198F26 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
-		E21CBB4E2859D3E4008CEDC3 /* Tag+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataClass.swift"; sourceTree = "<group>"; };
-		E21CBB4F2859D3E4008CEDC3 /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E21F3FBF286F396900BFB481 /* CoffeeBeanList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanList.swift; sourceTree = "<group>"; };
 		E26960B7286502FC00862F8E /* CoffeeBeanForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanForm.swift; sourceTree = "<group>"; };
 		E26960BA2865156E00862F8E /* TagItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagItem.swift; sourceTree = "<group>"; };
@@ -67,6 +63,8 @@
 		E2B481D82865453300FBA847 /* TagForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagForm.swift; sourceTree = "<group>"; };
 		E2FE3FB22862BC6F004F4626 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
 		E2FF053F2874175800C737EE /* Recipe+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe+Extension.swift"; sourceTree = "<group>"; };
+		E2FF0543287425EE00C737EE /* RecipeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeList.swift; sourceTree = "<group>"; };
+		E2FF0545287425FC00C737EE /* RecipeForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeForm.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -138,8 +136,6 @@
 		E21CBB522859D43D008CEDC3 /* Tag */ = {
 			isa = PBXGroup;
 			children = (
-				E21CBB4E2859D3E4008CEDC3 /* Tag+CoreDataClass.swift */,
-				E21CBB4F2859D3E4008CEDC3 /* Tag+CoreDataProperties.swift */,
 				E29A754B2859B767007379FD /* Tag+Extension.swift */,
 			);
 			path = Tag;
@@ -195,9 +191,10 @@
 		E2FE3FA92862A035004F4626 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E2FF0542287425DB00C737EE /* Recipe */,
 				E26960B92865155400862F8E /* Tag */,
 				E26960B5286502D100862F8E /* CoffeeBean */,
-				E215CF1528596AFB00198F26 /* ContentView.swift */,
+				E215CF1528596AFB00198F26 /* MainTabView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -214,6 +211,15 @@
 			isa = PBXGroup;
 			children = (
 				E2FF053F2874175800C737EE /* Recipe+Extension.swift */,
+			);
+			path = Recipe;
+			sourceTree = "<group>";
+		};
+		E2FF0542287425DB00C737EE /* Recipe */ = {
+			isa = PBXGroup;
+			children = (
+				E2FF0545287425FC00C737EE /* RecipeForm.swift */,
+				E2FF0543287425EE00C737EE /* RecipeList.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -340,17 +346,17 @@
 			files = (
 				E2B481D92865453300FBA847 /* TagForm.swift in Sources */,
 				E2FF05402874175800C737EE /* Recipe+Extension.swift in Sources */,
-				E21CBB502859D3E4008CEDC3 /* Tag+CoreDataClass.swift in Sources */,
 				E26960B8286502FC00862F8E /* CoffeeBeanForm.swift in Sources */,
 				E29A754C2859B767007379FD /* Tag+Extension.swift in Sources */,
 				E215CF2728596AFB00198F26 /* PouringDiaryApp.swift in Sources */,
 				E215CF2B28596AFB00198F26 /* PersistenceController.swift in Sources */,
 				E215CF2528596AFB00198F26 /* PouringDiary.xcdatamodeld in Sources */,
-				E21CBB512859D3E4008CEDC3 /* Tag+CoreDataProperties.swift in Sources */,
-				E215CF2928596AFB00198F26 /* ContentView.swift in Sources */,
+				E215CF2928596AFB00198F26 /* MainTabView.swift in Sources */,
 				E2AC03562863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */,
 				E2B481D428653DC100FBA847 /* TagPicker.swift in Sources */,
 				E21CBB4D2859CC24008CEDC3 /* AppEnvironment.swift in Sources */,
+				E2FF0546287425FC00C737EE /* RecipeForm.swift in Sources */,
+				E2FF0544287425EE00C737EE /* RecipeList.swift in Sources */,
 				E2FE3FB32862BC6F004F4626 /* NSManagedObjectContext+Extensions.swift in Sources */,
 				E29D02562877CC7F00A84A5D /* CoffeeBeanPicker.swift in Sources */,
 				E21F3FC0286F396900BFB481 /* CoffeeBeanList.swift in Sources */,
@@ -369,10 +375,9 @@
 				E2B481D728653DDA00FBA847 /* CoffeeBeanForm.swift in Sources */,
 				E215CF2628596AFB00198F26 /* PouringDiary.xcdatamodeld in Sources */,
 				E2FE3FAC2862A304004F4626 /* Tag+Extension.swift in Sources */,
+				E29E86D32874D73F009A07EB /* RecipeForm.swift in Sources */,
 				E2B481D528653DC100FBA847 /* TagPicker.swift in Sources */,
-				E2FE3FB12862A304004F4626 /* Tag+CoreDataClass.swift in Sources */,
-				E215CF2A28596AFB00198F26 /* ContentView.swift in Sources */,
-				E2FE3FAF2862A304004F4626 /* Tag+CoreDataProperties.swift in Sources */,
+				E215CF2A28596AFB00198F26 /* MainTabView.swift in Sources */,
 				E2AC03572863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */,
 				E2FE3FAE2862A304004F4626 /* AppEnvironment.swift in Sources */,
 				E29BE5E12863AD9E00628801 /* NSManagedObjectContext+Extensions.swift in Sources */,
