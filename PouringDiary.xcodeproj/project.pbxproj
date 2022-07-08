@@ -25,6 +25,8 @@
 		E26960BB2865156E00862F8E /* TagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960BA2865156E00862F8E /* TagItem.swift */; };
 		E29A754C2859B767007379FD /* Tag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A754B2859B767007379FD /* Tag+Extension.swift */; };
 		E29BE5E12863AD9E00628801 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FE3FB22862BC6F004F4626 /* NSManagedObjectContext+Extensions.swift */; };
+		E29D02562877CC7F00A84A5D /* CoffeeBeanPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D02552877CC7F00A84A5D /* CoffeeBeanPicker.swift */; };
+		E29D02572877CC7F00A84A5D /* CoffeeBeanPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D02552877CC7F00A84A5D /* CoffeeBeanPicker.swift */; };
 		E2AC03562863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AC03552863F9470005FFD2 /* CoffeeBean+Extension.swift */; };
 		E2AC03572863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AC03552863F9470005FFD2 /* CoffeeBean+Extension.swift */; };
 		E2B481D428653DC100FBA847 /* TagPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B481D328653DC100FBA847 /* TagPicker.swift */; };
@@ -57,6 +59,7 @@
 		E26960B7286502FC00862F8E /* CoffeeBeanForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanForm.swift; sourceTree = "<group>"; };
 		E26960BA2865156E00862F8E /* TagItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagItem.swift; sourceTree = "<group>"; };
 		E29A754B2859B767007379FD /* Tag+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+Extension.swift"; sourceTree = "<group>"; };
+		E29D02552877CC7F00A84A5D /* CoffeeBeanPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanPicker.swift; sourceTree = "<group>"; };
 		E2AC03552863F9470005FFD2 /* CoffeeBean+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoffeeBean+Extension.swift"; sourceTree = "<group>"; };
 		E2B481D328653DC100FBA847 /* TagPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPicker.swift; sourceTree = "<group>"; };
 		E2B481D82865453300FBA847 /* TagForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagForm.swift; sourceTree = "<group>"; };
@@ -144,6 +147,7 @@
 			children = (
 				E26960B7286502FC00862F8E /* CoffeeBeanForm.swift */,
 				E21F3FBF286F396900BFB481 /* CoffeeBeanList.swift */,
+				E29D02552877CC7F00A84A5D /* CoffeeBeanPicker.swift */,
 			);
 			path = CoffeeBean;
 			sourceTree = "<group>";
@@ -335,6 +339,7 @@
 				E2B481D428653DC100FBA847 /* TagPicker.swift in Sources */,
 				E21CBB4D2859CC24008CEDC3 /* AppEnvironment.swift in Sources */,
 				E2FE3FB32862BC6F004F4626 /* NSManagedObjectContext+Extensions.swift in Sources */,
+				E29D02562877CC7F00A84A5D /* CoffeeBeanPicker.swift in Sources */,
 				E21F3FC0286F396900BFB481 /* CoffeeBeanList.swift in Sources */,
 				E26960BB2865156E00862F8E /* TagItem.swift in Sources */,
 			);
@@ -357,6 +362,7 @@
 				E2AC03572863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */,
 				E2FE3FAE2862A304004F4626 /* AppEnvironment.swift in Sources */,
 				E29BE5E12863AD9E00628801 /* NSManagedObjectContext+Extensions.swift in Sources */,
+				E29D02572877CC7F00A84A5D /* CoffeeBeanPicker.swift in Sources */,
 				E21F3FC1286F396900BFB481 /* CoffeeBeanList.swift in Sources */,
 				E2B481D628653DC900FBA847 /* TagItem.swift in Sources */,
 			);
