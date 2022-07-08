@@ -17,7 +17,7 @@ struct CoffeeBeanList: View {
             List {
                 ForEach(beans, id: \.objectID) { bean in
                     NavigationLink(destination: {
-                        CoffeeBeanForm(bean)
+                        CoffeeBeanForm(bean.objectID)
                     }, label: {
                         Text(bean.name ?? "")
                     })
