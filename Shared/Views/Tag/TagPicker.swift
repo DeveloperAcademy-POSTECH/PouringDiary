@@ -19,24 +19,26 @@ struct TagPicker: View {
     @Binding var selected: [Tag]
 
     // Internal variables & getters
-    private var category: Tag.Category
+    var category: Tag.Category
     private var navigationTitle: String {
         switch category {
         case .regular:
             return "태그 선택"
         case .equipment:
             return "장비 선택"
+        case .notSelected:
+            return ""
         }
     }
 
     // Initializers
     init(with category: Tag.Category, selected: Binding<[Tag]>) {
         self.category = category
+        self._selected = selected
         self._allTags = FetchRequest(
             sortDescriptors: [NSSortDescriptor(keyPath: \Tag.color, ascending: true)],
-            predicate: NSPredicate(format: "category == %i", Int16(category.rawValue))
+            predicate: NSPredicate(format: "category == %i", category.rawValue)
         )
-        self._selected = selected
     }
 
     var body: some View {
@@ -121,7 +123,7 @@ extension TagPicker {
                 NavigationLink(
                     isActive: $isTagFormShow,
                     destination: {
-                        TagForm(with: $isTagFormShow, category: .regular)
+                        TagForm(with: $isTagFormShow, category: category)
                     },
                     label: {
                         Image(systemName: "plus")

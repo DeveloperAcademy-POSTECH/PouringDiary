@@ -39,7 +39,6 @@ extension NSManagedObjectContext {
         saveContext()
     }
 
-
     func get<T: NSManagedObject>(by objectId: NSManagedObjectID) -> T? {
         do {
             guard let result = try self.existingObject(with: objectId) as? T else { return nil }

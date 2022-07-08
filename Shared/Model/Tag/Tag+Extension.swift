@@ -22,6 +22,7 @@ extension Tag {
     public enum Category: Int, CaseIterable {
         case regular
         case equipment
+        case notSelected
 
         init(from int16: Int16) {
             switch int16 {
@@ -30,7 +31,7 @@ extension Tag {
             case Int16(Category.equipment.rawValue):
                 self = .equipment
             default:
-                self = .regular
+                self = .notSelected
             }
         }
     }
@@ -103,8 +104,9 @@ extension Tag {
         Tag.Input(content: "에티오피아", color: .blue),
         Tag.Input(content: "캐냐", color: .blue),
         Tag.Input(content: "브라질", color: .blue),
-        Tag.Input(content: "하리오 V60", color: .red),
-        Tag.Input(content: "오리가미 세라믹", color: .red)
+        Tag.Input(content: "하리오 V60", color: .red, category: .equipment),
+        Tag.Input(content: "오리가미 세라믹", color: .red, category: .equipment),
+        Tag.Input(content: "블루보틀 드리퍼", color: .red, category: .equipment)
     ]
 }
 
