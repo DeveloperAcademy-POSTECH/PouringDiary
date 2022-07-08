@@ -15,10 +15,15 @@ extension Recipe {
         var steps: String = ""
     }
 
+    struct RelationInput {
+        var tags: [Tag]
+        var coffeeBean: CoffeeBean
+        var equipments: [Tag]
+    }
+
     static func register(
         input: Input,
-        tags: [Tag],
-        equipments: [Tag],
+        relation: RelationInput,
         context: NSManagedObjectContext
     ) {
         let newRecipe = Recipe(context: context)
@@ -26,23 +31,24 @@ extension Recipe {
         newRecipe.created = Date()
         newRecipe.title = input.title
         newRecipe.information = input.information
-        newRecipe.equipmentTags = NSSet(array: equipments)
-        newRecipe.recipeTags = NSSet(array: tags)
+        newRecipe.coffeeBean = relation.coffeeBean
+        newRecipe.equipmentTags = NSSet(array: relation.equipments)
+        newRecipe.recipeTags = NSSet(array: relation.tags)
         context.saveContext()
     }
 
     static func save(
         objectId: NSManagedObjectID,
         input: Input,
-        tags: [Tag],
-        equipments: [Tag],
+        relation: RelationInput,
         context: NSManagedObjectContext
     ) {
         guard let current = context.object(with: objectId) as? Recipe else { return }
         current.title = input.title
         current.information = input.information
-        current.recipeTags = NSSet(array: tags)
-        current.equipmentTags = NSSet(array: equipments)
+        current.coffeeBean = relation.coffeeBean
+        current.recipeTags = NSSet(array: relation.tags)
+        current.equipmentTags = NSSet(array: relation.equipments)
         context.saveContext()
     }
 
