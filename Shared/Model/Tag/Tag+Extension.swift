@@ -16,6 +16,24 @@ extension Tag {
     public struct Input {
         var content: String
         var color: Color
+        var category: Category = .regular
+    }
+
+    public enum Category: Int, CaseIterable {
+        case regular
+        case equipment
+        case notSelected
+
+        init(from int16: Int16) {
+            switch int16 {
+            case Int16(Category.regular.rawValue):
+                self = .regular
+            case Int16(Category.equipment.rawValue):
+                self = .equipment
+            default:
+                self = .notSelected
+            }
+        }
     }
 
     /// 태그의 색상 리스트를 관리합니다.
@@ -53,7 +71,11 @@ extension Tag {
     }
 
     public var input: Tag.Input {
-        return Tag.Input(content: self.content ?? "", color: Color(rawValue: Int(self.color)) ?? .blue)
+        return Tag.Input(
+            content: self.content ?? "",
+            color: Color(rawValue: Int(self.color)) ?? .blue,
+            category: Category(from: self.category)
+        )
     }
 
     /// `Tag.Input`을 활용해서 새로운 원두를 등록합니다
@@ -63,6 +85,7 @@ extension Tag {
         newTag.color = Int16(input.color.rawValue)
         newTag.content = input.content
         newTag.created = Date()
+        newTag.category = Int16(input.category.rawValue)
         context.saveContext()
     }
 
@@ -81,8 +104,9 @@ extension Tag {
         Tag.Input(content: "에티오피아", color: .blue),
         Tag.Input(content: "캐냐", color: .blue),
         Tag.Input(content: "브라질", color: .blue),
-        Tag.Input(content: "하리오 V60", color: .red),
-        Tag.Input(content: "오리가미 세라믹", color: .red)
+        Tag.Input(content: "하리오 V60", color: .red, category: .equipment),
+        Tag.Input(content: "오리가미 세라믹", color: .red, category: .equipment),
+        Tag.Input(content: "블루보틀 드리퍼", color: .red, category: .equipment)
     ]
 }
 

@@ -11,7 +11,7 @@ import SwiftUI
 struct PouringDiaryApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabView()
                 .modifier(AppEnvironment())
         }
     }

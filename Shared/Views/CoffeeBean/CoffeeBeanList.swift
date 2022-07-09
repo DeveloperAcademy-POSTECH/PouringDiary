@@ -17,7 +17,7 @@ struct CoffeeBeanList: View {
             List {
                 ForEach(beans, id: \.objectID) { bean in
                     NavigationLink(destination: {
-                        CoffeeBeanForm(bean)
+                        CoffeeBeanForm(bean.objectID)
                     }, label: {
                         Text(bean.name ?? "")
                     })
@@ -40,6 +40,7 @@ extension CoffeeBeanList {
     }
 }
 
+// MARK: ViewBuilders
 extension CoffeeBeanList {
     private func toolBar() -> some ToolbarContent {
         return ToolbarItem(placement: .automatic) {

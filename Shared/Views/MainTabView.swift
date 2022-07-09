@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct MainTabView: View {
     var body: some View {
         TabView {
-            Text("레시피")
+            RecipeList()
                 .tabItem {
                     Label("레시피", systemImage: "note")
                 }
@@ -26,9 +26,9 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct MainTabView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        MainTabView()
             .modifier(AppEnvironment(inMemory: true))
     }
 }

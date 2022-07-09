@@ -12,37 +12,37 @@ import CoreData
  원두를 새로 등록하거나 수정하는 뷰입니다.
  */
 struct CoffeeBeanForm: View {
+    // Environment
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentationMode
 
-    private let beanId: NSManagedObjectID?
-    private var isEditing: Bool { beanId != nil }
-
-    @State var input: CoffeeBean.Input
+    // Property
+    @State var input: CoffeeBean.Input = CoffeeBean.Input()
     @State var isTagListShow: Bool = false
     @State var selectedTags: [Tag] = []
 
+    // Internal
+    private let beanId: NSManagedObjectID?
+    private var isEditing: Bool { beanId != nil }
+
     /// `bean`입력 여부에 따라 새로운 원두인지, 기존 원두인지를 결정합니다
     /// 태그값은 뷰가 그려진 이후에 수령합니다
-    init(_ bean: CoffeeBean? = nil) {
-        if let editing = bean {
-            self.beanId = editing.objectID
-            self._input = State(initialValue: editing.input)
-        } else {
-            self.beanId = bean?.objectID
-            self._input = State(initialValue: CoffeeBean.Input())
-        }
+    init(_ beanId: NSManagedObjectID? = nil) {
+        self.beanId = beanId
     }
 
     /// 초기화에 수령한 ObjectID를 사용해서 태그를 수령합니다
     @Sendable
-    private func prepareTags() async {
-        guard let objectId = beanId ,
-              let editing = CoffeeBean.get(
-                by: objectId,
-                context: viewContext
-              ) else { return }
-        self.selectedTags = editing.tagArray
+    private func prepare() async {
+        DispatchQueue.main.asyncAfter(deadline: .now().advanced(by: .milliseconds(50))) {
+            guard let objectId = beanId ,
+                  let editing = CoffeeBean.get(
+                    by: objectId,
+                    context: viewContext
+                  ) else { return }
+            self.selectedTags = editing.tagArray
+            self.input = editing.input
+        }
     }
 
     var body: some View {
@@ -52,9 +52,11 @@ struct CoffeeBeanForm: View {
             tagSection
         }
         .toolbar(content: toolbar)
-        .sheet(isPresented: $isTagListShow) { TagPicker(selected: $selectedTags) }
+        .sheet(isPresented: $isTagListShow) {
+            TagPicker(with: .regular, selected: $selectedTags)
+        }
         .navigationTitle(isEditing ? "원두 수정" : "원두 등록")
-        .task(prepareTags)
+        .task(prepare)
     }
 }
 
@@ -74,7 +76,7 @@ extension CoffeeBeanForm {
     @ViewBuilder
     private var explanationSection: some View {
         Section("원두 설명") {
-            TextEditor(text: $input.explanation)
+            TextEditor(text: $input.information)
                 .font(.body)
                 .submitLabel(.return)
         }

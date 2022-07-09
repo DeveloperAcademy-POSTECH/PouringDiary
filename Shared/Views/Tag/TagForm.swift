@@ -12,8 +12,19 @@ import SwiftUI
  */
 struct TagForm: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @State var input: Tag.Input = Tag.Input(content: "", color: .red)
+    @State var input: Tag.Input
     @Binding var isPresent: Bool
+
+    init(with isPresent: Binding<Bool>, category: Tag.Category) {
+        self._isPresent = isPresent
+        self._input = State(
+            initialValue: Tag.Input(
+                content: "",
+                color: .gray,
+                category: category
+            )
+        )
+    }
 
     var body: some View {
         VStack {
@@ -61,7 +72,7 @@ extension TagForm {
 struct TagForm_Previews: PreviewProvider {
     static var previews: some View {
         NavigationView {
-            TagForm(isPresent: .constant(false))
+            TagForm(with: .constant(false), category: .regular)
                 .modifier(AppEnvironment(inMemory: true))
         }
     }
