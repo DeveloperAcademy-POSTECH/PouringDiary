@@ -12,15 +12,18 @@ import CoreData
  원두를 새로 등록하거나 수정하는 뷰입니다.
  */
 struct CoffeeBeanForm: View {
+    // Environment
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentationMode
 
-    private let beanId: NSManagedObjectID?
-    private var isEditing: Bool { beanId != nil }
-
+    // Property
     @State var input: CoffeeBean.Input = CoffeeBean.Input()
     @State var isTagListShow: Bool = false
     @State var selectedTags: [Tag] = []
+
+    // Internal
+    private let beanId: NSManagedObjectID?
+    private var isEditing: Bool { beanId != nil }
 
     /// `bean`입력 여부에 따라 새로운 원두인지, 기존 원두인지를 결정합니다
     /// 태그값은 뷰가 그려진 이후에 수령합니다

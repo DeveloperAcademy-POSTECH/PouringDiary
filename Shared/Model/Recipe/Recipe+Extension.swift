@@ -30,6 +30,7 @@ extension Recipe {
         newRecipe.id = UUID()
         newRecipe.created = Date()
         newRecipe.title = input.title
+        newRecipe.steps = input.steps
         newRecipe.information = input.information
         newRecipe.coffeeBean = relation.coffeeBean
         newRecipe.equipmentTags = NSSet(array: relation.equipments)
@@ -46,6 +47,7 @@ extension Recipe {
         guard let current = context.object(with: objectId) as? Recipe else { return }
         current.title = input.title
         current.information = input.information
+        current.steps = input.steps
         current.coffeeBean = relation.coffeeBean
         current.recipeTags = NSSet(array: relation.tags)
         current.equipmentTags = NSSet(array: relation.equipments)
@@ -70,7 +72,7 @@ extension Recipe {
     }
 
     var equipmentArray: [Tag] {
-        guard let tags = self.recipeTags?.allObjects as? [Tag] else { return [] }
+        guard let tags = self.equipmentTags?.allObjects as? [Tag] else { return [] }
         return tags
     }
 }

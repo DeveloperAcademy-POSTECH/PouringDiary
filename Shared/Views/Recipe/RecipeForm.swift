@@ -9,25 +9,29 @@ import SwiftUI
 import CoreData
 
 struct RecipeForm: View {
+    // Environment
+    @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.presentationMode) var presentationMode
+
     // Structs
     private struct TagSheetOption {
         var isShow: Bool
         var category: Tag.Category
     }
-    // Variables /w property wrapper
+
+    // State
     @State private var input: Recipe.Input = Recipe.Input()
     @State private var selectedCoffeeBean: CoffeeBean?
     @State private var equipmentTags: [Tag] = []
     @State private var recipeTags: [Tag] = []
     @State private var equipmentPickerShow: Bool = false
     @State private var tagPickerShow: Bool = false
+    @State private var coffeeBeanPickerShow: Bool = false
 
-    @Environment(\.managedObjectContext) private var viewContext
-
-    // Internal variables / getters
-    private var objectId: NSManagedObjectID?
+    // Internal
+    private var recipeId: NSManagedObjectID?
     private var isEditing: Bool {
-        return objectId != nil
+        return recipeId != nil
     }
 
     private var formValidated: Bool {
@@ -36,12 +40,12 @@ struct RecipeForm: View {
 
     // MARK: Initializers
     init(_ recipeId: NSManagedObjectID? = nil) {
-        self.objectId = recipeId
+        self.recipeId = recipeId
         self.selectedCoffeeBean = nil
     }
 
     init(_ coffeeBean: CoffeeBean) {
-        self.objectId = nil
+        self.recipeId = nil
         self.selectedCoffeeBean = coffeeBean
     }
 
@@ -61,6 +65,9 @@ struct RecipeForm: View {
         }
         .sheet(isPresented: $equipmentPickerShow) {
             TagPicker(with: .equipment, selected: $equipmentTags)
+        }
+        .sheet(isPresented: $coffeeBeanPickerShow) {
+            CoffeeBeanPicker(selectedBean: $selectedCoffeeBean)
         }
         .navigationTitle(isEditing ? "레시피 수정" : "레시피 등록")
     }
@@ -99,7 +106,7 @@ extension RecipeForm {
     private var coffeeBeanSection: some View {
         Section("원두 선택") {
             Button(action: {
-
+                coffeeBeanPickerShow.toggle()
             }, label: {
                 if let bean = selectedCoffeeBean {
                     Text(bean.name ?? "")
@@ -200,16 +207,12 @@ extension RecipeForm {
 
     private func toolbar() -> some ToolbarContent {
         return ToolbarItem(placement: .automatic) {
-            Button(action: {
-                guard let bean = selectedCoffeeBean else { return }
-                Recipe.register(
-                    input: input,
-                    relation: Recipe.RelationInput(tags: recipeTags, coffeeBean: bean, equipments: equipmentTags),
-                    context: viewContext
-                )
-            }, label: {
-                Text(isEditing ? "수정" : "등록")
-            })
+            Button(
+                action: saveOrRegister,
+                label: {
+                    Text(isEditing ? "수정" : "등록")
+                }
+            )
             .disabled(!formValidated)
         }
     }
@@ -220,12 +223,38 @@ extension RecipeForm {
     @Sendable
     private func prepare() async {
         DispatchQueue.main.asyncAfter(deadline: .now().advanced(by: .milliseconds(50))) {
-            guard let id = self.objectId, let recipe = viewContext.get(by: id) as? Recipe else { return }
+            guard let id = self.recipeId, let recipe = viewContext.get(by: id) as? Recipe else { return }
             input = recipe.input
             selectedCoffeeBean = recipe.coffeeBean
             recipeTags = recipe.tagArray
             equipmentTags = recipe.equipmentArray
         }
+    }
+
+    @Sendable
+    private func saveOrRegister() {
+        guard let bean = selectedCoffeeBean else { return }
+        let relation = Recipe.RelationInput(
+            tags: recipeTags,
+            coffeeBean: bean,
+            equipments: equipmentTags
+        )
+        if let recipeId = recipeId {
+            Recipe.save(
+                objectId: recipeId,
+                input: input,
+                relation: relation,
+                context: viewContext
+            )
+        } else {
+            Recipe.register(
+                input: input,
+                relation: relation,
+                context: viewContext
+            )
+        }
+        presentationMode.wrappedValue.dismiss()
+
     }
 }
 
