@@ -87,6 +87,22 @@ extension TagPicker {
         })
     }
 
+    private func toolbar() -> some ToolbarContent {
+        ToolbarItem(placement: .automatic) {
+            HStack {
+                EditButton()
+                NavigationLink(
+                    isActive: $isTagFormShow,
+                    destination: {
+                        TagForm(with: $isTagFormShow, category: category)
+                    },
+                    label: {
+                        Image(systemName: "plus")
+                    }
+                )
+            }
+        }
+    }
 }
 
 // MARK: Actions
@@ -115,24 +131,6 @@ extension TagPicker {
         let tags = indexSet.map { notSelected()[$0] }
         Tag.delete(tags: tags, context: viewContext)
     }
-
-    private func toolbar() -> some ToolbarContent {
-        ToolbarItem(placement: .automatic) {
-            HStack {
-                EditButton()
-                NavigationLink(
-                    isActive: $isTagFormShow,
-                    destination: {
-                        TagForm(with: $isTagFormShow, category: category)
-                    },
-                    label: {
-                        Image(systemName: "plus")
-                    }
-                )
-            }
-        }
-    }
-
 }
 
 struct TagPicker_Previews: PreviewProvider {
