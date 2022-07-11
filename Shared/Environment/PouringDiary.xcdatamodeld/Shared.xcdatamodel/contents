@@ -6,8 +6,15 @@
         <attribute name="image" optional="YES" attributeType="Binary"/>
         <attribute name="information" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
-        <relationship name="recipes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipe" inverseName="coffeeBean" inverseEntity="Recipe"/>
+        <relationship name="diaries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Diary" inverseName="coffeeBean" inverseEntity="Diary"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="beans" inverseEntity="Tag"/>
+    </entity>
+    <entity name="Diary" representedClassName="Diary" syncable="YES" codeGenerationType="class">
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="memo" optional="YES" attributeType="String"/>
+        <relationship name="coffeeBean" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoffeeBean" inverseName="diaries" inverseEntity="CoffeeBean"/>
+        <relationship name="recipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="diaries" inverseEntity="Recipe"/>
     </entity>
     <entity name="Recipe" representedClassName="Recipe" syncable="YES" codeGenerationType="class">
         <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -15,7 +22,7 @@
         <attribute name="information" optional="YES" attributeType="String"/>
         <attribute name="steps" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
-        <relationship name="coffeeBean" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoffeeBean" inverseName="recipes" inverseEntity="CoffeeBean"/>
+        <relationship name="diaries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Diary" inverseName="recipe" inverseEntity="Diary"/>
         <relationship name="equipmentTags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="equipments" inverseEntity="Tag"/>
         <relationship name="recipeTags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="recipes" inverseEntity="Tag"/>
     </entity>
@@ -30,8 +37,9 @@
         <relationship name="recipes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="recipeTags" inverseEntity="Recipe"/>
     </entity>
     <elements>
-        <element name="CoffeeBean" positionX="-78.63671875" positionY="18.19140625" width="128" height="148"/>
-        <element name="Recipe" positionX="114.0703125" positionY="-84.03515625" width="128" height="163"/>
+        <element name="CoffeeBean" positionX="-78.63671875" positionY="18.19140625" width="128" height="14"/>
+        <element name="Recipe" positionX="114.0703125" positionY="-84.03515625" width="128" height="14"/>
         <element name="Tag" positionX="-60.92578125" positionY="-139.19140625" width="128" height="149"/>
+        <element name="Diary" positionX="18" positionY="0" width="128" height="14"/>
     </elements>
 </model>
