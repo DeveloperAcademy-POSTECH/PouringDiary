@@ -14,12 +14,12 @@ import CoreData
 struct CoffeeBeanForm: View {
     // Environment
     @Environment(\.managedObjectContext) private var viewContext
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.presentationMode) private var presentationMode
 
     // Property
-    @State var input: CoffeeBean.Input = CoffeeBean.Input()
-    @State var isTagListShow: Bool = false
-    @State var selectedTags: [Tag] = []
+    @State private var input: CoffeeBean.Input = CoffeeBean.Input()
+    @State private var isTagListShow: Bool = false
+    @State private var selectedTags: [Tag] = []
 
     // Internal
     private let beanId: NSManagedObjectID?
@@ -60,7 +60,7 @@ struct CoffeeBeanForm: View {
     }
 }
 
-// MARK: ViewBuilders
+// MARK: Views
 extension CoffeeBeanForm {
     /// 원두 이름 입력 Form Section
     @ViewBuilder

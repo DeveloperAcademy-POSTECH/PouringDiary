@@ -40,7 +40,7 @@ extension CoffeeBeanList {
     }
 }
 
-// MARK: ViewBuilders
+// MARK: Views
 extension CoffeeBeanList {
     private func toolBar() -> some ToolbarContent {
         return ToolbarItem(placement: .automatic) {

@@ -75,7 +75,7 @@ struct TagPicker: View {
     }
 }
 
-// MARK: ViewBuilders
+// MARK: Views
 extension TagPicker {
     // MARK: 태그 터치 시 토글을 수행하는 버튼
     @ViewBuilder

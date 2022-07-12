@@ -39,7 +39,7 @@ struct TagForm: View {
     }
 }
 
-// MARK: ViewBuilders
+// MARK: Views
 extension TagForm {
     private func toolbar() -> some ToolbarContent {
         return ToolbarItem(placement: .automatic) {

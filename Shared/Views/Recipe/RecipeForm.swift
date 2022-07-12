@@ -70,7 +70,7 @@ struct RecipeForm: View {
     }
 }
 
-// MARK: ViewBuilders {
+// MARK: Views {
 extension RecipeForm {
     @ViewBuilder
     private var stepSection: some View {
