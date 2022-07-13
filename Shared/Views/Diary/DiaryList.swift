@@ -1,0 +1,124 @@
+//
+//  DiaryList.swift
+//  PouringDiary
+//
+//  Created by devisaac on 2022/07/12.
+//
+
+import SwiftUI
+
+struct DiaryList: View {
+    @Environment(\.managedObjectContext) private var viewContext
+
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.created, order: SortOrder.reverse)])
+    private var diaries: FetchedResults<Diary>
+
+    @State private var detailViewShow: Bool = false
+
+    var body: some View {
+        NavigationView {
+            List {
+                if diaries.isEmpty {
+                    HStack(alignment: .center) {
+                        Spacer()
+                        Text("아직 작성된 일지가 없습니다.\n원두와 레시피를 등록하신 뒤에\n일지 작성이 가능합니다")
+                            .font(.subheadline)
+                            .multilineTextAlignment(.center)
+                            .padding()
+                        Spacer()
+                    }
+                }
+                ForEach(diaries, id: \.id) { diary in
+                    DiaryCard(diary: diary)
+                }
+                .onDelete(perform: deleteDiaries)
+            }
+            .toolbar(content: toolbar)
+            .navigationTitle("일지 목록")
+
+            // iPad NavigationView를 위한 Placeholder
+            Text("원두 목록에서 원두를 선택하거나\n새로운 원두를 등록해주세요")
+        }
+    }
+}
+
+// MARK: Views
+extension DiaryList {
+    private struct DiaryCard: View {
+        @ObservedObject var diary: Diary
+
+        @State var copiedFormShow: Bool = false
+
+        var body: some View {
+            NavigationLink(
+                destination: {
+                    DiaryForm(with: diary.objectID)
+                }, label: {
+                    HStack(alignment: .center) {
+                        VStack {
+                            Text(diary.created?.simpleYear ?? "")
+                                .frame(minWidth: 40)
+                                .font(.caption2)
+                            Text(diary.created?.monthAndDate ?? "")
+                                .frame(minWidth: 40)
+                                .font(.title2)
+                            Text(diary.created?.simpleTime ?? "")
+                                .frame(minWidth: 40)
+                                .font(.caption2)
+                        }
+                        .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 6))
+                        Divider()
+                        VStack(alignment: .leading, spacing: 6) {
+                            Text("☕️ \(diary.recipe?.title ?? "")")
+                                .font(.headline)
+                            Text("w/ \(diary.coffeeBean?.name ?? "")")
+                                .font(.caption)
+                            NavigationLink(
+                                isActive: $copiedFormShow,
+                                destination: { DiaryForm(recipe: diary.recipe, bean: diary.coffeeBean) },
+                                label: { EmptyView() }
+                            )
+                        }
+                        .padding()
+                    }
+                    .contextMenu {
+                        Button {
+                            copiedFormShow.toggle()
+                        } label: {
+                            Label("복제", systemImage: "doc.on.doc")
+                        }
+                    }
+                    .padding(4)
+                })
+        }
+    }
+
+    private func toolbar() -> some ToolbarContent {
+        ToolbarItem(placement: .automatic) {
+            HStack {
+                EditButton()
+                NavigationLink(destination: {
+                    DiaryForm()
+                }, label: {
+                    Image(systemName: "plus")
+                })
+            }
+        }
+    }
+}
+
+// MARK: Actions
+extension DiaryList {
+    @Sendable
+    private func deleteDiaries(indexSet: IndexSet) {
+        let deletions = indexSet
+            .map { diaries[$0] }
+        Diary.delete(diaries: deletions, context: viewContext)
+    }
+}
+
+struct DiaryList_Previews: PreviewProvider {
+    static var previews: some View {
+        DiaryList()
+    }
+}

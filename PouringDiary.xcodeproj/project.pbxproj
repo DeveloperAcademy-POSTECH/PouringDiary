@@ -22,11 +22,20 @@
 		E26960B8286502FC00862F8E /* CoffeeBeanForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960B7286502FC00862F8E /* CoffeeBeanForm.swift */; };
 		E26960BB2865156E00862F8E /* TagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960BA2865156E00862F8E /* TagItem.swift */; };
 		E29A754C2859B767007379FD /* Tag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A754B2859B767007379FD /* Tag+Extension.swift */; };
-		E29BE5E12863AD9E00628801 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FE3FB22862BC6F004F4626 /* NSManagedObjectContext+Extensions.swift */; };
+		E29BE5E12863AD9E00628801 /* NSManagedObjectContext+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FE3FB22862BC6F004F4626 /* NSManagedObjectContext+Extension.swift */; };
 		E29D02562877CC7F00A84A5D /* CoffeeBeanPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D02552877CC7F00A84A5D /* CoffeeBeanPicker.swift */; };
 		E29E86D32874D73F009A07EB /* RecipeForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF0545287425FC00C737EE /* RecipeForm.swift */; };
 		E2AC03562863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AC03552863F9470005FFD2 /* CoffeeBean+Extension.swift */; };
 		E2AC03572863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AC03552863F9470005FFD2 /* CoffeeBean+Extension.swift */; };
+		E2B3DEA9287C122B00DCCBAB /* Diary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3DEA8287C122B00DCCBAB /* Diary+Extension.swift */; };
+		E2B3DEAC287CF84100DCCBAB /* DiaryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3DEAB287CF84100DCCBAB /* DiaryList.swift */; };
+		E2B3DEAD287CF84100DCCBAB /* DiaryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3DEAB287CF84100DCCBAB /* DiaryList.swift */; };
+		E2B3DEAF287CF84A00DCCBAB /* DiaryForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3DEAE287CF84A00DCCBAB /* DiaryForm.swift */; };
+		E2B3DEB0287CF84A00DCCBAB /* DiaryForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3DEAE287CF84A00DCCBAB /* DiaryForm.swift */; };
+		E2B3DEB2287D3A7500DCCBAB /* RecipePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3DEB1287D3A7500DCCBAB /* RecipePicker.swift */; };
+		E2B3DEB3287D3A7500DCCBAB /* RecipePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3DEB1287D3A7500DCCBAB /* RecipePicker.swift */; };
+		E2B3DEB6287E103D00DCCBAB /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3DEB5287E103D00DCCBAB /* Date+Extension.swift */; };
+		E2B3DEB7287E103D00DCCBAB /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3DEB5287E103D00DCCBAB /* Date+Extension.swift */; };
 		E2B481D428653DC100FBA847 /* TagPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B481D328653DC100FBA847 /* TagPicker.swift */; };
 		E2B481D528653DC100FBA847 /* TagPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B481D328653DC100FBA847 /* TagPicker.swift */; };
 		E2B481D628653DC900FBA847 /* TagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960BA2865156E00862F8E /* TagItem.swift */; };
@@ -36,7 +45,7 @@
 		E2FE3FAC2862A304004F4626 /* Tag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A754B2859B767007379FD /* Tag+Extension.swift */; };
 		E2FE3FAE2862A304004F4626 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */; };
 		E2FE3FB02862A304004F4626 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1628596AFB00198F26 /* PersistenceController.swift */; };
-		E2FE3FB32862BC6F004F4626 /* NSManagedObjectContext+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FE3FB22862BC6F004F4626 /* NSManagedObjectContext+Extensions.swift */; };
+		E2FE3FB32862BC6F004F4626 /* NSManagedObjectContext+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FE3FB22862BC6F004F4626 /* NSManagedObjectContext+Extension.swift */; };
 		E2FF05402874175800C737EE /* Recipe+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF053F2874175800C737EE /* Recipe+Extension.swift */; };
 		E2FF05412874175C00C737EE /* Recipe+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF053F2874175800C737EE /* Recipe+Extension.swift */; };
 		E2FF0544287425EE00C737EE /* RecipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF0543287425EE00C737EE /* RecipeList.swift */; };
@@ -59,9 +68,14 @@
 		E29A754B2859B767007379FD /* Tag+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+Extension.swift"; sourceTree = "<group>"; };
 		E29D02552877CC7F00A84A5D /* CoffeeBeanPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanPicker.swift; sourceTree = "<group>"; };
 		E2AC03552863F9470005FFD2 /* CoffeeBean+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoffeeBean+Extension.swift"; sourceTree = "<group>"; };
+		E2B3DEA8287C122B00DCCBAB /* Diary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Diary+Extension.swift"; sourceTree = "<group>"; };
+		E2B3DEAB287CF84100DCCBAB /* DiaryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryList.swift; sourceTree = "<group>"; };
+		E2B3DEAE287CF84A00DCCBAB /* DiaryForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryForm.swift; sourceTree = "<group>"; };
+		E2B3DEB1287D3A7500DCCBAB /* RecipePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipePicker.swift; sourceTree = "<group>"; };
+		E2B3DEB5287E103D00DCCBAB /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		E2B481D328653DC100FBA847 /* TagPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPicker.swift; sourceTree = "<group>"; };
 		E2B481D82865453300FBA847 /* TagForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagForm.swift; sourceTree = "<group>"; };
-		E2FE3FB22862BC6F004F4626 /* NSManagedObjectContext+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extensions.swift"; sourceTree = "<group>"; };
+		E2FE3FB22862BC6F004F4626 /* NSManagedObjectContext+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extension.swift"; sourceTree = "<group>"; };
 		E2FF053F2874175800C737EE /* Recipe+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe+Extension.swift"; sourceTree = "<group>"; };
 		E2FF0543287425EE00C737EE /* RecipeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeList.swift; sourceTree = "<group>"; };
 		E2FF0545287425FC00C737EE /* RecipeForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeForm.swift; sourceTree = "<group>"; };
@@ -164,6 +178,7 @@
 		E29A754028599F35007379FD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E2B3DEA7287C11EB00DCCBAB /* Diary */,
 				E2FF053E2874152700C737EE /* Recipe */,
 				E2AC03582863F9590005FFD2 /* CoffeeBean */,
 				E21CBB522859D43D008CEDC3 /* Tag */,
@@ -180,10 +195,35 @@
 			path = CoffeeBean;
 			sourceTree = "<group>";
 		};
+		E2B3DEA7287C11EB00DCCBAB /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				E2B3DEA8287C122B00DCCBAB /* Diary+Extension.swift */,
+			);
+			path = Diary;
+			sourceTree = "<group>";
+		};
+		E2B3DEAA287CF81400DCCBAB /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				E2B3DEAE287CF84A00DCCBAB /* DiaryForm.swift */,
+				E2B3DEAB287CF84100DCCBAB /* DiaryList.swift */,
+			);
+			path = Diary;
+			sourceTree = "<group>";
+		};
+		E2B3DEB4287E101400DCCBAB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E2B3DEB5287E103D00DCCBAB /* Date+Extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E2FE3FA82862A020004F4626 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				E2FE3FB22862BC6F004F4626 /* NSManagedObjectContext+Extensions.swift */,
+				E2FE3FB22862BC6F004F4626 /* NSManagedObjectContext+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -191,9 +231,11 @@
 		E2FE3FA92862A035004F4626 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E2B3DEAA287CF81400DCCBAB /* Diary */,
 				E2FF0542287425DB00C737EE /* Recipe */,
 				E26960B92865155400862F8E /* Tag */,
 				E26960B5286502D100862F8E /* CoffeeBean */,
+				E2B3DEB4287E101400DCCBAB /* Extensions */,
 				E215CF1528596AFB00198F26 /* MainTabView.swift */,
 			);
 			path = Views;
@@ -220,6 +262,7 @@
 			children = (
 				E2FF0545287425FC00C737EE /* RecipeForm.swift */,
 				E2FF0543287425EE00C737EE /* RecipeList.swift */,
+				E2B3DEB1287D3A7500DCCBAB /* RecipePicker.swift */,
 			);
 			path = Recipe;
 			sourceTree = "<group>";
@@ -345,8 +388,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2B481D92865453300FBA847 /* TagForm.swift in Sources */,
+				E2B3DEB6287E103D00DCCBAB /* Date+Extension.swift in Sources */,
 				E2FF05402874175800C737EE /* Recipe+Extension.swift in Sources */,
 				E26960B8286502FC00862F8E /* CoffeeBeanForm.swift in Sources */,
+				E2B3DEA9287C122B00DCCBAB /* Diary+Extension.swift in Sources */,
 				E29A754C2859B767007379FD /* Tag+Extension.swift in Sources */,
 				E215CF2728596AFB00198F26 /* PouringDiaryApp.swift in Sources */,
 				E215CF2B28596AFB00198F26 /* PersistenceController.swift in Sources */,
@@ -354,10 +399,13 @@
 				E215CF2928596AFB00198F26 /* MainTabView.swift in Sources */,
 				E2AC03562863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */,
 				E2B481D428653DC100FBA847 /* TagPicker.swift in Sources */,
+				E2B3DEAF287CF84A00DCCBAB /* DiaryForm.swift in Sources */,
 				E21CBB4D2859CC24008CEDC3 /* AppEnvironment.swift in Sources */,
+				E2B3DEAC287CF84100DCCBAB /* DiaryList.swift in Sources */,
 				E2FF0546287425FC00C737EE /* RecipeForm.swift in Sources */,
 				E2FF0544287425EE00C737EE /* RecipeList.swift in Sources */,
-				E2FE3FB32862BC6F004F4626 /* NSManagedObjectContext+Extensions.swift in Sources */,
+				E2FE3FB32862BC6F004F4626 /* NSManagedObjectContext+Extension.swift in Sources */,
+				E2B3DEB2287D3A7500DCCBAB /* RecipePicker.swift in Sources */,
 				E29D02562877CC7F00A84A5D /* CoffeeBeanPicker.swift in Sources */,
 				E21F3FC0286F396900BFB481 /* CoffeeBeanList.swift in Sources */,
 				E26960BB2865156E00862F8E /* TagItem.swift in Sources */,
@@ -374,15 +422,19 @@
 				E2FE3FB02862A304004F4626 /* PersistenceController.swift in Sources */,
 				E2B481D728653DDA00FBA847 /* CoffeeBeanForm.swift in Sources */,
 				E215CF2628596AFB00198F26 /* PouringDiary.xcdatamodeld in Sources */,
+				E2B3DEB0287CF84A00DCCBAB /* DiaryForm.swift in Sources */,
 				E2FE3FAC2862A304004F4626 /* Tag+Extension.swift in Sources */,
 				E29E86D32874D73F009A07EB /* RecipeForm.swift in Sources */,
 				E2B481D528653DC100FBA847 /* TagPicker.swift in Sources */,
 				E215CF2A28596AFB00198F26 /* MainTabView.swift in Sources */,
 				E2AC03572863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */,
 				E2FE3FAE2862A304004F4626 /* AppEnvironment.swift in Sources */,
-				E29BE5E12863AD9E00628801 /* NSManagedObjectContext+Extensions.swift in Sources */,
+				E29BE5E12863AD9E00628801 /* NSManagedObjectContext+Extension.swift in Sources */,
 				E21F3FC1286F396900BFB481 /* CoffeeBeanList.swift in Sources */,
 				E2B481D628653DC900FBA847 /* TagItem.swift in Sources */,
+				E2B3DEAD287CF84100DCCBAB /* DiaryList.swift in Sources */,
+				E2B3DEB7287E103D00DCCBAB /* Date+Extension.swift in Sources */,
+				E2B3DEB3287D3A7500DCCBAB /* RecipePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

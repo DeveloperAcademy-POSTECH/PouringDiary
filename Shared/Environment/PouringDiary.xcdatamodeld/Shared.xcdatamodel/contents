@@ -11,6 +11,7 @@
     </entity>
     <entity name="Diary" representedClassName="Diary" syncable="YES" codeGenerationType="class">
         <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="flavorRecords" optional="YES" attributeType="Binary"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="memo" optional="YES" attributeType="String"/>
         <relationship name="coffeeBean" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoffeeBean" inverseName="diaries" inverseEntity="CoffeeBean"/>
@@ -38,8 +39,8 @@
     </entity>
     <elements>
         <element name="CoffeeBean" positionX="-78.63671875" positionY="18.19140625" width="128" height="14"/>
+        <element name="Diary" positionX="18" positionY="0" width="128" height="119"/>
         <element name="Recipe" positionX="114.0703125" positionY="-84.03515625" width="128" height="14"/>
         <element name="Tag" positionX="-60.92578125" positionY="-139.19140625" width="128" height="149"/>
-        <element name="Diary" positionX="18" positionY="0" width="128" height="14"/>
     </elements>
 </model>
