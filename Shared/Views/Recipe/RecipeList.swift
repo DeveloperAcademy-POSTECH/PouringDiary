@@ -17,6 +17,16 @@ struct RecipeList: View {
     var body: some View {
         NavigationView {
             List {
+                if recipes.isEmpty {
+                    HStack(alignment: .center) {
+                        Spacer()
+                        Text("아직 등록된 레시피가 없습니다")
+                            .font(.subheadline)
+                            .multilineTextAlignment(.center)
+                            .padding()
+                        Spacer()
+                    }
+                }
                 ForEach(recipes, id: \.id) { recipe in
                     NavigationLink(destination: {
                         RecipeForm(recipe.objectID)

@@ -15,6 +15,16 @@ struct CoffeeBeanList: View {
     var body: some View {
         NavigationView {
             List {
+                if beans.isEmpty {
+                    HStack(alignment: .center) {
+                        Spacer()
+                        Text("아직 등록된 원두가 없습니다")
+                            .font(.subheadline)
+                            .multilineTextAlignment(.center)
+                            .padding()
+                        Spacer()
+                    }
+                }
                 ForEach(beans, id: \.objectID) { bean in
                     NavigationLink(destination: {
                         CoffeeBeanForm(bean.objectID)
