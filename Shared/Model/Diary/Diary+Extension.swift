@@ -10,11 +10,6 @@ import CoreData
 import SwiftUI
 
 extension Diary {
-    enum FlavorRecord: Int, CaseIterable, Codable {
-        case bitter
-        case dry
-    }
-
     struct Input {
         var memo: String
         var flavorRecords: [FlavorRecord]
