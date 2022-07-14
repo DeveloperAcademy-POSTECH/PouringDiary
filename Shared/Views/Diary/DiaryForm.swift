@@ -105,23 +105,28 @@ extension DiaryForm {
     private var recipeSection: some View {
         Section(content: {
             if let recipe = selectedRecipe {
-                Text(recipe.title ?? "")
-                    .font(.headline)
-                    .padding(.vertical, 4)
-                Text(recipe.steps ?? "")
-                    .font(.body)
-                    .padding(.vertical, 4)
                 VStack(alignment: .leading) {
-                    ScrollView(.horizontal) {
+                    Text(recipe.title ?? "")
+                        .font(.headline)
+                        .padding(.vertical, 4)
+                    Divider()
+                    Text(recipe.steps ?? "")
+                        .font(.body)
+                        .padding(.vertical, 4)
+                    Divider()
+                    VStack(alignment: .leading) {
                         Text("사용 장비")
-                            .font(.caption2)
-                        HStack {
-                            ForEach(recipe.equipmentArray) { tag in
-                                TagItem(tag: tag.input)
+                            .font(.subheadline)
+                        ScrollView(.horizontal) {
+                            HStack {
+                                ForEach(recipe.equipmentArray) { tag in
+                                    TagItem(tag: tag.input)
+                                }
                             }
                         }
                     }
                 }
+                .padding(4)
             } else {
                 Button(action: {
                     recipePickerShow.toggle()

@@ -29,7 +29,7 @@ struct RecipePicker: View {
                     })
                 }
             }
-            .navigationTitle("원두 선택")
+            .navigationTitle("레시피 선택")
         }
     }
 }

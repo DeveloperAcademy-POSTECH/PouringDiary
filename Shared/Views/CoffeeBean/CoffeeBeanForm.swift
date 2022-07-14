@@ -24,6 +24,9 @@ struct CoffeeBeanForm: View {
     // Internal
     private let beanId: NSManagedObjectID?
     private var isEditing: Bool { beanId != nil }
+    private var navigationTitle: LocalizedStringKey {
+        return isEditing ? "원두 수정" : "원두 등록"
+    }
 
     /// `bean`입력 여부에 따라 새로운 원두인지, 기존 원두인지를 결정합니다
     /// 태그값은 뷰가 그려진 이후에 수령합니다
@@ -55,7 +58,7 @@ struct CoffeeBeanForm: View {
         .sheet(isPresented: $isTagListShow) {
             TagPicker(with: .regular, selected: $selectedTags)
         }
-        .navigationTitle(isEditing ? "원두 수정" : "원두 등록")
+        .navigationTitle(navigationTitle)
         .task(prepare)
     }
 }

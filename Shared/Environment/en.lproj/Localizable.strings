@@ -1,0 +1,116 @@
+/* 
+  Localizable.strings
+  PouringDiary
+
+  Created by devisaac on 2022/07/14.
+  
+*/
+// MARK: FlavorRecord
+"soupy" = "soupy";
+"harsh" = "harsh";
+"overwhelming" = "overwhelming";
+"severe" = "severe";
+"intense" = "intense";
+"dry" = "dry";
+"bitter" = "bitter";
+"powdery" = "powdery";
+"empty" = "empty";
+"dusty" = "dusty";
+"astringent" = "astringent";
+"dilute" = "dilute";
+"limp" = "limp";
+"fragile" = "fragile";
+"muted" = "muted";
+"faint" = "faint";
+"sparse" = "sparse";
+"flimsy" = "flimsy";
+"watery" = "watery";
+"underwhelming" = "underwhelming";
+"bland" = "bland";
+"nutty" = "nutty";
+"sour" = "sour";
+"salty" = "salty";
+"quick finish" = "quick finish";
+"dull" = "dull";
+"beefy" = "beefy";
+"bulky" = "bulky";
+
+// MARK: Form
+"등록" = "Save";
+"저장" = "Save";
+"Edit" = "Edit";
+"Done" = "Done";
+
+// MARK: DiaryForm
+"일지 수정" = "Edit Jounal";
+"일지 작성" = "New Jounal";
+"화면 켠 채로 유지" = "keep screen awake";
+"화면 설정" = "screen setting";
+"레시피를 조회하면서 화면이 꺼지지 않도록 해줍니다" = "it prevents the screen from turning off while viewing the recipe.";
+"사용 장비" = "equipments";
+"레시피를 선택해주세요" = "Select recipe";
+"레시피" = "recipe";
+"레시피 변경" = "Change recipe";
+"원두를 선택해주세요" = "Select coffee";
+"원두" = "coffee bean";
+"원두 변경" = "Change coffee";
+"메모" = "note";
+
+"이번 추출에서 레시피에 변화를 준 부분 등을 적어주세요\n다음에 같은 원두, 같은 레시피로 일지를 만드시면 이 내용이 표시됩니다"
+= "Please write down the part where you changed the recipe in this extraction.\nNext time, if you make a journal with the same beans and the same recipe, this will be displayed.";
+
+"같은  원두와 레시피로 작성된 메모가 %lld개 있습니다." = "%lld notes from same coffee and recipe.";
+
+// MARK: DiaryList
+"일지" = "Jounals";
+"일지 목록" = "Jounals";
+"아직 작성된 일지가 없습니다.\n원두와 레시피를 등록하신 뒤에\n일지 작성이 가능합니다"
+= "There is no journal yet.\nAfter registering beans and recipes,\nyou can create a journal.";
+"원두 목록에서 원두를 선택하거나\n새로운 원두를 등록해주세요" = "Please select a bean from the list or \nregister a new one";
+"복제" = "duplicate";
+
+// MARK: RecipeForm
+"레시피 수정" = "Edit Recipe";
+"레시피 등록" = "New Recipe";
+"레시피 작성" = "recipe";
+"레시피 이름" = "Recipe title";
+"이름을 입력해주세요" = "title";
+"추출장비를 선택해주세요" = "select equipments";
+"장비 선택" = "Equipments";
+"장비 변경하기" = "edit equipments";
+"태그를 선택해주세요" = "select tags";
+"태그 선택" = "Select Tag";
+"태그 변경하기" = "edit tags";
+"기타 정보" = "etc.";
+"그 외 필요한 정보들을 입력해주세요" = "additional informations";
+
+// MARK: RecipeList
+"아직 등록된 레시피가 없습니다" = "There is no recipes yet";
+"레시피 목록" = "Recipes";
+"레시피 목록에서 레시피를 선택하거나\n새로운 레시피를 등록해주세요" = "Please select a recipe from the list or \nregister a new one";
+
+// MARK: TagPicker
+"태그 선택" = "Tags";
+"장비 선택" = "Equipments";
+"태그를 검색해보세요" = "search";
+
+// MARK: TagForm
+"태그 이름을 입력해주세요" = "Tag name";
+"새로운 태그" = "New Tag";
+"저장하기" = "Save";
+
+// MARK: RecipePicker
+"레시피 선택" = "Recipes";
+
+// MARK: CoffeBeanForm
+"원두 수정" = "Edit Coffee Bean";
+"원두 등록" = "New Coffee Bean";
+"원두 이름" = "Bean name";
+"원두 설명" = "Bean information";
+"아직 태그가 추가되지 않았습니다" = "No tags";
+"태그" = "Tag";
+"태그 추가하기" = "Add tags";
+"태그 변경하기" = "Change tags";
+
+// MARK: CoffeeBeanList
+"원두 목록" = "Coffee Beans";

@@ -20,7 +20,7 @@ struct TagPicker: View {
 
     // Internal variables & getters
     var category: Tag.Category
-    private var navigationTitle: String {
+    private var navigationTitle: LocalizedStringKey {
         switch category {
         case .regular:
             return "태그 선택"
@@ -80,11 +80,10 @@ extension TagPicker {
     // MARK: 태그 터치 시 토글을 수행하는 버튼
     @ViewBuilder
     private func tagToggleButton(tag: Tag) -> some View {
-        Button(action: {
-            toggleItem(tag: tag)
-        }, label: {
-            TagItem(tag: tag.input)
-        })
+        TagItem(tag: tag.input)
+            .onTapGesture {
+                toggleItem(tag: tag)
+            }
     }
 
     private func toolbar() -> some ToolbarContent {
