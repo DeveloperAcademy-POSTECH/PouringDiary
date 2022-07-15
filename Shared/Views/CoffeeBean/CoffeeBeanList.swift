@@ -36,9 +36,8 @@ struct CoffeeBeanList: View {
             }
             .navigationTitle("원두 목록")
             .toolbar(content: toolBar)
-            // iPad NavigationView를 위한 Placeholder
-            Text("원두 목록에서 원두를 선택하거나\n새로운 원두를 등록해주세요")
         }
+        .navigationViewStyle(.stack)
     }
 }
 

@@ -35,10 +35,8 @@ struct DiaryList: View {
             }
             .toolbar(content: toolbar)
             .navigationTitle("일지 목록")
-
-            // iPad NavigationView를 위한 Placeholder
-            Text("원두 목록에서 원두를 선택하거나\n새로운 원두를 등록해주세요")
         }
+        .navigationViewStyle(.stack)
     }
 }
 
@@ -78,6 +76,7 @@ extension DiaryList {
                                 destination: { DiaryForm(recipe: diary.recipe, bean: diary.coffeeBean) },
                                 label: { EmptyView() }
                             )
+                            .hidden()
                         }
                         .padding()
                     }
@@ -89,7 +88,8 @@ extension DiaryList {
                         }
                     }
                     .padding(4)
-                })
+                }
+            )
         }
     }
 

@@ -38,9 +38,8 @@ struct RecipeList: View {
             }
             .navigationTitle("레시피 목록")
             .toolbar(content: toolbar)
-            // iPad NavigationView를 위한 Placeholder
-            Text("레시피 목록에서 레시피를 선택하거나\n새로운 레시피를 등록해주세요")
         }
+        .navigationViewStyle(.stack)
     }
 }
 
