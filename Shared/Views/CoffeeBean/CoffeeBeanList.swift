@@ -29,7 +29,16 @@ struct CoffeeBeanList: View {
                     NavigationLink(destination: {
                         CoffeeBeanForm(bean.objectID)
                     }, label: {
-                        Text(bean.name ?? "")
+                        VStack(alignment: .leading) {
+                            Text(bean.name ?? "")
+                                .font(.headline)
+                            HStack {
+                                ForEach(bean.tagArray) { tag in
+                                    TagItem(tag: tag.input)
+                                }
+                            }
+                        }
+                        .padding(.vertical, 6)
                     })
                 }
                 .onDelete(perform: delete)

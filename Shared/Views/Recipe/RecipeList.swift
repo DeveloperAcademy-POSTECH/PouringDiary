@@ -31,7 +31,21 @@ struct RecipeList: View {
                     NavigationLink(destination: {
                         RecipeForm(recipe.objectID)
                     }, label: {
-                        Text(recipe.title ?? "")
+                        VStack(alignment: .leading) {
+                            Text(recipe.title ?? "")
+                                .font(.headline)
+                            HStack {
+                                ForEach(recipe.tagArray) { tag in
+                                    TagItem(tag: tag.input)
+                                }
+                            }
+                            HStack {
+                                ForEach(recipe.equipmentArray) { tag in
+                                    TagItem(tag: tag.input)
+                                }
+                            }
+                        }
+                        .padding(.vertical, 6)
                     })
                 }
                 .onDelete(perform: delete)
