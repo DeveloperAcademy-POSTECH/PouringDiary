@@ -15,6 +15,16 @@ struct CoffeeBeanList: View {
     var body: some View {
         NavigationView {
             List {
+                if beans.isEmpty {
+                    HStack(alignment: .center) {
+                        Spacer()
+                        Text("아직 등록된 원두가 없습니다")
+                            .font(.subheadline)
+                            .multilineTextAlignment(.center)
+                            .padding()
+                        Spacer()
+                    }
+                }
                 ForEach(beans, id: \.objectID) { bean in
                     NavigationLink(destination: {
                         CoffeeBeanForm(bean.objectID)
@@ -26,9 +36,8 @@ struct CoffeeBeanList: View {
             }
             .navigationTitle("원두 목록")
             .toolbar(content: toolBar)
-            // iPad NavigationView를 위한 Placeholder
-            Text("원두 목록에서 원두를 선택하거나\n새로운 원두를 등록해주세요")
         }
+        .navigationViewStyle(.stack)
     }
 }
 
@@ -40,7 +49,7 @@ extension CoffeeBeanList {
     }
 }
 
-// MARK: ViewBuilders
+// MARK: Views
 extension CoffeeBeanList {
     private func toolBar() -> some ToolbarContent {
         return ToolbarItem(placement: .automatic) {

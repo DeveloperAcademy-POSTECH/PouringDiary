@@ -17,7 +17,6 @@ extension Recipe {
 
     struct RelationInput {
         var tags: [Tag]
-        var coffeeBean: CoffeeBean
         var equipments: [Tag]
     }
 
@@ -32,7 +31,6 @@ extension Recipe {
         newRecipe.title = input.title
         newRecipe.steps = input.steps
         newRecipe.information = input.information
-        newRecipe.coffeeBean = relation.coffeeBean
         newRecipe.equipmentTags = NSSet(array: relation.equipments)
         newRecipe.recipeTags = NSSet(array: relation.tags)
         context.saveContext()
@@ -48,7 +46,6 @@ extension Recipe {
         current.title = input.title
         current.information = input.information
         current.steps = input.steps
-        current.coffeeBean = relation.coffeeBean
         current.recipeTags = NSSet(array: relation.tags)
         current.equipmentTags = NSSet(array: relation.equipments)
         context.saveContext()

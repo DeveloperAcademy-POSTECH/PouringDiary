@@ -10,6 +10,10 @@ import SwiftUI
 struct MainTabView: View {
     var body: some View {
         TabView {
+            DiaryList()
+                .tabItem {
+                    Label("일지", systemImage: "book.closed")
+                }
             RecipeList()
                 .tabItem {
                     Label("레시피", systemImage: "note")
@@ -17,10 +21,6 @@ struct MainTabView: View {
             CoffeeBeanList()
                 .tabItem {
                     Label("원두", systemImage: "cup.and.saucer")
-                }
-            Text("태그")
-                .tabItem {
-                    Label("태그", systemImage: "tag")
                 }
         }
     }

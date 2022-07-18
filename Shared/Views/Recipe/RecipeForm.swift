@@ -21,12 +21,11 @@ struct RecipeForm: View {
 
     // State
     @State private var input: Recipe.Input = Recipe.Input()
-    @State private var selectedCoffeeBean: CoffeeBean?
     @State private var equipmentTags: [Tag] = []
     @State private var recipeTags: [Tag] = []
     @State private var equipmentPickerShow: Bool = false
     @State private var tagPickerShow: Bool = false
-    @State private var coffeeBeanPickerShow: Bool = false
+//    @State private var coffeeBeanPickerShow: Bool = false
 
     // Internal
     private var recipeId: NSManagedObjectID?
@@ -35,25 +34,23 @@ struct RecipeForm: View {
     }
 
     private var formValidated: Bool {
-        return selectedCoffeeBean != nil && !input.steps.isEmpty && !input.title.isEmpty
+        return !input.steps.isEmpty && !input.title.isEmpty
     }
 
     // MARK: Initializers
     init(_ recipeId: NSManagedObjectID? = nil) {
         self.recipeId = recipeId
-        self.selectedCoffeeBean = nil
     }
 
     init(_ coffeeBean: CoffeeBean) {
         self.recipeId = nil
-        self.selectedCoffeeBean = coffeeBean
     }
 
     var body: some View {
         Form {
             titleSection
             stepSection
-            coffeeBeanSection
+//            coffeeBeanSection
             equipmentSection
             recipeTagSection
             informationSection
@@ -66,14 +63,14 @@ struct RecipeForm: View {
         .sheet(isPresented: $equipmentPickerShow) {
             TagPicker(with: .equipment, selected: $equipmentTags)
         }
-        .sheet(isPresented: $coffeeBeanPickerShow) {
-            CoffeeBeanPicker(selectedBean: $selectedCoffeeBean)
-        }
+//        .sheet(isPresented: $coffeeBeanPickerShow) {
+//            CoffeeBeanPicker(selectedBean: $selectedCoffeeBean)
+//        }
         .navigationTitle(isEditing ? "레시피 수정" : "레시피 등록")
     }
 }
 
-// MARK: ViewBuilders {
+// MARK: Views {
 extension RecipeForm {
     @ViewBuilder
     private var stepSection: some View {
@@ -81,15 +78,7 @@ extension RecipeForm {
             TextEditor(text: $input.steps)
         }, header: {
             Text("레시피 작성")
-        }, footer: {
-            HStack {
-                Spacer()
-                Text(input.steps.isEmpty ? "추출 과정을 적어보세요" : "")
-                    .foregroundColor(.blue)
-                    .font(.caption2)
-            }
         })
-
     }
 
     @ViewBuilder
@@ -102,23 +91,23 @@ extension RecipeForm {
         }
     }
 
-    @ViewBuilder
-    private var coffeeBeanSection: some View {
-        Section("원두 선택") {
-            Button(action: {
-                coffeeBeanPickerShow.toggle()
-            }, label: {
-                if let bean = selectedCoffeeBean {
-                    Text(bean.name ?? "")
-                        .font(.body)
-                } else {
-                    Text("원두를 선택해주세요")
-                        .font(.caption)
-                        .foregroundColor(.gray)
-                }
-            })
-        }
-    }
+//    @ViewBuilder
+//    private var coffeeBeanSection: some View {
+//        Section("원두 선택") {
+//            Button(action: {
+//                coffeeBeanPickerShow.toggle()
+//            }, label: {
+//                if let bean = selectedCoffeeBean {
+//                    Text(bean.name ?? "")
+//                        .font(.body)
+//                } else {
+//                    Text("원두를 선택해주세요")
+//                        .font(.caption)
+//                        .foregroundColor(.gray)
+//                }
+//            })
+//        }
+//    }
 
     @ViewBuilder
     private func tagList(tags: [Tag]) -> some View {
@@ -225,7 +214,7 @@ extension RecipeForm {
         DispatchQueue.main.asyncAfter(deadline: .now().advanced(by: .milliseconds(50))) {
             guard let id = self.recipeId, let recipe = viewContext.get(by: id) as? Recipe else { return }
             input = recipe.input
-            selectedCoffeeBean = recipe.coffeeBean
+//            selectedCoffeeBean = recipe.coffeeBean
             recipeTags = recipe.tagArray
             equipmentTags = recipe.equipmentArray
         }
@@ -233,10 +222,9 @@ extension RecipeForm {
 
     @Sendable
     private func saveOrRegister() {
-        guard let bean = selectedCoffeeBean else { return }
+//        guard let bean = selectedCoffeeBean else { return }
         let relation = Recipe.RelationInput(
             tags: recipeTags,
-            coffeeBean: bean,
             equipments: equipmentTags
         )
         if let recipeId = recipeId {

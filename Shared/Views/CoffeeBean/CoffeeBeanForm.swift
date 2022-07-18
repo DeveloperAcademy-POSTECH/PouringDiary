@@ -14,16 +14,19 @@ import CoreData
 struct CoffeeBeanForm: View {
     // Environment
     @Environment(\.managedObjectContext) private var viewContext
-    @Environment(\.presentationMode) var presentationMode
+    @Environment(\.presentationMode) private var presentationMode
 
     // Property
-    @State var input: CoffeeBean.Input = CoffeeBean.Input()
-    @State var isTagListShow: Bool = false
-    @State var selectedTags: [Tag] = []
+    @State private var input: CoffeeBean.Input = CoffeeBean.Input()
+    @State private var isTagListShow: Bool = false
+    @State private var selectedTags: [Tag] = []
 
     // Internal
     private let beanId: NSManagedObjectID?
     private var isEditing: Bool { beanId != nil }
+    private var navigationTitle: LocalizedStringKey {
+        return isEditing ? "원두 수정" : "원두 등록"
+    }
 
     /// `bean`입력 여부에 따라 새로운 원두인지, 기존 원두인지를 결정합니다
     /// 태그값은 뷰가 그려진 이후에 수령합니다
@@ -55,12 +58,12 @@ struct CoffeeBeanForm: View {
         .sheet(isPresented: $isTagListShow) {
             TagPicker(with: .regular, selected: $selectedTags)
         }
-        .navigationTitle(isEditing ? "원두 수정" : "원두 등록")
+        .navigationTitle(navigationTitle)
         .task(prepare)
     }
 }
 
-// MARK: ViewBuilders
+// MARK: Views
 extension CoffeeBeanForm {
     /// 원두 이름 입력 Form Section
     @ViewBuilder
@@ -78,7 +81,6 @@ extension CoffeeBeanForm {
         Section("원두 설명") {
             TextEditor(text: $input.information)
                 .font(.body)
-                .submitLabel(.return)
         }
     }
 
