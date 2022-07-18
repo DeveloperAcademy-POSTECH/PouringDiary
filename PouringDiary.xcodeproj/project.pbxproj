@@ -50,6 +50,10 @@
 		E2D8D0C2287EB918009A6427 /* Diary+FlavorRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D8D0C0287EB918009A6427 /* Diary+FlavorRecord.swift */; };
 		E2D8D0C7287F686E009A6427 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2D8D0CA287F686E009A6427 /* Localizable.strings */; };
 		E2D8D0C8287F686E009A6427 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2D8D0CA287F686E009A6427 /* Localizable.strings */; };
+		E2E6BC3028860C250049C490 /* Shape+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E6BC2F28860C250049C490 /* Shape+Extension.swift */; };
+		E2E6BC3128860C250049C490 /* Shape+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E6BC2F28860C250049C490 /* Shape+Extension.swift */; };
+		E2E6BC3428860C610049C490 /* CornerRadiusStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E6BC3328860C610049C490 /* CornerRadiusStyle.swift */; };
+		E2E6BC3528860C610049C490 /* CornerRadiusStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E6BC3328860C610049C490 /* CornerRadiusStyle.swift */; };
 		E2FE3FAC2862A304004F4626 /* Tag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A754B2859B767007379FD /* Tag+Extension.swift */; };
 		E2FE3FAE2862A304004F4626 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */; };
 		E2FE3FB02862A304004F4626 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1628596AFB00198F26 /* PersistenceController.swift */; };
@@ -89,6 +93,8 @@
 		E2D8D0C3287EBA90009A6427 /* PouringDiary (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PouringDiary (iOS).entitlements"; sourceTree = "<group>"; };
 		E2D8D0C9287F686E009A6427 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E2D8D0CB287F68CE009A6427 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
+		E2E6BC2F28860C250049C490 /* Shape+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+Extension.swift"; sourceTree = "<group>"; };
+		E2E6BC3328860C610049C490 /* CornerRadiusStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyle.swift; sourceTree = "<group>"; };
 		E2FE3FB22862BC6F004F4626 /* NSManagedObjectContext+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extension.swift"; sourceTree = "<group>"; };
 		E2FF053F2874175800C737EE /* Recipe+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe+Extension.swift"; sourceTree = "<group>"; };
 		E2FF0543287425EE00C737EE /* RecipeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeList.swift; sourceTree = "<group>"; };
@@ -234,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				E2B3DEB5287E103D00DCCBAB /* Date+Extension.swift */,
+				E2E6BC2F28860C250049C490 /* Shape+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -247,6 +254,14 @@
 			path = FlaovrRecord;
 			sourceTree = "<group>";
 		};
+		E2E6BC3228860C3D0049C490 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				E2E6BC3328860C610049C490 /* CornerRadiusStyle.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 		E2FE3FA82862A020004F4626 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +273,7 @@
 		E2FE3FA92862A035004F4626 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E2E6BC3228860C3D0049C490 /* Modifiers */,
 				E2B3DEAA287CF81400DCCBAB /* Diary */,
 				E2FF0542287425DB00C737EE /* Recipe */,
 				E26960B92865155400862F8E /* Tag */,
@@ -425,9 +441,11 @@
 				E29A754C2859B767007379FD /* Tag+Extension.swift in Sources */,
 				E215CF2728596AFB00198F26 /* PouringDiaryApp.swift in Sources */,
 				E215CF2B28596AFB00198F26 /* PersistenceController.swift in Sources */,
+				E2E6BC3428860C610049C490 /* CornerRadiusStyle.swift in Sources */,
 				E215CF2528596AFB00198F26 /* PouringDiary.xcdatamodeld in Sources */,
 				E215CF2928596AFB00198F26 /* MainTabView.swift in Sources */,
 				E2AC03562863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */,
+				E2E6BC3028860C250049C490 /* Shape+Extension.swift in Sources */,
 				E2B481D428653DC100FBA847 /* TagPicker.swift in Sources */,
 				E2B3DEAF287CF84A00DCCBAB /* DiaryForm.swift in Sources */,
 				E21CBB4D2859CC24008CEDC3 /* AppEnvironment.swift in Sources */,
@@ -464,10 +482,12 @@
 				E215CF2A28596AFB00198F26 /* MainTabView.swift in Sources */,
 				E2BC211D287FB1560000CEC1 /* FlavorRecordPicker.swift in Sources */,
 				E2AC03572863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */,
+				E2E6BC3128860C250049C490 /* Shape+Extension.swift in Sources */,
 				E2FE3FAE2862A304004F4626 /* AppEnvironment.swift in Sources */,
 				E29BE5E12863AD9E00628801 /* NSManagedObjectContext+Extension.swift in Sources */,
 				E21F3FC1286F396900BFB481 /* CoffeeBeanList.swift in Sources */,
 				E2B481D628653DC900FBA847 /* TagItem.swift in Sources */,
+				E2E6BC3528860C610049C490 /* CornerRadiusStyle.swift in Sources */,
 				E2B3DEAD287CF84100DCCBAB /* DiaryList.swift in Sources */,
 				E2B3DEB7287E103D00DCCBAB /* Date+Extension.swift in Sources */,
 				E2B3DEB3287D3A7500DCCBAB /* RecipePicker.swift in Sources */,

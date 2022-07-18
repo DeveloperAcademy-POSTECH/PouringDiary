@@ -123,3 +123,9 @@
 // MARK: FlavorRecordPicker
 "flavor-record-picker-title" = "Flavors";
 "flavor-record-picker-information" = "Pick unpleasant flavors up to 5";
+"flavor-record-picker-extraction" = "extraction";
+"flavor-record-picker-strength" = "strength";
+"flavor-record-picker-extraction-under" = "under";
+"flavor-record-picker-extraction-over" = "over";
+"flavor-record-picker-strength-under" = "low";
+"flavor-record-picker-strength-over" = "high";
