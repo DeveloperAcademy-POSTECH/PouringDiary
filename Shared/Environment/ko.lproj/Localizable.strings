@@ -38,6 +38,8 @@
 // MARK: Form
 "등록" = "등록";
 "저장" = "저장";
+"수정" = "수정";
+"수정하기" = "수정하기";
 "Edit" = "수정";
 "Done" = "완료";
 
@@ -60,6 +62,9 @@
 = "이번 추출에서 레시피에 변화를 준 부분 등을 적어주세요\n다음에 같은 원두, 같은 레시피로 일지를 만드시면 이 내용이 표시됩니다";
 
 "같은  원두와 레시피로 작성된 메모가 %lld개 있습니다." = "같은  원두와 레시피로 작성된 메모가 %lld개 있습니다.";
+"diary-form-flavor-section-header" = "이번 커피 약점 찾기";
+"diary-form-flavor-section-footer" = "이번에 추출한 커피에서 부정적인 향미를 찾고 다음 추출에 더 발전된 레시피를 시도할 수 있게 돕습니다";
+"diary-form-flavor-section-picker-label" = "부정적 향미 찾기";
 
 // MARK: DiaryList
 "일지" = "일지";
@@ -114,3 +119,7 @@
 
 // MARK: CoffeeBeanList
 "원두 목록" = "원두 목록";
+
+// MARK: FlavorRecordPicker
+"flavor-record-picker-title" = "약점 찾기";
+"flavor-record-picker-information" = "이번 추출에서 느껴지는 부정적인 향미를 \n5개까지 골라주세요";

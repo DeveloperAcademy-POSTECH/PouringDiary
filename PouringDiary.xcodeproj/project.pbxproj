@@ -21,6 +21,8 @@
 		E21F3FC1286F396900BFB481 /* CoffeeBeanList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F3FBF286F396900BFB481 /* CoffeeBeanList.swift */; };
 		E26960B8286502FC00862F8E /* CoffeeBeanForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960B7286502FC00862F8E /* CoffeeBeanForm.swift */; };
 		E26960BB2865156E00862F8E /* TagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960BA2865156E00862F8E /* TagItem.swift */; };
+		E283540428810ABA00BA4A7D /* FlavorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E283540328810ABA00BA4A7D /* FlavorItem.swift */; };
+		E283540528810ABA00BA4A7D /* FlavorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E283540328810ABA00BA4A7D /* FlavorItem.swift */; };
 		E29A754C2859B767007379FD /* Tag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A754B2859B767007379FD /* Tag+Extension.swift */; };
 		E29BE5E12863AD9E00628801 /* NSManagedObjectContext+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FE3FB22862BC6F004F4626 /* NSManagedObjectContext+Extension.swift */; };
 		E29D02562877CC7F00A84A5D /* CoffeeBeanPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D02552877CC7F00A84A5D /* CoffeeBeanPicker.swift */; };
@@ -42,6 +44,8 @@
 		E2B481D728653DDA00FBA847 /* CoffeeBeanForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960B7286502FC00862F8E /* CoffeeBeanForm.swift */; };
 		E2B481D92865453300FBA847 /* TagForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B481D82865453300FBA847 /* TagForm.swift */; };
 		E2B481DA2865453300FBA847 /* TagForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B481D82865453300FBA847 /* TagForm.swift */; };
+		E2BC211C287FB1560000CEC1 /* FlavorRecordPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BC211B287FB1560000CEC1 /* FlavorRecordPicker.swift */; };
+		E2BC211D287FB1560000CEC1 /* FlavorRecordPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BC211B287FB1560000CEC1 /* FlavorRecordPicker.swift */; };
 		E2D8D0C1287EB918009A6427 /* Diary+FlavorRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D8D0C0287EB918009A6427 /* Diary+FlavorRecord.swift */; };
 		E2D8D0C2287EB918009A6427 /* Diary+FlavorRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D8D0C0287EB918009A6427 /* Diary+FlavorRecord.swift */; };
 		E2D8D0C7287F686E009A6427 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2D8D0CA287F686E009A6427 /* Localizable.strings */; };
@@ -69,6 +73,7 @@
 		E21F3FBF286F396900BFB481 /* CoffeeBeanList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanList.swift; sourceTree = "<group>"; };
 		E26960B7286502FC00862F8E /* CoffeeBeanForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanForm.swift; sourceTree = "<group>"; };
 		E26960BA2865156E00862F8E /* TagItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagItem.swift; sourceTree = "<group>"; };
+		E283540328810ABA00BA4A7D /* FlavorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavorItem.swift; sourceTree = "<group>"; };
 		E29A754B2859B767007379FD /* Tag+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+Extension.swift"; sourceTree = "<group>"; };
 		E29D02552877CC7F00A84A5D /* CoffeeBeanPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanPicker.swift; sourceTree = "<group>"; };
 		E2AC03552863F9470005FFD2 /* CoffeeBean+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoffeeBean+Extension.swift"; sourceTree = "<group>"; };
@@ -79,6 +84,7 @@
 		E2B3DEB5287E103D00DCCBAB /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		E2B481D328653DC100FBA847 /* TagPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPicker.swift; sourceTree = "<group>"; };
 		E2B481D82865453300FBA847 /* TagForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagForm.swift; sourceTree = "<group>"; };
+		E2BC211B287FB1560000CEC1 /* FlavorRecordPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavorRecordPicker.swift; sourceTree = "<group>"; };
 		E2D8D0C0287EB918009A6427 /* Diary+FlavorRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Diary+FlavorRecord.swift"; sourceTree = "<group>"; };
 		E2D8D0C3287EBA90009A6427 /* PouringDiary (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PouringDiary (iOS).entitlements"; sourceTree = "<group>"; };
 		E2D8D0C9287F686E009A6427 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -217,6 +223,7 @@
 		E2B3DEAA287CF81400DCCBAB /* Diary */ = {
 			isa = PBXGroup;
 			children = (
+				E2BC211A287FB12D0000CEC1 /* FlaovrRecord */,
 				E2B3DEAE287CF84A00DCCBAB /* DiaryForm.swift */,
 				E2B3DEAB287CF84100DCCBAB /* DiaryList.swift */,
 			);
@@ -229,6 +236,15 @@
 				E2B3DEB5287E103D00DCCBAB /* Date+Extension.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		E2BC211A287FB12D0000CEC1 /* FlaovrRecord */ = {
+			isa = PBXGroup;
+			children = (
+				E2BC211B287FB1560000CEC1 /* FlavorRecordPicker.swift */,
+				E283540328810ABA00BA4A7D /* FlavorItem.swift */,
+			);
+			path = FlaovrRecord;
 			sourceTree = "<group>";
 		};
 		E2FE3FA82862A020004F4626 /* Extensions */ = {
@@ -419,10 +435,12 @@
 				E2B3DEAC287CF84100DCCBAB /* DiaryList.swift in Sources */,
 				E2FF0546287425FC00C737EE /* RecipeForm.swift in Sources */,
 				E2FF0544287425EE00C737EE /* RecipeList.swift in Sources */,
+				E2BC211C287FB1560000CEC1 /* FlavorRecordPicker.swift in Sources */,
 				E2FE3FB32862BC6F004F4626 /* NSManagedObjectContext+Extension.swift in Sources */,
 				E2B3DEB2287D3A7500DCCBAB /* RecipePicker.swift in Sources */,
 				E29D02562877CC7F00A84A5D /* CoffeeBeanPicker.swift in Sources */,
 				E21F3FC0286F396900BFB481 /* CoffeeBeanList.swift in Sources */,
+				E283540428810ABA00BA4A7D /* FlavorItem.swift in Sources */,
 				E26960BB2865156E00862F8E /* TagItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -439,10 +457,12 @@
 				E2B481D728653DDA00FBA847 /* CoffeeBeanForm.swift in Sources */,
 				E215CF2628596AFB00198F26 /* PouringDiary.xcdatamodeld in Sources */,
 				E2B3DEB0287CF84A00DCCBAB /* DiaryForm.swift in Sources */,
+				E283540528810ABA00BA4A7D /* FlavorItem.swift in Sources */,
 				E2FE3FAC2862A304004F4626 /* Tag+Extension.swift in Sources */,
 				E29E86D32874D73F009A07EB /* RecipeForm.swift in Sources */,
 				E2B481D528653DC100FBA847 /* TagPicker.swift in Sources */,
 				E215CF2A28596AFB00198F26 /* MainTabView.swift in Sources */,
+				E2BC211D287FB1560000CEC1 /* FlavorRecordPicker.swift in Sources */,
 				E2AC03572863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */,
 				E2FE3FAE2862A304004F4626 /* AppEnvironment.swift in Sources */,
 				E29BE5E12863AD9E00628801 /* NSManagedObjectContext+Extension.swift in Sources */,

@@ -6,9 +6,10 @@
 //
 
 import Foundation
+import SwiftUI
 
 extension Diary {
-    struct FlavorRecord: Codable {
+    struct FlavorRecord: Codable, Equatable {
         let label: String       // 향미의 종류
         let strength: Double    // 농도 (1: 강함 0: 균형 -1: 약함)
         let extraction: Double  // 추출 정도 (1: 과다추출 0: 균형 -1: 과소추출)
@@ -42,8 +43,14 @@ extension Diary {
                 FlavorRecord(label: "quick finish", strength: 0.25, extraction: -0.75),
                 FlavorRecord(label: "dull", strength: 0.4, extraction: -0.6),
                 FlavorRecord(label: "beefy", strength: 0.55, extraction: -0.45),
-                FlavorRecord(label: "bulky", strength: 0.7, extraction: -0.3),
+                FlavorRecord(label: "bulky", strength: 0.7, extraction: -0.3)
             ]
         }
+    }
+}
+
+extension Diary.FlavorRecord {
+    var localizedLabel: LocalizedStringKey {
+        return LocalizedStringKey(label)
     }
 }

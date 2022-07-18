@@ -57,20 +57,24 @@ extension DiaryList {
                             Text(diary.created?.simpleYear ?? "")
                                 .frame(minWidth: 40)
                                 .font(.caption2)
+                                .foregroundColor(.accentColor)
                             Text(diary.created?.monthAndDate ?? "")
                                 .frame(minWidth: 40)
                                 .font(.title2)
                             Text(diary.created?.simpleTime ?? "")
                                 .frame(minWidth: 40)
                                 .font(.caption2)
+                                .foregroundColor(.secondary)
                         }
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 6))
                         Divider()
+                            .background(Color.accentColor)
                         VStack(alignment: .leading, spacing: 6) {
-                            Text("☕️ \(diary.recipe?.title ?? "")")
+                            Text("📝 \(diary.recipe?.title ?? "")")
                                 .font(.headline)
-                            Text("w/ \(diary.coffeeBean?.name ?? "")")
+                            Text("\(diary.coffeeBean?.name ?? "") ☕️")
                                 .font(.caption)
+                                .foregroundColor(.secondary)
                             NavigationLink(
                                 isActive: $copiedFormShow,
                                 destination: { DiaryForm(recipe: diary.recipe, bean: diary.coffeeBean) },
@@ -90,6 +94,7 @@ extension DiaryList {
                     .padding(4)
                 }
             )
+            .listRowSeparatorTint(.accentColor)
         }
     }
 

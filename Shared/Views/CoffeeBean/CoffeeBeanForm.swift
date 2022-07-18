@@ -81,7 +81,6 @@ extension CoffeeBeanForm {
         Section("원두 설명") {
             TextEditor(text: $input.information)
                 .font(.body)
-                .submitLabel(.return)
         }
     }
 

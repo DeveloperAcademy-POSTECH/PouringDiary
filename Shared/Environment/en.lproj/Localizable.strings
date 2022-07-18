@@ -38,6 +38,8 @@
 // MARK: Form
 "등록" = "Save";
 "저장" = "Save";
+"수정" = "Edit";
+"수정하기" = "Edit";
 "Edit" = "Edit";
 "Done" = "Done";
 
@@ -60,6 +62,9 @@
 = "Please write down the part where you changed the recipe in this extraction.\nNext time, if you make a journal with the same beans and the same recipe, this will be displayed.";
 
 "같은  원두와 레시피로 작성된 메모가 %lld개 있습니다." = "%lld notes from same coffee and recipe.";
+"diary-form-flavor-section-header" = "Find weakness in my coffee";
+"diary-form-flavor-section-footer" = "Check unpleasant flavors in this one and improve your next extraction";
+"diary-form-flavor-section-picker-label" = "check unpleasant flavors";
 
 // MARK: DiaryList
 "일지" = "Jounals";
@@ -114,3 +119,7 @@
 
 // MARK: CoffeeBeanList
 "원두 목록" = "Coffee Beans";
+
+// MARK: FlavorRecordPicker
+"flavor-record-picker-title" = "Flavors";
+"flavor-record-picker-information" = "Pick unpleasant flavors up to 5";

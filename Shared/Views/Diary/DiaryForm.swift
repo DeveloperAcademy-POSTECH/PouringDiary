@@ -29,6 +29,7 @@ struct DiaryForm: View {
     @State private var recipePickerShow: Bool = false
     @State private var coffeeBeanPickerShow: Bool = false
     @State private var memoListShow: Bool = false
+    @State private var flavorPickerShow: Bool = false
     @State private var preventScreenLock: Bool = false
 
     // Internal
@@ -58,7 +59,9 @@ struct DiaryForm: View {
             settingSection
             coffeeBeanSection
             recipeSection
+            previousDiarySection
             memoSection
+            flavorSection
         }
         .navigationTitle(isEditing ? "일지 수정" : "일지 작성")
         .toolbar(content: toolbar)
@@ -70,6 +73,9 @@ struct DiaryForm: View {
         }
         .sheet(isPresented: $memoListShow) {
             previousMemo
+        }
+        .sheet(isPresented: $flavorPickerShow) {
+            FlavorRecordPicker(selectedRecords: $input.flavorRecords)
         }
         .onChange(of: preventScreenLock, perform: { prevent in
             UIApplication.shared.isIdleTimerDisabled = prevent
@@ -101,6 +107,19 @@ extension DiaryForm {
                 .font(.caption2)
         })
     }
+
+    @ViewBuilder
+    private var previousDiarySection: some View {
+        if  !diaries.isEmpty {
+            Button {
+                memoListShow.toggle()
+            } label: {
+                Text("같은 원두와 레시피로 작성된 메모가 \(diaries.count)개 있습니다.")
+                    .font(.caption)
+            }
+        }
+    }
+
     @ViewBuilder
     private var recipeSection: some View {
         Section(content: {
@@ -199,19 +218,8 @@ extension DiaryForm {
             Text("메모")
                 .font(.caption)
         }, footer: {
-            if  diaries.isEmpty {
-                Text("이번 추출에서 레시피에 변화를 준 부분 등을 적어주세요\n다음에 같은 원두, 같은 레시피로 일지를 만드시면 이 내용이 표시됩니다")
-                    .font(.caption2)
-            } else {
-                HStack {
-                    Spacer()
-                    Button {
-                        memoListShow.toggle()
-                    } label: {
-                        Text("같은 원두와 레시피로 작성된 메모가 \(diaries.count)개 있습니다.")
-                    }
-                }
-            }
+            Text("이번 추출에서 레시피에 변화를 준 부분 등을 적어주세요\n다음에 같은 원두, 같은 레시피로 일지를 만드시면 이 내용이 표시됩니다")
+                .font(.caption2)
         })
     }
 
@@ -231,6 +239,45 @@ extension DiaryForm {
                 .padding()
             }
         }
+    }
+
+    @ViewBuilder
+    private var flavorSection: some View {
+        Section(content: {
+            if input.flavorRecords.isEmpty {
+                Button(action: {
+                    flavorPickerShow.toggle()
+                }, label: {
+                    Text("diary-form-flavor-section-picker-label")
+                        .font(.caption)
+                })
+            } else {
+                ScrollView(.horizontal) {
+                    HStack {
+                        ForEach(input.flavorRecords, id: \.label) { record in
+                            FlavorItem(record: record, selected: false)
+                        }
+                    }
+                }
+            }
+        }, header: {
+            Text("diary-form-flavor-section-header")
+                .font(.caption)
+        }, footer: {
+            if input.flavorRecords.isEmpty {
+                Text("diary-form-flavor-section-footer")
+                    .font(.caption)
+            } else {
+                HStack {
+                    Spacer()
+                    Button(action: {
+                        flavorPickerShow.toggle()
+                    }, label: {
+                        Label("수정하기", systemImage: "pencil")
+                    })
+                }
+            }
+        })
     }
 
     private func toolbar() -> some ToolbarContent {
@@ -262,6 +309,7 @@ extension DiaryForm {
     }
 }
 
+// MARK: Actions
 extension DiaryForm {
     @Sendable
     private func updateSameSourcedDiary() {
