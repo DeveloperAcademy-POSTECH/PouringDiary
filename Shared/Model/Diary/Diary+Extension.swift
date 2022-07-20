@@ -43,8 +43,8 @@ extension Diary {
         relation: RelationInput,
         context: NSManagedObjectContext
     ) {
-        guard let current = context.object(with: objectId) as? Diary else { return }
         let encoder = JSONEncoder()
+        guard let current = context.object(with: objectId) as? Diary else { return }
         guard let recordData = try? encoder.encode(input.flavorRecords) else { return }
         current.memo = input.memo
         current.flavorRecords = recordData

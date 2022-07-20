@@ -95,6 +95,7 @@
 		E2D8D0CB287F68CE009A6427 /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		E2E6BC2F28860C250049C490 /* Shape+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Shape+Extension.swift"; sourceTree = "<group>"; };
 		E2E6BC3328860C610049C490 /* CornerRadiusStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadiusStyle.swift; sourceTree = "<group>"; };
+		E2F1258B288676C0000451BF /* PouringDiary--iOS--Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "PouringDiary--iOS--Info.plist"; sourceTree = "<group>"; };
 		E2FE3FB22862BC6F004F4626 /* NSManagedObjectContext+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSManagedObjectContext+Extension.swift"; sourceTree = "<group>"; };
 		E2FF053F2874175800C737EE /* Recipe+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe+Extension.swift"; sourceTree = "<group>"; };
 		E2FF0543287425EE00C737EE /* RecipeList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeList.swift; sourceTree = "<group>"; };
@@ -122,6 +123,7 @@
 		E215CF0C28596AFA00198F26 = {
 			isa = PBXGroup;
 			children = (
+				E2F1258B288676C0000451BF /* PouringDiary--iOS--Info.plist */,
 				E2D8D0C3287EBA90009A6427 /* PouringDiary (iOS).entitlements */,
 				E215CF1128596AFB00198F26 /* Shared */,
 				E215CF2328596AFB00198F26 /* macOS */,
@@ -631,6 +633,7 @@
 				DEVELOPMENT_TEAM = 2B2B4NCTA5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "PouringDiary--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -663,6 +666,7 @@
 				DEVELOPMENT_TEAM = 2B2B4NCTA5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "PouringDiary--iOS--Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
