@@ -16,7 +16,7 @@ struct MainTabView: View {
                 }
             RecipeList()
                 .tabItem {
-                    Label("레시피", systemImage: "note")
+                    Label("레시피", systemImage: "paperclip")
                 }
             CoffeeBeanList()
                 .tabItem {
