@@ -36,7 +36,7 @@ struct TagPicker: View {
         self.category = category
         self._selected = selected
         self._allTags = FetchRequest(
-            sortDescriptors: [NSSortDescriptor(keyPath: \Tag.color, ascending: true)],
+            sortDescriptors: [SortDescriptor(\.color, order: .reverse)],
             predicate: NSPredicate(format: "category == %i", category.rawValue)
         )
     }

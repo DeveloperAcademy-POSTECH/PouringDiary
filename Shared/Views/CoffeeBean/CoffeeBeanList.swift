@@ -9,7 +9,7 @@ import SwiftUI
 
 struct CoffeeBeanList: View {
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.created)])
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.created, order: .reverse)])
     private var beans: FetchedResults<CoffeeBean>
 
     var body: some View {
