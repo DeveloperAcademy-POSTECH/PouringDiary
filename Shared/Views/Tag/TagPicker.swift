@@ -13,8 +13,11 @@ import SwiftUI
 struct TagPicker: View {
     // Variables /w property wrapper
     @Environment(\.managedObjectContext) private var viewContext
-    @FetchRequest private var allTags: FetchedResults<Tag>
+    @FetchRequest
+    private var allTags: FetchedResults<Tag>
+
     @State var searchQuery: String = ""
+    @State var selectedColor: Tag.Color?
     @State var isTagFormShow: Bool = false
     @Binding var selected: [Tag]
 
@@ -36,14 +39,32 @@ struct TagPicker: View {
         self.category = category
         self._selected = selected
         self._allTags = FetchRequest(
-            sortDescriptors: [SortDescriptor(\.color, order: .reverse)],
-            predicate: NSPredicate(format: "category == %i", category.rawValue)
+            sortDescriptors: Tag.sortByColor,
+            predicate: Tag.searchPredicate(by: category)
         )
     }
 
     var body: some View {
         NavigationView {
             VStack {
+                HStack {
+                    ForEach(Tag.Color.allCases, id: \.rawValue) { color in
+                        Button(action: {
+                            if selectedColor == color {
+                                selectedColor = nil
+                            } else {
+                                selectedColor = color
+                            }
+                        }, label: {
+                            Rectangle()
+                                .fill(color.color.opacity(selectedColor == color ? 0.1 : 1.0))
+                                .frame(width: 24, height: 24)
+                                .cornerRadius(12)
+                        })
+                    }
+                    Spacer()
+                }
+                .padding(EdgeInsets(top: 0, leading: 16, bottom: 8, trailing: 16))
                 ScrollView(.horizontal) {
                     HStack {
                         ForEach(
@@ -67,6 +88,12 @@ struct TagPicker: View {
                     placement: .navigationBarDrawer(displayMode: .always),
                     prompt: "태그를 검색해보세요"
                 )
+                .onChange(of: selectedColor) { color in
+                    allTags.nsPredicate = Tag.searchPredicate(by: category, query: searchQuery, color: color)
+                }
+                .onChange(of: searchQuery) { search in
+                    allTags.nsPredicate = Tag.searchPredicate(by: category, query: search, color: selectedColor)
+                }
             }
             .toolbar(content: toolbar)
             .navigationTitle(navigationTitle)
@@ -110,8 +137,6 @@ extension TagPicker {
     private func notSelected() -> [Tag] {
         return allTags
             .filter { !selected.contains($0) }
-            .filter { $0.content?.contains(searchQuery) ?? false || searchQuery.isEmpty }
-            .sorted { $0.color > $1.color }
     }
 
     /// 태그 선택을 위한 토글 액션

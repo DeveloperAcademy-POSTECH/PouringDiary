@@ -78,15 +78,17 @@ extension Tag {
         )
     }
 
-    /// `Tag.Input`을 활용해서 새로운 원두를 등록합니다
+    /// `Tag.Input`을 활용해서 새로운 태그를 등록합니다
     static func register(input: Tag.Input, context: NSManagedObjectContext) {
-        let newTag = Tag(context: context)
-        newTag.id = UUID()
-        newTag.color = Int16(input.color.rawValue)
-        newTag.content = input.content
-        newTag.created = Date()
-        newTag.category = Int16(input.category.rawValue)
-        context.saveContext()
+        context.perform {
+            let newTag = Tag(context: context)
+            newTag.id = UUID()
+            newTag.color = Int16(input.color.rawValue)
+            newTag.content = input.content
+            newTag.created = Date()
+            newTag.category = Int16(input.category.rawValue)
+            context.saveContext()
+        }
     }
 
     /// Tag 엔티티를 삭제합니다.
@@ -95,19 +97,33 @@ extension Tag {
     }
 }
 
-/// 초기 태그 데이터
+// MARK: Requests
 extension Tag {
-    static let presets: [Tag.Input] = [
-        Tag.Input(content: "강배전", color: .gray),
-        Tag.Input(content: "중배전", color: .gray),
-        Tag.Input(content: "약배전", color: .gray),
-        Tag.Input(content: "에티오피아", color: .blue),
-        Tag.Input(content: "캐냐", color: .blue),
-        Tag.Input(content: "브라질", color: .blue),
-        Tag.Input(content: "하리오 V60", color: .red, category: .equipment),
-        Tag.Input(content: "오리가미 세라믹", color: .red, category: .equipment),
-        Tag.Input(content: "블루보틀 드리퍼", color: .red, category: .equipment)
-    ]
+    static var sortByColor: [SortDescriptor<Tag>] {
+        return [
+            SortDescriptor(\.color, order: .reverse)
+        ]
+    }
+    static func searchPredicate(by category: Category, query: String? = nil, color: Color? = nil) -> NSPredicate? {
+        if let queryTrimmed = query?.trimmingCharacters(in: .whitespacesAndNewlines), !queryTrimmed.isEmpty {
+            // Query가 유효한 경우
+            if let color = color {
+                return NSPredicate(
+                    format: "category == %i && content CONTAINS %@ && color == %i",
+                    category.rawValue,
+                    queryTrimmed,
+                    color.rawValue
+                )
+            }
+            print(queryTrimmed)
+            return NSPredicate(format: "category == %i && content CONTAINS %@", category.rawValue, queryTrimmed)
+        } else {
+            if let color = color {
+                return NSPredicate(format: "category == %i && color == %i", category.rawValue, color.rawValue)
+            }
+            return NSPredicate(format: "category == %i", category.rawValue)
+        }
+    }
 }
 
 extension Tag: UUIDObject {}
