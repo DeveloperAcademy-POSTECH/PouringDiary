@@ -73,4 +73,23 @@ extension Diary {
     }
 }
 
+// MARK: Requests
+extension Diary {
+    static func requestSameSourceDiary(recipe: Recipe? = nil, bean: CoffeeBean? = nil) -> NSFetchRequest<Diary> {
+        let request = Diary.fetchRequest()
+        if let recipe = recipe, let bean = bean {
+            request.predicate = NSPredicate(
+                format: "recipe == %@ AND coffeeBean == %@",
+                recipe,
+                bean
+            )
+        } else {
+
+            request.predicate = NSPredicate(format: "id == %@", UUID().uuidString)
+        }
+        request.sortDescriptors = [NSSortDescriptor(SortDescriptor<Diary>(\.created, order: .reverse))]
+        return request
+    }
+}
+
 extension Diary: UUIDObject { }

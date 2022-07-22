@@ -14,10 +14,7 @@ struct DiaryForm: View {
     @Environment(\.presentationMode) private var presentationMode
 
     // FetchedRequest
-    @FetchRequest(
-        sortDescriptors: [SortDescriptor(\.created)],
-        predicate: NSPredicate(format: "id == %@", UUID().uuidString)
-    )
+    @FetchRequest
     private var sameSourceDiaries: FetchedResults<Diary>
 
     // Property
@@ -42,16 +39,19 @@ struct DiaryForm: View {
     // Initializer
     init() {
         self.objectId = nil
+        self._sameSourceDiaries = FetchRequest(fetchRequest: Diary.requestSameSourceDiary())
     }
 
     init(recipe: Recipe? = nil, bean: CoffeeBean? = nil) {
         self.objectId = nil
         self._selectedRecipe = State(initialValue: recipe)
         self._selectedCoffeeBean = State(initialValue: bean)
+        self._sameSourceDiaries = FetchRequest(fetchRequest: Diary.requestSameSourceDiary())
     }
 
     init(with diaryId: NSManagedObjectID) {
         self.objectId = diaryId
+        self._sameSourceDiaries = FetchRequest(fetchRequest: Diary.requestSameSourceDiary())
     }
 
     var body: some View {
@@ -317,11 +317,12 @@ extension DiaryForm {
             let recipe = selectedRecipe,
             let bean = selectedCoffeeBean
         else { return }
-        sameSourceDiaries.nsPredicate = NSPredicate(
-            format: "recipe == %@ AND coffeeBean == %@",
-            recipe,
-            bean
-        )
+        let newRequest = Diary.requestSameSourceDiary(recipe: recipe, bean: bean)
+        sameSourceDiaries.nsPredicate = newRequest.predicate
+        sameSourceDiaries.sortDescriptors = newRequest
+            .sortDescriptors?
+            .map { SortDescriptor<Diary>($0, comparing: Diary.self)! } ?? []
+
     }
 
     @Sendable
