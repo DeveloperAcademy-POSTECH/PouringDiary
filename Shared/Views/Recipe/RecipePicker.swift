@@ -11,7 +11,7 @@ struct RecipePicker: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentationMode
 
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.created)])
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.created, order: .reverse)])
     private var recipes: FetchedResults<Recipe>
 
     @Binding var selectedRecipe: Recipe?
