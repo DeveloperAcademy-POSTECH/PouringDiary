@@ -11,7 +11,7 @@ struct CoffeeBeanPicker: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentationMode
 
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.created)])
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.created, order: .reverse)])
     private var beans: FetchedResults<CoffeeBean>
 
     @Binding var selectedBean: CoffeeBean?
