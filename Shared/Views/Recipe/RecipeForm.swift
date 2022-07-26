@@ -193,6 +193,14 @@ extension RecipeForm {
         input = recipe.input
         recipeTags = recipe.tagArray
         equipmentTags = recipe.equipmentArray
+
+        DispatchQueue.main.async {
+            if input.steps.last != "\n" {
+                input.steps.append(contentsOf: "\n")
+            } else {
+                input.steps.removeLast()
+            }
+        }
     }
 
     @Sendable

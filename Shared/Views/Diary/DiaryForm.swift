@@ -131,9 +131,10 @@ extension DiaryForm {
                     Divider()
                     // Text 짤림현상이 String 끝에 개행문자가 있으면 해결됩니다
                     // 왜인지 잘 모르겠습니다
-                    Text(recipe.steps?.appending("\n") ?? "")
+                    Text(recipe.steps ?? "")
                         .font(.body)
                         .padding(.vertical, 4)
+                        .fixedSize(horizontal: false, vertical: true)
                     Divider()
                     VStack(alignment: .leading) {
                         Text("사용 장비")
@@ -336,6 +337,14 @@ extension DiaryForm {
         selectedRecipe = diary.recipe
         selectedCoffeeBean = diary.coffeeBean
         input = diary.input
+
+        DispatchQueue.main.async {
+            if input.memo.last != "\n" {
+                input.memo.append(contentsOf: "\n")
+            } else {
+                input.memo.removeLast()
+            }
+        }
     }
 }
 

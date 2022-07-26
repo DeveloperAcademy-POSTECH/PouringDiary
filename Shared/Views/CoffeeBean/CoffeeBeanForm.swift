@@ -45,6 +45,15 @@ struct CoffeeBeanForm: View {
               ) else { return }
         self.selectedTags = editing.tagArray
         self.input = editing.input
+
+        // TODO: TextEditor 버그 임시 해결 방법(추후 수정 필요)
+        DispatchQueue.main.async {
+            if self.input.information.last != "\n" {
+                self.input.information.append(contentsOf: "\n")
+            } else {
+                self.input.information.removeLast()
+            }
+        }
     }
 
     var body: some View {
