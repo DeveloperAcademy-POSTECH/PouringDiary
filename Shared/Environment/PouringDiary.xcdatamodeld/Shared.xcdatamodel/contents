@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="CoffeeBean" representedClassName=".CoffeeBean" syncable="YES" codeGenerationType="class">
         <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
@@ -16,6 +16,13 @@
         <attribute name="memo" optional="YES" attributeType="String"/>
         <relationship name="coffeeBean" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoffeeBean" inverseName="diaries" inverseEntity="CoffeeBean"/>
         <relationship name="recipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="diaries" inverseEntity="Recipe"/>
+    </entity>
+    <entity name="PublicTag" representedClassName="PublicTag" syncable="YES" codeGenerationType="class">
+        <attribute name="category" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="color" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
     </entity>
     <entity name="Recipe" representedClassName="Recipe" syncable="YES" codeGenerationType="class">
         <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -37,9 +44,19 @@
         <relationship name="equipments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipe" inverseName="equipmentTags" inverseEntity="Recipe"/>
         <relationship name="recipes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipe" inverseName="recipeTags" inverseEntity="Recipe"/>
     </entity>
+    <configuration name="Private" usedWithCloudKit="YES">
+        <memberEntity name="CoffeeBean"/>
+        <memberEntity name="Diary"/>
+        <memberEntity name="Recipe"/>
+        <memberEntity name="Tag"/>
+    </configuration>
+    <configuration name="Public" usedWithCloudKit="YES">
+        <memberEntity name="PublicTag"/>
+    </configuration>
     <elements>
         <element name="CoffeeBean" positionX="-78.63671875" positionY="18.19140625" width="128" height="14"/>
         <element name="Diary" positionX="18" positionY="0" width="128" height="119"/>
+        <element name="PublicTag" positionX="27" positionY="0" width="128" height="104"/>
         <element name="Recipe" positionX="114.0703125" positionY="-84.03515625" width="128" height="14"/>
         <element name="Tag" positionX="-60.92578125" positionY="-139.19140625" width="128" height="149"/>
     </elements>

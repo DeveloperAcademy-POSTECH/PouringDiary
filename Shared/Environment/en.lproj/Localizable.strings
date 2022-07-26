@@ -6,34 +6,21 @@
   
 */
 // MARK: FlavorRecord
-"soupy" = "soupy";
-"harsh" = "harsh";
-"overwhelming" = "overwhelming";
-"severe" = "severe";
-"intense" = "intense";
-"dry" = "dry";
-"bitter" = "bitter";
-"powdery" = "powdery";
-"empty" = "empty";
-"dusty" = "dusty";
-"astringent" = "astringent";
-"dilute" = "dilute";
-"limp" = "limp";
-"fragile" = "fragile";
-"muted" = "muted";
-"faint" = "faint";
-"sparse" = "sparse";
-"flimsy" = "flimsy";
-"watery" = "watery";
-"underwhelming" = "underwhelming";
-"bland" = "bland";
-"nutty" = "nutty";
-"sour" = "sour";
-"salty" = "salty";
-"quick finish" = "quick finish";
-"dull" = "dull";
-"beefy" = "beefy";
-"bulky" = "bulky";
+"강한" = "Strong";
+"쓴맛" = "Harsh";
+"텁텁한" = "Svere";
+"드라이한" = "Dry";
+"우디한" = "Woody";
+"떫은" = "Limp";
+"물맛" = "Watery";
+"약한" = "Weak";
+"묽은" = "Faint";
+"밋밋한" = "Inspid";
+"너티한" = "Nutty";
+"신맛" = "Sour";
+"날카로운" = "Sharp";
+"짠맛" = "Salty";
+"자극적인" = "Intense";
 
 // MARK: Form
 "등록" = "Save";
