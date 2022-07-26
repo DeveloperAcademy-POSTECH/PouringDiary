@@ -35,6 +35,7 @@ struct CoffeeBeanForm: View {
     }
 
     /// 초기화에 수령한 ObjectID를 사용해서 태그를 수령합니다
+    @MainActor
     @Sendable
     private func prepare() async {
         guard let objectId = beanId ,

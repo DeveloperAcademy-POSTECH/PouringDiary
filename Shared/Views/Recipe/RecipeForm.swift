@@ -186,6 +186,7 @@ extension RecipeForm {
 
 // MARK: Actions
 extension RecipeForm {
+    @MainActor
     @Sendable
     private func prepare() async {
         guard let id = self.recipeId, let recipe = viewContext.get(by: id) as? Recipe else { return }

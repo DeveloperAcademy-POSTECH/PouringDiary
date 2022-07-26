@@ -327,6 +327,7 @@ extension DiaryForm {
 
     }
 
+    @MainActor
     @Sendable
     private func prepare() {
         preventScreenLock = true
