@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E215CF2528596AFB00198F26 /* PouringDiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1228596AFB00198F26 /* PouringDiary.xcdatamodeld */; };
-		E215CF2628596AFB00198F26 /* PouringDiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1228596AFB00198F26 /* PouringDiary.xcdatamodeld */; };
 		E215CF2728596AFB00198F26 /* PouringDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1428596AFB00198F26 /* PouringDiaryApp.swift */; };
 		E215CF2828596AFB00198F26 /* PouringDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1428596AFB00198F26 /* PouringDiaryApp.swift */; };
 		E215CF2928596AFB00198F26 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1528596AFB00198F26 /* MainTabView.swift */; };
@@ -21,6 +19,8 @@
 		E21F3FC1286F396900BFB481 /* CoffeeBeanList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F3FBF286F396900BFB481 /* CoffeeBeanList.swift */; };
 		E26960B8286502FC00862F8E /* CoffeeBeanForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960B7286502FC00862F8E /* CoffeeBeanForm.swift */; };
 		E26960BB2865156E00862F8E /* TagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960BA2865156E00862F8E /* TagItem.swift */; };
+		E269FE7C288D2F8D00AF17D3 /* PouringDiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E269FE7A288D2F8D00AF17D3 /* PouringDiary.xcdatamodeld */; };
+		E269FE7D288D2F8D00AF17D3 /* PouringDiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E269FE7A288D2F8D00AF17D3 /* PouringDiary.xcdatamodeld */; };
 		E283540428810ABA00BA4A7D /* FlavorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E283540328810ABA00BA4A7D /* FlavorItem.swift */; };
 		E283540528810ABA00BA4A7D /* FlavorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E283540328810ABA00BA4A7D /* FlavorItem.swift */; };
 		E29A754C2859B767007379FD /* Tag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A754B2859B767007379FD /* Tag+Extension.swift */; };
@@ -46,6 +46,8 @@
 		E2B481DA2865453300FBA847 /* TagForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B481D82865453300FBA847 /* TagForm.swift */; };
 		E2BC211C287FB1560000CEC1 /* FlavorRecordPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BC211B287FB1560000CEC1 /* FlavorRecordPicker.swift */; };
 		E2BC211D287FB1560000CEC1 /* FlavorRecordPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BC211B287FB1560000CEC1 /* FlavorRecordPicker.swift */; };
+		E2D255D7288BD21D00D2932F /* PublicTag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D255D6288BD21D00D2932F /* PublicTag+Extension.swift */; };
+		E2D255D8288BD21D00D2932F /* PublicTag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D255D6288BD21D00D2932F /* PublicTag+Extension.swift */; };
 		E2D8D0C1287EB918009A6427 /* Diary+FlavorRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D8D0C0287EB918009A6427 /* Diary+FlavorRecord.swift */; };
 		E2D8D0C2287EB918009A6427 /* Diary+FlavorRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D8D0C0287EB918009A6427 /* Diary+FlavorRecord.swift */; };
 		E2D8D0C7287F686E009A6427 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2D8D0CA287F686E009A6427 /* Localizable.strings */; };
@@ -65,7 +67,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E215CF1328596AFB00198F26 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		E215CF1428596AFB00198F26 /* PouringDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouringDiaryApp.swift; sourceTree = "<group>"; };
 		E215CF1528596AFB00198F26 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		E215CF1628596AFB00198F26 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
@@ -77,6 +78,7 @@
 		E21F3FBF286F396900BFB481 /* CoffeeBeanList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanList.swift; sourceTree = "<group>"; };
 		E26960B7286502FC00862F8E /* CoffeeBeanForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanForm.swift; sourceTree = "<group>"; };
 		E26960BA2865156E00862F8E /* TagItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagItem.swift; sourceTree = "<group>"; };
+		E269FE7B288D2F8D00AF17D3 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		E283540328810ABA00BA4A7D /* FlavorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavorItem.swift; sourceTree = "<group>"; };
 		E29A754B2859B767007379FD /* Tag+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+Extension.swift"; sourceTree = "<group>"; };
 		E29D02552877CC7F00A84A5D /* CoffeeBeanPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanPicker.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 		E2B481D328653DC100FBA847 /* TagPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPicker.swift; sourceTree = "<group>"; };
 		E2B481D82865453300FBA847 /* TagForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagForm.swift; sourceTree = "<group>"; };
 		E2BC211B287FB1560000CEC1 /* FlavorRecordPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavorRecordPicker.swift; sourceTree = "<group>"; };
+		E2D255D6288BD21D00D2932F /* PublicTag+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PublicTag+Extension.swift"; sourceTree = "<group>"; };
 		E2D8D0C0287EB918009A6427 /* Diary+FlavorRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Diary+FlavorRecord.swift"; sourceTree = "<group>"; };
 		E2D8D0C3287EBA90009A6427 /* PouringDiary (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PouringDiary (iOS).entitlements"; sourceTree = "<group>"; };
 		E2D8D0C9287F686E009A6427 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -162,8 +165,8 @@
 		E21CBB4B2859CC18008CEDC3 /* Environment */ = {
 			isa = PBXGroup;
 			children = (
+				E269FE7A288D2F8D00AF17D3 /* PouringDiary.xcdatamodeld */,
 				E215CF1728596AFB00198F26 /* Assets.xcassets */,
-				E215CF1228596AFB00198F26 /* PouringDiary.xcdatamodeld */,
 				E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */,
 				E215CF1628596AFB00198F26 /* PersistenceController.swift */,
 				E2D8D0CA287F686E009A6427 /* Localizable.strings */,
@@ -175,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				E29A754B2859B767007379FD /* Tag+Extension.swift */,
+				E2D255D6288BD21D00D2932F /* PublicTag+Extension.swift */,
 			);
 			path = Tag;
 			sourceTree = "<group>";
@@ -444,12 +448,12 @@
 				E215CF2728596AFB00198F26 /* PouringDiaryApp.swift in Sources */,
 				E215CF2B28596AFB00198F26 /* PersistenceController.swift in Sources */,
 				E2E6BC3428860C610049C490 /* CornerRadiusStyle.swift in Sources */,
-				E215CF2528596AFB00198F26 /* PouringDiary.xcdatamodeld in Sources */,
 				E215CF2928596AFB00198F26 /* MainTabView.swift in Sources */,
 				E2AC03562863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */,
 				E2E6BC3028860C250049C490 /* Shape+Extension.swift in Sources */,
 				E2B481D428653DC100FBA847 /* TagPicker.swift in Sources */,
 				E2B3DEAF287CF84A00DCCBAB /* DiaryForm.swift in Sources */,
+				E2D255D7288BD21D00D2932F /* PublicTag+Extension.swift in Sources */,
 				E21CBB4D2859CC24008CEDC3 /* AppEnvironment.swift in Sources */,
 				E2D8D0C1287EB918009A6427 /* Diary+FlavorRecord.swift in Sources */,
 				E2B3DEAC287CF84100DCCBAB /* DiaryList.swift in Sources */,
@@ -461,6 +465,7 @@
 				E29D02562877CC7F00A84A5D /* CoffeeBeanPicker.swift in Sources */,
 				E21F3FC0286F396900BFB481 /* CoffeeBeanList.swift in Sources */,
 				E283540428810ABA00BA4A7D /* FlavorItem.swift in Sources */,
+				E269FE7C288D2F8D00AF17D3 /* PouringDiary.xcdatamodeld in Sources */,
 				E26960BB2865156E00862F8E /* TagItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,11 +476,12 @@
 			files = (
 				E2B481DA2865453300FBA847 /* TagForm.swift in Sources */,
 				E2FF05412874175C00C737EE /* Recipe+Extension.swift in Sources */,
+				E269FE7D288D2F8D00AF17D3 /* PouringDiary.xcdatamodeld in Sources */,
 				E215CF2828596AFB00198F26 /* PouringDiaryApp.swift in Sources */,
 				E2FE3FB02862A304004F4626 /* PersistenceController.swift in Sources */,
 				E2D8D0C2287EB918009A6427 /* Diary+FlavorRecord.swift in Sources */,
+				E2D255D8288BD21D00D2932F /* PublicTag+Extension.swift in Sources */,
 				E2B481D728653DDA00FBA847 /* CoffeeBeanForm.swift in Sources */,
-				E215CF2628596AFB00198F26 /* PouringDiary.xcdatamodeld in Sources */,
 				E2B3DEB0287CF84A00DCCBAB /* DiaryForm.swift in Sources */,
 				E283540528810ABA00BA4A7D /* FlavorItem.swift in Sources */,
 				E2FE3FAC2862A304004F4626 /* Tag+Extension.swift in Sources */,
@@ -780,12 +786,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		E215CF1228596AFB00198F26 /* PouringDiary.xcdatamodeld */ = {
+		E269FE7A288D2F8D00AF17D3 /* PouringDiary.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				E215CF1328596AFB00198F26 /* Shared.xcdatamodel */,
+				E269FE7B288D2F8D00AF17D3 /* Shared.xcdatamodel */,
 			);
-			currentVersion = E215CF1328596AFB00198F26 /* Shared.xcdatamodel */;
+			currentVersion = E269FE7B288D2F8D00AF17D3 /* Shared.xcdatamodel */;
 			path = PouringDiary.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
