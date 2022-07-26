@@ -25,7 +25,6 @@ struct RecipeForm: View {
     @State private var recipeTags: [Tag] = []
     @State private var equipmentPickerShow: Bool = false
     @State private var tagPickerShow: Bool = false
-//    @State private var coffeeBeanPickerShow: Bool = false
 
     // Internal
     private var recipeId: NSManagedObjectID?
@@ -50,7 +49,6 @@ struct RecipeForm: View {
         Form {
             titleSection
             stepSection
-//            coffeeBeanSection
             equipmentSection
             recipeTagSection
             informationSection
@@ -63,14 +61,11 @@ struct RecipeForm: View {
         .sheet(isPresented: $equipmentPickerShow) {
             TagPicker(with: .equipment, selected: $equipmentTags)
         }
-//        .sheet(isPresented: $coffeeBeanPickerShow) {
-//            CoffeeBeanPicker(selectedBean: $selectedCoffeeBean)
-//        }
         .navigationTitle(isEditing ? "레시피 수정" : "레시피 등록")
     }
 }
 
-// MARK: Views {
+// MARK: Views
 extension RecipeForm {
     @ViewBuilder
     private var stepSection: some View {
@@ -90,24 +85,6 @@ extension RecipeForm {
             }
         }
     }
-
-//    @ViewBuilder
-//    private var coffeeBeanSection: some View {
-//        Section("원두 선택") {
-//            Button(action: {
-//                coffeeBeanPickerShow.toggle()
-//            }, label: {
-//                if let bean = selectedCoffeeBean {
-//                    Text(bean.name ?? "")
-//                        .font(.body)
-//                } else {
-//                    Text("원두를 선택해주세요")
-//                        .font(.caption)
-//                        .foregroundColor(.gray)
-//                }
-//            })
-//        }
-//    }
 
     @ViewBuilder
     private func tagList(tags: [Tag]) -> some View {
@@ -211,18 +188,14 @@ extension RecipeForm {
 extension RecipeForm {
     @Sendable
     private func prepare() async {
-        DispatchQueue.main.asyncAfter(deadline: .now().advanced(by: .milliseconds(50))) {
-            guard let id = self.recipeId, let recipe = viewContext.get(by: id) as? Recipe else { return }
-            input = recipe.input
-//            selectedCoffeeBean = recipe.coffeeBean
-            recipeTags = recipe.tagArray
-            equipmentTags = recipe.equipmentArray
-        }
+        guard let id = self.recipeId, let recipe = viewContext.get(by: id) as? Recipe else { return }
+        input = recipe.input
+        recipeTags = recipe.tagArray
+        equipmentTags = recipe.equipmentArray
     }
 
     @Sendable
     private func saveOrRegister() {
-//        guard let bean = selectedCoffeeBean else { return }
         let relation = Recipe.RelationInput(
             tags: recipeTags,
             equipments: equipmentTags

@@ -37,15 +37,13 @@ struct CoffeeBeanForm: View {
     /// 초기화에 수령한 ObjectID를 사용해서 태그를 수령합니다
     @Sendable
     private func prepare() async {
-        DispatchQueue.main.asyncAfter(deadline: .now().advanced(by: .milliseconds(50))) {
-            guard let objectId = beanId ,
-                  let editing = CoffeeBean.get(
-                    by: objectId,
-                    context: viewContext
-                  ) else { return }
-            self.selectedTags = editing.tagArray
-            self.input = editing.input
-        }
+        guard let objectId = beanId ,
+              let editing = CoffeeBean.get(
+                by: objectId,
+                context: viewContext
+              ) else { return }
+        self.selectedTags = editing.tagArray
+        self.input = editing.input
     }
 
     var body: some View {

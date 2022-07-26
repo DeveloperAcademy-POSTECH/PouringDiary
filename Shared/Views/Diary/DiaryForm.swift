@@ -129,7 +129,9 @@ extension DiaryForm {
                         .font(.headline)
                         .padding(.vertical, 4)
                     Divider()
-                    Text(recipe.steps ?? "")
+                    // Text 짤림현상이 String 끝에 개행문자가 있으면 해결됩니다
+                    // 왜인지 잘 모르겠습니다
+                    Text(recipe.steps?.appending("\n") ?? "")
                         .font(.body)
                         .padding(.vertical, 4)
                     Divider()
@@ -327,14 +329,12 @@ extension DiaryForm {
 
     @Sendable
     private func prepare() {
-        DispatchQueue.main.asyncAfter(deadline: .now().advanced(by: .milliseconds(50))) {
-            preventScreenLock = true
-            updateSameSourcedDiary()
-            guard let id = objectId, let diary = Diary.get(by: id, context: viewContext) else { return }
-            selectedRecipe = diary.recipe
-            selectedCoffeeBean = diary.coffeeBean
-            input = diary.input
-        }
+        preventScreenLock = true
+        updateSameSourcedDiary()
+        guard let id = objectId, let diary = Diary.get(by: id, context: viewContext) else { return }
+        selectedRecipe = diary.recipe
+        selectedCoffeeBean = diary.coffeeBean
+        input = diary.input
     }
 }
 
