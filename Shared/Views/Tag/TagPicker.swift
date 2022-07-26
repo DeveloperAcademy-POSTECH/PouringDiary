@@ -13,8 +13,11 @@ import SwiftUI
 struct TagPicker: View {
     // Variables /w property wrapper
     @Environment(\.managedObjectContext) private var viewContext
+    @Environment(\.presentationMode) private var presentationMode
+
     @FetchRequest
     private var allTags: FetchedResults<Tag>
+
 
     @State var searchQuery: String = ""
     @State var selectedColor: Tag.Color?
@@ -76,12 +79,17 @@ struct TagPicker: View {
                 }
                 .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
                 List {
-                    ForEach(
-                        notSelected(),
-                        id: \.objectID,
-                        content: tagToggleButton
-                    )
-                    .onDelete(perform: deleteItems)
+                    Section {
+                        ForEach(
+                            notSelected(),
+                            id: \.objectID,
+                            content: tagToggleButton
+                        )
+                        .onDelete(perform: deleteItems)
+                    } header: {
+                        Text("내 태그")
+                            .font(.caption)
+                    }
                 }
                 .searchable(
                     text: $searchQuery,
@@ -95,7 +103,28 @@ struct TagPicker: View {
                     allTags.nsPredicate = Tag.searchPredicate(by: category, query: search, color: selectedColor)
                 }
             }
-            .toolbar(content: toolbar)
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarLeading) {
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Image(systemName: "xmark")
+                    }
+                }
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+
+                    EditButton()
+                    NavigationLink(
+                        isActive: $isTagFormShow,
+                        destination: {
+                            TagForm(with: $isTagFormShow, category: category)
+                        },
+                        label: {
+                            Image(systemName: "plus")
+                        }
+                    )
+                }
+            }
             .navigationTitle(navigationTitle)
             .navigationBarTitleDisplayMode(.large)
         }
@@ -104,6 +133,27 @@ struct TagPicker: View {
 
 // MARK: Views
 extension TagPicker {
+    @ViewBuilder
+    private var publicTagSection: some View {
+        Section {
+            NavigationLink {
+                PublicTagList()
+            } label: {
+                Text("준비된 태그를 다운로드 해보세요")
+                    .font(.callout)
+            }
+        } header: {
+            Text("프리셋")
+                .font(.caption)
+        } footer: {
+            HStack {
+                Spacer()
+                Text("프리셋 태그와 함께 나만의 태그를 구성해보세요")
+                    .font(.caption2)
+            }
+        }
+    }
+
     // MARK: 태그 터치 시 토글을 수행하는 버튼
     @ViewBuilder
     private func tagToggleButton(tag: Tag) -> some View {
@@ -111,23 +161,6 @@ extension TagPicker {
             .onTapGesture {
                 toggleItem(tag: tag)
             }
-    }
-
-    private func toolbar() -> some ToolbarContent {
-        ToolbarItem(placement: .automatic) {
-            HStack {
-                EditButton()
-                NavigationLink(
-                    isActive: $isTagFormShow,
-                    destination: {
-                        TagForm(with: $isTagFormShow, category: category)
-                    },
-                    label: {
-                        Image(systemName: "plus")
-                    }
-                )
-            }
-        }
     }
 }
 

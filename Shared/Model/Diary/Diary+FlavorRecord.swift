@@ -22,7 +22,7 @@ extension Diary {
                 FlavorRecord(label: "드라이한", strength: 0.2, extraction: 0.8),
                 FlavorRecord(label: "우디한", strength: -0.2, extraction: 0.8),
                 FlavorRecord(label: "떫은", strength: -0.5, extraction: 0.5),
-                FlavorRecord(label: "물맛이 나는", strength: -0.8, extraction: 0.2),
+                FlavorRecord(label: "물맛", strength: -0.8, extraction: 0.2),
                 FlavorRecord(label: "약한", strength: -1, extraction: 0),
                 FlavorRecord(label: "묽은", strength: -0.8, extraction: -0.2),
                 FlavorRecord(label: "밋밋한", strength: -0.5, extraction: -0.5),

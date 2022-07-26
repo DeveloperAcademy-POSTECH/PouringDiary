@@ -29,6 +29,15 @@ struct CoffeeBeanPicker: View {
                     })
                 }
             }
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarLeading) {
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Image(systemName: "xmark")
+                    }
+                }
+            }
             .navigationTitle("원두 선택")
         }
     }

@@ -29,6 +29,15 @@ struct RecipePicker: View {
                     })
                 }
             }
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarLeading) {
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Image(systemName: "xmark")
+                    }
+                }
+            }
             .navigationTitle("레시피 선택")
         }
     }

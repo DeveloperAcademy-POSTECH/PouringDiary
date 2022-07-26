@@ -12,12 +12,16 @@ import CoreData
 extension PublicTag {
     func saveToPrivate() {
         Tag.register(
-            input: Tag.Input(
-                content: content ?? "",
-                color: Tag.Color(rawValue: Int(color))!,
-                category: Tag.Category(from: category)
-            ),
+            input: tagInput,
             context: managedObjectContext!
+        )
+    }
+
+    var tagInput: Tag.Input {
+        return Tag.Input(
+            content: content ?? "",
+            color: Tag.Color(rawValue: Int(color))!,
+            category: Tag.Category(from: category)
         )
     }
 }
