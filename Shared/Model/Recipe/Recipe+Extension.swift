@@ -75,3 +75,25 @@ extension Recipe {
 }
 
 extension Recipe: UUIDObject {  }
+
+#if DEBUG
+extension Recipe {
+    static var presets: [Recipe.Input] {
+        return [
+            .init(
+                title: "아이스 레시피",
+                information: "동네 카페에서 배워온 레시피",
+                steps:
+"""
+도징 16.5g
+물 92도
+
+1차 : 30g 1분 뜸들이기
+2차 : 125g 빠르게 푸어링
+총 2.5~3분으로 추출 종료
+"""
+            )
+        ]
+    }
+}
+#endif

@@ -93,3 +93,17 @@ extension Diary {
 }
 
 extension Diary: UUIDObject { }
+
+
+#if DEBUG
+extension Diary {
+    static var presets: [Diary.Input] {
+        return [
+            .init(memo: "그라인더 15클릭으로 진행\n추출 완료까지 2분 12초", flavorRecords: [
+                FlavorRecord(label: "텁텁한", strength: 0.4, extraction: 0.6),
+                FlavorRecord(label: "드라이한", strength: 0.2, extraction: 0.8),
+            ])
+        ]
+    }
+}
+#endif

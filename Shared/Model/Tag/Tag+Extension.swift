@@ -132,3 +132,28 @@ enum TagError: Error {
     case notExist
     case unexpected(Error)
 }
+
+#if DEBUG
+extension Tag {
+    static var presets: [Tag.Input] = [
+        .init(content: "에티오피아", color: .blue),
+        .init(content: "브라질", color: .blue),
+        .init(content: "과테말라", color: .blue),
+        .init(content: "캐냐", color: .blue),
+
+        .init(content: "Natural", color: .pink),
+        .init(content: "Washed", color: .pink),
+
+        .init(content: "강배전", color: .gray),
+        .init(content: "중배전", color: .gray),
+        .init(content: "약배전", color: .gray),
+
+        .init(content: "코만단테", color: .purple, category: .equipment),
+        .init(content: "바라짜 앤코", color: .purple, category: .equipment),
+        .init(content: "EK43", color: .purple, category: .equipment),
+
+        .init(content: "하리오 V60", color: .red, category: .equipment),
+        .init(content: "블루보틀", color: .red, category: .equipment),
+    ]
+}
+#endif

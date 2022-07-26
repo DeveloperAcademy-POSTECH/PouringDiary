@@ -21,7 +21,9 @@ extension CoffeeBean {
         newBean.information = input.information
         newBean.created = Date()
         newBean.image = input.image
-        newBean.tags = NSSet(array: tags)
+        if !tags.isEmpty {
+            newBean.tags = NSSet(array: tags)
+        }
         context.saveContext()
     }
 
@@ -52,3 +54,13 @@ extension CoffeeBean {
 }
 
 extension CoffeeBean: UUIDObject { }
+
+#if DEBUG
+extension CoffeeBean {
+    static var presets: [CoffeeBean.Input] {
+        return [
+            .init(name: "Flavor Blend", information: "우리동네 맛집 카페 대표 원두", image: nil),
+        ]
+    }
+}
+#endif

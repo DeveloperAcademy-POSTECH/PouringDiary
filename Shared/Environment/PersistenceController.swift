@@ -65,7 +65,13 @@ struct PersistenceController {
 
         if inMemory {
             _ = container.persistentStoreDescriptions
-                .map { $0.url = URL(fileURLWithPath: "/dev/null") }
+                .enumerated()
+                .map {
+                    $1.url = URL(fileURLWithPath: "/dev/null\($0)")
+                }
+
+            _ = Tag.presets.map { Tag.register(input: $0, context: container.viewContext) }
+            
         }
         container.viewContext.automaticallyMergesChangesFromParent = true
 
