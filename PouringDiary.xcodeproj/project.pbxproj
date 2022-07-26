@@ -7,79 +7,58 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E215CF2528596AFB00198F26 /* PouringDiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1228596AFB00198F26 /* PouringDiary.xcdatamodeld */; };
-		E215CF2628596AFB00198F26 /* PouringDiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1228596AFB00198F26 /* PouringDiary.xcdatamodeld */; };
 		E215CF2728596AFB00198F26 /* PouringDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1428596AFB00198F26 /* PouringDiaryApp.swift */; };
-		E215CF2828596AFB00198F26 /* PouringDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1428596AFB00198F26 /* PouringDiaryApp.swift */; };
 		E215CF2928596AFB00198F26 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1528596AFB00198F26 /* MainTabView.swift */; };
-		E215CF2A28596AFB00198F26 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1528596AFB00198F26 /* MainTabView.swift */; };
 		E215CF2B28596AFB00198F26 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1628596AFB00198F26 /* PersistenceController.swift */; };
 		E215CF2D28596AFB00198F26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E215CF1728596AFB00198F26 /* Assets.xcassets */; };
-		E215CF2E28596AFB00198F26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E215CF1728596AFB00198F26 /* Assets.xcassets */; };
 		E21CBB4D2859CC24008CEDC3 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */; };
 		E21F3FC0286F396900BFB481 /* CoffeeBeanList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F3FBF286F396900BFB481 /* CoffeeBeanList.swift */; };
-		E21F3FC1286F396900BFB481 /* CoffeeBeanList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F3FBF286F396900BFB481 /* CoffeeBeanList.swift */; };
 		E26960B8286502FC00862F8E /* CoffeeBeanForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960B7286502FC00862F8E /* CoffeeBeanForm.swift */; };
 		E26960BB2865156E00862F8E /* TagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960BA2865156E00862F8E /* TagItem.swift */; };
+		E269FE7C288D2F8D00AF17D3 /* PouringDiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E269FE7A288D2F8D00AF17D3 /* PouringDiary.xcdatamodeld */; };
 		E283540428810ABA00BA4A7D /* FlavorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E283540328810ABA00BA4A7D /* FlavorItem.swift */; };
-		E283540528810ABA00BA4A7D /* FlavorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E283540328810ABA00BA4A7D /* FlavorItem.swift */; };
 		E29A754C2859B767007379FD /* Tag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A754B2859B767007379FD /* Tag+Extension.swift */; };
-		E29BE5E12863AD9E00628801 /* NSManagedObjectContext+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FE3FB22862BC6F004F4626 /* NSManagedObjectContext+Extension.swift */; };
 		E29D02562877CC7F00A84A5D /* CoffeeBeanPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D02552877CC7F00A84A5D /* CoffeeBeanPicker.swift */; };
-		E29E86D32874D73F009A07EB /* RecipeForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF0545287425FC00C737EE /* RecipeForm.swift */; };
+		E2ABD29F288F7E3100CBFCFF /* PublicTagList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABD29E288F7E3100CBFCFF /* PublicTagList.swift */; };
+		E2ABD2A3288FD1C000CBFCFF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2ABD2A5288FD1C000CBFCFF /* InfoPlist.strings */; };
 		E2AC03562863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AC03552863F9470005FFD2 /* CoffeeBean+Extension.swift */; };
-		E2AC03572863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2AC03552863F9470005FFD2 /* CoffeeBean+Extension.swift */; };
 		E2B3DEA9287C122B00DCCBAB /* Diary+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3DEA8287C122B00DCCBAB /* Diary+Extension.swift */; };
 		E2B3DEAC287CF84100DCCBAB /* DiaryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3DEAB287CF84100DCCBAB /* DiaryList.swift */; };
-		E2B3DEAD287CF84100DCCBAB /* DiaryList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3DEAB287CF84100DCCBAB /* DiaryList.swift */; };
 		E2B3DEAF287CF84A00DCCBAB /* DiaryForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3DEAE287CF84A00DCCBAB /* DiaryForm.swift */; };
-		E2B3DEB0287CF84A00DCCBAB /* DiaryForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3DEAE287CF84A00DCCBAB /* DiaryForm.swift */; };
 		E2B3DEB2287D3A7500DCCBAB /* RecipePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3DEB1287D3A7500DCCBAB /* RecipePicker.swift */; };
-		E2B3DEB3287D3A7500DCCBAB /* RecipePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3DEB1287D3A7500DCCBAB /* RecipePicker.swift */; };
 		E2B3DEB6287E103D00DCCBAB /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3DEB5287E103D00DCCBAB /* Date+Extension.swift */; };
-		E2B3DEB7287E103D00DCCBAB /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3DEB5287E103D00DCCBAB /* Date+Extension.swift */; };
 		E2B481D428653DC100FBA847 /* TagPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B481D328653DC100FBA847 /* TagPicker.swift */; };
-		E2B481D528653DC100FBA847 /* TagPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B481D328653DC100FBA847 /* TagPicker.swift */; };
-		E2B481D628653DC900FBA847 /* TagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960BA2865156E00862F8E /* TagItem.swift */; };
-		E2B481D728653DDA00FBA847 /* CoffeeBeanForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960B7286502FC00862F8E /* CoffeeBeanForm.swift */; };
 		E2B481D92865453300FBA847 /* TagForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B481D82865453300FBA847 /* TagForm.swift */; };
-		E2B481DA2865453300FBA847 /* TagForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B481D82865453300FBA847 /* TagForm.swift */; };
 		E2BC211C287FB1560000CEC1 /* FlavorRecordPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BC211B287FB1560000CEC1 /* FlavorRecordPicker.swift */; };
-		E2BC211D287FB1560000CEC1 /* FlavorRecordPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BC211B287FB1560000CEC1 /* FlavorRecordPicker.swift */; };
+		E2D255D7288BD21D00D2932F /* PublicTag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D255D6288BD21D00D2932F /* PublicTag+Extension.swift */; };
 		E2D8D0C1287EB918009A6427 /* Diary+FlavorRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D8D0C0287EB918009A6427 /* Diary+FlavorRecord.swift */; };
-		E2D8D0C2287EB918009A6427 /* Diary+FlavorRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D8D0C0287EB918009A6427 /* Diary+FlavorRecord.swift */; };
 		E2D8D0C7287F686E009A6427 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2D8D0CA287F686E009A6427 /* Localizable.strings */; };
-		E2D8D0C8287F686E009A6427 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2D8D0CA287F686E009A6427 /* Localizable.strings */; };
 		E2E6BC3028860C250049C490 /* Shape+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E6BC2F28860C250049C490 /* Shape+Extension.swift */; };
-		E2E6BC3128860C250049C490 /* Shape+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E6BC2F28860C250049C490 /* Shape+Extension.swift */; };
 		E2E6BC3428860C610049C490 /* CornerRadiusStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E6BC3328860C610049C490 /* CornerRadiusStyle.swift */; };
-		E2E6BC3528860C610049C490 /* CornerRadiusStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2E6BC3328860C610049C490 /* CornerRadiusStyle.swift */; };
-		E2FE3FAC2862A304004F4626 /* Tag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A754B2859B767007379FD /* Tag+Extension.swift */; };
-		E2FE3FAE2862A304004F4626 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */; };
-		E2FE3FB02862A304004F4626 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1628596AFB00198F26 /* PersistenceController.swift */; };
 		E2FE3FB32862BC6F004F4626 /* NSManagedObjectContext+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FE3FB22862BC6F004F4626 /* NSManagedObjectContext+Extension.swift */; };
 		E2FF05402874175800C737EE /* Recipe+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF053F2874175800C737EE /* Recipe+Extension.swift */; };
-		E2FF05412874175C00C737EE /* Recipe+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF053F2874175800C737EE /* Recipe+Extension.swift */; };
 		E2FF0544287425EE00C737EE /* RecipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF0543287425EE00C737EE /* RecipeList.swift */; };
 		E2FF0546287425FC00C737EE /* RecipeForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF0545287425FC00C737EE /* RecipeForm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E215CF1328596AFB00198F26 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		E215CF1428596AFB00198F26 /* PouringDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouringDiaryApp.swift; sourceTree = "<group>"; };
 		E215CF1528596AFB00198F26 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		E215CF1628596AFB00198F26 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		E215CF1728596AFB00198F26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E215CF1C28596AFB00198F26 /* PouringDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PouringDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E215CF2228596AFB00198F26 /* PouringDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PouringDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E215CF2428596AFB00198F26 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		E21F3FBF286F396900BFB481 /* CoffeeBeanList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanList.swift; sourceTree = "<group>"; };
 		E26960B7286502FC00862F8E /* CoffeeBeanForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanForm.swift; sourceTree = "<group>"; };
 		E26960BA2865156E00862F8E /* TagItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagItem.swift; sourceTree = "<group>"; };
+		E269FE7B288D2F8D00AF17D3 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		E283540328810ABA00BA4A7D /* FlavorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavorItem.swift; sourceTree = "<group>"; };
 		E29A754B2859B767007379FD /* Tag+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+Extension.swift"; sourceTree = "<group>"; };
 		E29D02552877CC7F00A84A5D /* CoffeeBeanPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanPicker.swift; sourceTree = "<group>"; };
+		E2ABD29E288F7E3100CBFCFF /* PublicTagList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicTagList.swift; sourceTree = "<group>"; };
+		E2ABD2A4288FD1C000CBFCFF /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E2ABD2A6288FD1C400CBFCFF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E2AC03552863F9470005FFD2 /* CoffeeBean+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoffeeBean+Extension.swift"; sourceTree = "<group>"; };
 		E2B3DEA8287C122B00DCCBAB /* Diary+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Diary+Extension.swift"; sourceTree = "<group>"; };
 		E2B3DEAB287CF84100DCCBAB /* DiaryList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryList.swift; sourceTree = "<group>"; };
@@ -89,6 +68,7 @@
 		E2B481D328653DC100FBA847 /* TagPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPicker.swift; sourceTree = "<group>"; };
 		E2B481D82865453300FBA847 /* TagForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagForm.swift; sourceTree = "<group>"; };
 		E2BC211B287FB1560000CEC1 /* FlavorRecordPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavorRecordPicker.swift; sourceTree = "<group>"; };
+		E2D255D6288BD21D00D2932F /* PublicTag+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PublicTag+Extension.swift"; sourceTree = "<group>"; };
 		E2D8D0C0287EB918009A6427 /* Diary+FlavorRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Diary+FlavorRecord.swift"; sourceTree = "<group>"; };
 		E2D8D0C3287EBA90009A6427 /* PouringDiary (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PouringDiary (iOS).entitlements"; sourceTree = "<group>"; };
 		E2D8D0C9287F686E009A6427 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -104,13 +84,6 @@
 
 /* Begin PBXFrameworksBuildPhase section */
 		E215CF1928596AFB00198F26 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E215CF1F28596AFB00198F26 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -146,7 +119,6 @@
 			isa = PBXGroup;
 			children = (
 				E215CF1C28596AFB00198F26 /* PouringDiary.app */,
-				E215CF2228596AFB00198F26 /* PouringDiary.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -162,11 +134,12 @@
 		E21CBB4B2859CC18008CEDC3 /* Environment */ = {
 			isa = PBXGroup;
 			children = (
+				E269FE7A288D2F8D00AF17D3 /* PouringDiary.xcdatamodeld */,
 				E215CF1728596AFB00198F26 /* Assets.xcassets */,
-				E215CF1228596AFB00198F26 /* PouringDiary.xcdatamodeld */,
 				E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */,
 				E215CF1628596AFB00198F26 /* PersistenceController.swift */,
 				E2D8D0CA287F686E009A6427 /* Localizable.strings */,
+				E2ABD2A5288FD1C000CBFCFF /* InfoPlist.strings */,
 			);
 			path = Environment;
 			sourceTree = "<group>";
@@ -175,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				E29A754B2859B767007379FD /* Tag+Extension.swift */,
+				E2D255D6288BD21D00D2932F /* PublicTag+Extension.swift */,
 			);
 			path = Tag;
 			sourceTree = "<group>";
@@ -195,6 +169,7 @@
 				E26960BA2865156E00862F8E /* TagItem.swift */,
 				E2B481D328653DC100FBA847 /* TagPicker.swift */,
 				E2B481D82865453300FBA847 /* TagForm.swift */,
+				E2ABD29E288F7E3100CBFCFF /* PublicTagList.swift */,
 			);
 			path = Tag;
 			sourceTree = "<group>";
@@ -333,23 +308,6 @@
 			productReference = E215CF1C28596AFB00198F26 /* PouringDiary.app */;
 			productType = "com.apple.product-type.application";
 		};
-		E215CF2128596AFB00198F26 /* PouringDiary (macOS) */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E215CF3428596AFB00198F26 /* Build configuration list for PBXNativeTarget "PouringDiary (macOS)" */;
-			buildPhases = (
-				E215CF1E28596AFB00198F26 /* Sources */,
-				E215CF1F28596AFB00198F26 /* Frameworks */,
-				E215CF2028596AFB00198F26 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "PouringDiary (macOS)";
-			productName = "PouringDiary (macOS)";
-			productReference = E215CF2228596AFB00198F26 /* PouringDiary.app */;
-			productType = "com.apple.product-type.application";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -361,9 +319,6 @@
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					E215CF1B28596AFB00198F26 = {
-						CreatedOnToolsVersion = 13.3.1;
-					};
-					E215CF2128596AFB00198F26 = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
 				};
@@ -383,7 +338,6 @@
 			projectRoot = "";
 			targets = (
 				E215CF1B28596AFB00198F26 /* PouringDiary (iOS) */,
-				E215CF2128596AFB00198F26 /* PouringDiary (macOS) */,
 			);
 		};
 /* End PBXProject section */
@@ -394,16 +348,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E215CF2D28596AFB00198F26 /* Assets.xcassets in Resources */,
+				E2ABD2A3288FD1C000CBFCFF /* InfoPlist.strings in Resources */,
 				E2D8D0C7287F686E009A6427 /* Localizable.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E215CF2028596AFB00198F26 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E215CF2E28596AFB00198F26 /* Assets.xcassets in Resources */,
-				E2D8D0C8287F686E009A6427 /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,12 +390,12 @@
 				E215CF2728596AFB00198F26 /* PouringDiaryApp.swift in Sources */,
 				E215CF2B28596AFB00198F26 /* PersistenceController.swift in Sources */,
 				E2E6BC3428860C610049C490 /* CornerRadiusStyle.swift in Sources */,
-				E215CF2528596AFB00198F26 /* PouringDiary.xcdatamodeld in Sources */,
 				E215CF2928596AFB00198F26 /* MainTabView.swift in Sources */,
 				E2AC03562863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */,
 				E2E6BC3028860C250049C490 /* Shape+Extension.swift in Sources */,
 				E2B481D428653DC100FBA847 /* TagPicker.swift in Sources */,
 				E2B3DEAF287CF84A00DCCBAB /* DiaryForm.swift in Sources */,
+				E2D255D7288BD21D00D2932F /* PublicTag+Extension.swift in Sources */,
 				E21CBB4D2859CC24008CEDC3 /* AppEnvironment.swift in Sources */,
 				E2D8D0C1287EB918009A6427 /* Diary+FlavorRecord.swift in Sources */,
 				E2B3DEAC287CF84100DCCBAB /* DiaryList.swift in Sources */,
@@ -461,44 +407,24 @@
 				E29D02562877CC7F00A84A5D /* CoffeeBeanPicker.swift in Sources */,
 				E21F3FC0286F396900BFB481 /* CoffeeBeanList.swift in Sources */,
 				E283540428810ABA00BA4A7D /* FlavorItem.swift in Sources */,
+				E2ABD29F288F7E3100CBFCFF /* PublicTagList.swift in Sources */,
+				E269FE7C288D2F8D00AF17D3 /* PouringDiary.xcdatamodeld in Sources */,
 				E26960BB2865156E00862F8E /* TagItem.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		E215CF1E28596AFB00198F26 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E2B481DA2865453300FBA847 /* TagForm.swift in Sources */,
-				E2FF05412874175C00C737EE /* Recipe+Extension.swift in Sources */,
-				E215CF2828596AFB00198F26 /* PouringDiaryApp.swift in Sources */,
-				E2FE3FB02862A304004F4626 /* PersistenceController.swift in Sources */,
-				E2D8D0C2287EB918009A6427 /* Diary+FlavorRecord.swift in Sources */,
-				E2B481D728653DDA00FBA847 /* CoffeeBeanForm.swift in Sources */,
-				E215CF2628596AFB00198F26 /* PouringDiary.xcdatamodeld in Sources */,
-				E2B3DEB0287CF84A00DCCBAB /* DiaryForm.swift in Sources */,
-				E283540528810ABA00BA4A7D /* FlavorItem.swift in Sources */,
-				E2FE3FAC2862A304004F4626 /* Tag+Extension.swift in Sources */,
-				E29E86D32874D73F009A07EB /* RecipeForm.swift in Sources */,
-				E2B481D528653DC100FBA847 /* TagPicker.swift in Sources */,
-				E215CF2A28596AFB00198F26 /* MainTabView.swift in Sources */,
-				E2BC211D287FB1560000CEC1 /* FlavorRecordPicker.swift in Sources */,
-				E2AC03572863F9470005FFD2 /* CoffeeBean+Extension.swift in Sources */,
-				E2E6BC3128860C250049C490 /* Shape+Extension.swift in Sources */,
-				E2FE3FAE2862A304004F4626 /* AppEnvironment.swift in Sources */,
-				E29BE5E12863AD9E00628801 /* NSManagedObjectContext+Extension.swift in Sources */,
-				E21F3FC1286F396900BFB481 /* CoffeeBeanList.swift in Sources */,
-				E2B481D628653DC900FBA847 /* TagItem.swift in Sources */,
-				E2E6BC3528860C610049C490 /* CornerRadiusStyle.swift in Sources */,
-				E2B3DEAD287CF84100DCCBAB /* DiaryList.swift in Sources */,
-				E2B3DEB7287E103D00DCCBAB /* Date+Extension.swift in Sources */,
-				E2B3DEB3287D3A7500DCCBAB /* RecipePicker.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		E2ABD2A5288FD1C000CBFCFF /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E2ABD2A4288FD1C000CBFCFF /* ko */,
+				E2ABD2A6288FD1C400CBFCFF /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		E2D8D0CA287F686E009A6427 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -634,6 +560,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "PouringDiary--iOS--Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "푸어링노트";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -644,7 +571,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = academy.isaac.PouringDiary;
 				PRODUCT_NAME = PouringDiary;
 				SDKROOT = iphoneos;
@@ -667,6 +594,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "PouringDiary--iOS--Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "푸어링노트";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -677,7 +605,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = academy.isaac.PouringDiary;
 				PRODUCT_NAME = PouringDiary;
 				SDKROOT = iphoneos;
@@ -686,64 +614,6 @@
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		E215CF3528596AFB00198F26 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2B2B4NCTA5;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = academy.isaac.PouringDiary;
-				PRODUCT_NAME = PouringDiary;
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
-			};
-			name = Debug;
-		};
-		E215CF3628596AFB00198F26 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = macOS/macOS.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				CODE_SIGN_STYLE = Automatic;
-				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2B2B4NCTA5;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
-				MACOSX_DEPLOYMENT_TARGET = 12.3;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = academy.isaac.PouringDiary;
-				PRODUCT_NAME = PouringDiary;
-				SDKROOT = macosx;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -768,24 +638,15 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E215CF3428596AFB00198F26 /* Build configuration list for PBXNativeTarget "PouringDiary (macOS)" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				E215CF3528596AFB00198F26 /* Debug */,
-				E215CF3628596AFB00198F26 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		E215CF1228596AFB00198F26 /* PouringDiary.xcdatamodeld */ = {
+		E269FE7A288D2F8D00AF17D3 /* PouringDiary.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				E215CF1328596AFB00198F26 /* Shared.xcdatamodel */,
+				E269FE7B288D2F8D00AF17D3 /* Shared.xcdatamodel */,
 			);
-			currentVersion = E215CF1328596AFB00198F26 /* Shared.xcdatamodel */;
+			currentVersion = E269FE7B288D2F8D00AF17D3 /* Shared.xcdatamodel */;
 			path = PouringDiary.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

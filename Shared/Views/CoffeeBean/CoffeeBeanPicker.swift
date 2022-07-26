@@ -11,7 +11,7 @@ struct CoffeeBeanPicker: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentationMode
 
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.created)])
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.created, order: .reverse)])
     private var beans: FetchedResults<CoffeeBean>
 
     @Binding var selectedBean: CoffeeBean?
@@ -27,6 +27,15 @@ struct CoffeeBeanPicker: View {
                         Text(bean.name ?? "")
                             .font(.body)
                     })
+                }
+            }
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarLeading) {
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Image(systemName: "xmark")
+                    }
                 }
             }
             .navigationTitle("원두 선택")

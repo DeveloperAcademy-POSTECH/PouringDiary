@@ -6,34 +6,22 @@
   
 */
 // MARK: FlavorRecord
-"soupy" = "텁텁하다";
-"harsh" = "질감이 거칠다";
-"overwhelming" = "압도되는";
-"severe" = "severe";
-"intense" = "강렬하다";
-"dry" = "끝이 마른다";
-"bitter" = "쓰다";
-"powdery" = "가루가 느껴진다";
-"empty" = "맛이 빈다";
-"dusty" = "무미건조하다";
-"astringent" = "astringent";
-"dilute" = "묽은";
-"limp" = "limp";
-"fragile" = "fragile";
-"muted" = "muted";
-"faint" = "맛이 희미하다";
-"sparse" = "sparse";
-"flimsy" = "flimsy";
-"watery" = "물맛이 난다";
-"underwhelming" = "underwhelming";
-"bland" = "bland";
-"nutty" = "nuttu";
-"sour" = "시다";
-"salty" = "salty";
-"quick finish" = "향이 짧다";
-"dull" = "dull";
-"beefy" = "beffy";
-"bulky" = "bulky";
+"강한" = "진한";
+"쓴맛" = "한약같은";
+"텁텁한" = "텁텁한";
+"드라이한" = "드라이한";
+"우디한" = "우디한";
+"떫은" = "떫은";
+"물맛" = "물맛";
+"약한" = "약한";
+"묽은" = "묽은";
+"밋밋한" = "밋밋한";
+"너티한" = "너티한";
+"신맛" = "신맛";
+"날카로운" = "날카로운";
+"짠맛" = "짠맛";
+"자극적인" = "자극적인";
+
 
 // MARK: Form
 "등록" = "등록";
@@ -98,6 +86,10 @@
 "태그 선택" = "태그 선택";
 "장비 선택" = "장비 선택";
 "태그를 검색해보세요" = "태그를 검색해보세요";
+"프리셋" ="프리셋";
+"내 태그" ="내 태그";
+"준비된 태그를 다운로드 해보세요" ="준비된 태그를 다운로드 해보세요";
+"프리셋 태그와 함께 나만의 태그를 구성해보세요" ="프리셋 태그와 함께 나만의 태그를 구성해보세요";
 
 // MARK: TagForm
 "태그 이름을 입력해주세요" = "태그 이름을 입력해주세요";

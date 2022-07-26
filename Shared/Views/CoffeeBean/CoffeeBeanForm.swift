@@ -35,16 +35,24 @@ struct CoffeeBeanForm: View {
     }
 
     /// 초기화에 수령한 ObjectID를 사용해서 태그를 수령합니다
+    @MainActor
     @Sendable
     private func prepare() async {
-        DispatchQueue.main.asyncAfter(deadline: .now().advanced(by: .milliseconds(50))) {
-            guard let objectId = beanId ,
-                  let editing = CoffeeBean.get(
-                    by: objectId,
-                    context: viewContext
-                  ) else { return }
-            self.selectedTags = editing.tagArray
-            self.input = editing.input
+        guard let objectId = beanId ,
+              let editing = CoffeeBean.get(
+                by: objectId,
+                context: viewContext
+              ) else { return }
+        self.selectedTags = editing.tagArray
+        self.input = editing.input
+
+        // TODO: TextEditor 버그 임시 해결 방법(추후 수정 필요)
+        DispatchQueue.main.async {
+            if self.input.information.last != "\n" {
+                self.input.information.append(contentsOf: "\n")
+            } else {
+                self.input.information.removeLast()
+            }
         }
     }
 

@@ -6,54 +6,74 @@
 //
 
 import CoreData
+import CloudKit
 
 struct PersistenceController {
-    static let keyForPreset: String = "KEY_FOR_PRESET_DATA"
     static let shared: PersistenceController = {
         let result = PersistenceController()
-        generateTagPreset(context: result.container.viewContext)
         return result
     }()
 
     static var preview: PersistenceController = {
         let result = PersistenceController(inMemory: true)
-        generateTagPreset(context: result.container.viewContext)
         return result
     }()
 
     let container: NSPersistentCloudKitContainer
 
-    static func generateTagPreset(context: NSManagedObjectContext) {
-        let defaults = UserDefaults.standard
-
-        if defaults.value(forKey: self.keyForPreset) == nil {
-            for tagInput in Tag.presets {
-                Tag.register(input: tagInput, context: context)
-            }
-            defaults.set(true, forKey: self.keyForPreset)
-        }
-    }
-
     init(inMemory: Bool = false) {
         container = NSPersistentCloudKitContainer(name: "PouringDiary")
-        if inMemory {
-            container.persistentStoreDescriptions.first!.url = URL(fileURLWithPath: "/dev/null")
+
+        guard let description = container.persistentStoreDescriptions.first else {
+            fatalError("Unresolved error with loading persistentStoreDescriptions")
         }
-        container.loadPersistentStores(completionHandler: { (_, error) in
+
+        // MARK: Public Database
+        let publicStoreUrl = description.url!
+            .deletingLastPathComponent()
+            .appendingPathComponent("PouringDiary-public.sqlite")
+        let identifier = description.cloudKitContainerOptions!.containerIdentifier
+
+        let publicDescription = NSPersistentStoreDescription(url: publicStoreUrl)
+        publicDescription.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+        publicDescription.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
+
+        let publicOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: identifier)
+        publicOptions.databaseScope = .public
+        publicDescription.cloudKitContainerOptions = publicOptions
+        publicDescription.configuration = "Public"
+
+        // MARK: Private Database
+        let privateStoreUrl = description.url!
+            .deletingLastPathComponent()
+            .appendingPathComponent("PouringDiary-private.sqlite")
+        let privateIdentifier = description.cloudKitContainerOptions!.containerIdentifier
+
+        let privateDescription = NSPersistentStoreDescription(url: privateStoreUrl)
+        privateDescription.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+        privateDescription.setOption(true as NSNumber, forKey: NSPersistentStoreRemoteChangeNotificationPostOptionKey)
+
+        let privateOptions = NSPersistentCloudKitContainerOptions(containerIdentifier: privateIdentifier)
+        privateOptions.databaseScope = .private
+        privateDescription.cloudKitContainerOptions = privateOptions
+        privateDescription.configuration = "Private"
+
+        container.persistentStoreDescriptions = [
+            publicDescription,
+            privateDescription
+        ]
+
+        if inMemory {
+            _ = container.persistentStoreDescriptions
+                .map { $0.url = URL(fileURLWithPath: "/dev/null") }
+        }
+        container.viewContext.automaticallyMergesChangesFromParent = true
+
+        container.loadPersistentStores(completionHandler: {(_, error) in
             if let error = error as NSError? {
                 // TODO: CoreData 초기화 실패 시 에러 핸들링. 배포 직전에 처리할 것. 개발 도중에는 fatalError를 위해서 남겨둠
-                /*
-                 Typical reasons for an error here include:
-                 * The parent directory does not exist, cannot be created, or disallows writing.
-                 * The persistent store is not accessible, due to permissions or
-                 * data protection when the device is locked.
-                 * The device is out of space.
-                 * The store could not be migrated to the current model version.
-                 Check the error message to determine what the actual problem was.
-                 */
                 fatalError("Unresolved error \(error), \(error.userInfo)")
             }
         })
-        container.viewContext.automaticallyMergesChangesFromParent = true
     }
 }

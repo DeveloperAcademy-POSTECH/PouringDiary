@@ -10,7 +10,7 @@ import SwiftUI
 struct DiaryList: View {
     @Environment(\.managedObjectContext) private var viewContext
 
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.created, order: SortOrder.reverse)])
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.created, order: .reverse)])
     private var diaries: FetchedResults<Diary>
 
     @State private var detailViewShow: Bool = false

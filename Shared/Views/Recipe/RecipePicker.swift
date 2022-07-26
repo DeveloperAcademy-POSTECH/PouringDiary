@@ -11,7 +11,7 @@ struct RecipePicker: View {
     @Environment(\.managedObjectContext) private var viewContext
     @Environment(\.presentationMode) var presentationMode
 
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.created)])
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.created, order: .reverse)])
     private var recipes: FetchedResults<Recipe>
 
     @Binding var selectedRecipe: Recipe?
@@ -27,6 +27,15 @@ struct RecipePicker: View {
                         Text(recipe.title ?? "")
                             .font(.body)
                     })
+                }
+            }
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarLeading) {
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Image(systemName: "xmark")
+                    }
                 }
             }
             .navigationTitle("레시피 선택")

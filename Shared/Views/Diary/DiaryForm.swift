@@ -14,10 +14,7 @@ struct DiaryForm: View {
     @Environment(\.presentationMode) private var presentationMode
 
     // FetchedRequest
-    @FetchRequest(
-        sortDescriptors: [SortDescriptor(\.created)],
-        predicate: NSPredicate(format: "id == %@", UUID().uuidString)
-    )
+    @FetchRequest
     private var sameSourceDiaries: FetchedResults<Diary>
 
     // Property
@@ -42,16 +39,19 @@ struct DiaryForm: View {
     // Initializer
     init() {
         self.objectId = nil
+        self._sameSourceDiaries = FetchRequest(fetchRequest: Diary.requestSameSourceDiary())
     }
 
     init(recipe: Recipe? = nil, bean: CoffeeBean? = nil) {
         self.objectId = nil
         self._selectedRecipe = State(initialValue: recipe)
         self._selectedCoffeeBean = State(initialValue: bean)
+        self._sameSourceDiaries = FetchRequest(fetchRequest: Diary.requestSameSourceDiary())
     }
 
     init(with diaryId: NSManagedObjectID) {
         self.objectId = diaryId
+        self._sameSourceDiaries = FetchRequest(fetchRequest: Diary.requestSameSourceDiary())
     }
 
     var body: some View {
@@ -129,9 +129,12 @@ extension DiaryForm {
                         .font(.headline)
                         .padding(.vertical, 4)
                     Divider()
+                    // Text 짤림현상이 String 끝에 개행문자가 있으면 해결됩니다
+                    // 왜인지 잘 모르겠습니다
                     Text(recipe.steps ?? "")
                         .font(.body)
                         .padding(.vertical, 4)
+                        .fixedSize(horizontal: false, vertical: true)
                     Divider()
                     VStack(alignment: .leading) {
                         Text("사용 장비")
@@ -317,22 +320,30 @@ extension DiaryForm {
             let recipe = selectedRecipe,
             let bean = selectedCoffeeBean
         else { return }
-        sameSourceDiaries.nsPredicate = NSPredicate(
-            format: "recipe == %@ AND coffeeBean == %@",
-            recipe,
-            bean
-        )
+        let newRequest = Diary.requestSameSourceDiary(recipe: recipe, bean: bean)
+        sameSourceDiaries.nsPredicate = newRequest.predicate
+        sameSourceDiaries.sortDescriptors = newRequest
+            .sortDescriptors?
+            .map { SortDescriptor<Diary>($0, comparing: Diary.self)! } ?? []
+
     }
 
+    @MainActor
     @Sendable
     private func prepare() {
-        DispatchQueue.main.asyncAfter(deadline: .now().advanced(by: .milliseconds(50))) {
-            preventScreenLock = true
-            updateSameSourcedDiary()
-            guard let id = objectId, let diary = Diary.get(by: id, context: viewContext) else { return }
-            selectedRecipe = diary.recipe
-            selectedCoffeeBean = diary.coffeeBean
-            input = diary.input
+        preventScreenLock = true
+        updateSameSourcedDiary()
+        guard let id = objectId, let diary = Diary.get(by: id, context: viewContext) else { return }
+        selectedRecipe = diary.recipe
+        selectedCoffeeBean = diary.coffeeBean
+        input = diary.input
+
+        DispatchQueue.main.async {
+            if input.memo.last != "\n" {
+                input.memo.append(contentsOf: "\n")
+            } else {
+                input.memo.removeLast()
+            }
         }
     }
 }

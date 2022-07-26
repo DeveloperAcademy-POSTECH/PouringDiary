@@ -11,7 +11,7 @@ struct RecipeList: View {
     @Environment(\.managedObjectContext)
     private var viewContext
 
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.created)])
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.created, order: .reverse)])
     private var recipes: FetchedResults<Recipe>
 
     var body: some View {
