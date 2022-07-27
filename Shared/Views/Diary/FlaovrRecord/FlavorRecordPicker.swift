@@ -10,6 +10,9 @@ import SwiftUI
 struct FlavorRecordPicker: View {
     typealias Item = Diary.FlavorRecord
 
+    @Environment(\.presentationMode)
+    private var presentationMode
+
     @Binding var selectedRecords: [Item]
 
     private var filtered: [Item] {
@@ -44,14 +47,14 @@ struct FlavorRecordPicker: View {
                     .padding()
                 }
                 VStack(spacing: 12) {
-                    flavorInformation(
+                    FlavorSummary(
                         sum: extractionSum,
                         count: selectedRecords.count,
                         label: "flavor-record-picker-extraction",
                         minLabel: "flavor-record-picker-extraction-under",
                         maxLabel: "flavor-record-picker-extraction-over"
                     )
-                    flavorInformation(
+                    FlavorSummary(
                         sum: strengthSum,
                         count: selectedRecords.count,
                         label: "flavor-record-picker-strength",
@@ -69,6 +72,15 @@ struct FlavorRecordPicker: View {
                 }
                 .padding(.bottom, 16)
             }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        presentationMode.wrappedValue.dismiss()
+                    } label: {
+                        Image(systemName: "xmark")
+                    }
+                }
+            }
             .navigationTitle("flavor-record-picker-title")
         }
     }
@@ -76,57 +88,6 @@ struct FlavorRecordPicker: View {
 
 // MARK: Views
 extension FlavorRecordPicker {
-    @ViewBuilder
-    private func flavorInformation(
-        sum: Double,
-        count: Int,
-        label: LocalizedStringKey,
-        minLabel: LocalizedStringKey,
-        maxLabel: LocalizedStringKey
-    ) -> some View {
-        VStack(spacing: 0) {
-            Text(label)
-                .font(.subheadline)
-                .padding(.bottom, 4)
-            HStack {
-                Text(minLabel)
-                    .font(.caption2)
-                GeometryReader { proxy in
-                    ZStack(alignment: sum < 0 ? .trailing : .leading) {
-                        Rectangle()
-                            .fill(Color.secondary.opacity(0.2))
-                            .frame(width: proxy.size.width, height: 20)
-                            .cornerRadius(10)
-                        if sum != 0 {
-                            HStack(spacing: 0) {
-                                if sum > 0 {
-                                    Rectangle()
-                                        .fill(Color.clear)
-                                        .frame(width: 0.5*proxy.size.width, height: 20)
-                                }
-                                Rectangle()
-                                    .fill(Color.accentColor.opacity(0.7))
-                                    .frame(width: proxy.size.width*abs(sum)*0.5/Double(count), height: 20)
-                                    .cornerRadius(
-                                        radius: 10,
-                                        corners: sum > 0 ? [.topRight, .bottomRight] : [.topLeft, .bottomLeft]
-                                    )
-                                if sum < 0 {
-                                    Rectangle()
-                                        .fill(Color.clear)
-                                        .frame(width: 0.5*proxy.size.width, height: 20)
-                                }
-                            }
-                        }
-                    }
-                    .frame(width: proxy.size.width, height: 20)
-                }
-                Text(maxLabel)
-                    .font(.caption2)
-            }
-            .frame(height: 20)
-        }
-    }
     @ViewBuilder
     private func recordItem(record: Item) -> some View {
         let selected = selectedRecords.contains(record)

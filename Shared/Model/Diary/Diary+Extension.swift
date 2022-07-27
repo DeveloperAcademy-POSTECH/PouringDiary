@@ -94,6 +94,33 @@ extension Diary {
 
 extension Diary: UUIDObject { }
 
+extension Diary {
+    var extractionSum: Double {
+        return flavorRecordArray
+            .map { $0.extraction }
+            .reduce(0) { $0 + $1 }
+    }
+
+    var strengthSum: Double {
+        return flavorRecordArray
+            .map { $0.strength }
+            .reduce(0) { $0 + $1 }
+    }
+}
+
+extension Diary.Input {
+    var extractionSum: Double {
+        return flavorRecords
+            .map { $0.extraction }
+            .reduce(0) { $0 + $1 }
+    }
+
+    var strengthSum: Double {
+        return flavorRecords
+            .map { $0.strength }
+            .reduce(0) { $0 + $1 }
+    }
+}
 
 #if DEBUG
 extension Diary {
@@ -101,7 +128,7 @@ extension Diary {
         return [
             .init(memo: "그라인더 15클릭으로 진행\n추출 완료까지 2분 12초", flavorRecords: [
                 FlavorRecord(label: "텁텁한", strength: 0.4, extraction: 0.6),
-                FlavorRecord(label: "드라이한", strength: 0.2, extraction: 0.8),
+                FlavorRecord(label: "드라이한", strength: 0.2, extraction: 0.8)
             ])
         ]
     }

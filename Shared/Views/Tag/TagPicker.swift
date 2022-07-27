@@ -18,7 +18,6 @@ struct TagPicker: View {
     @FetchRequest
     private var allTags: FetchedResults<Tag>
 
-
     @State var searchQuery: String = ""
     @State var selectedColor: Tag.Color?
     @State var isTagFormShow: Bool = false

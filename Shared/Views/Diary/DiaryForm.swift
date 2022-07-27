@@ -228,18 +228,21 @@ extension DiaryForm {
 
     @ViewBuilder
     private var previousMemo: some View {
-        List {
-            ForEach(diaries) { diary in
-                VStack(alignment: .leading) {
-                    HStack {
-                        Spacer()
-                        Text(diary.created?.monthAndDate ?? "")
-                            .font(.caption2)
-                    }
-                    Text(diary.memo ?? "")
-                        .font(.body)
+        NavigationView {
+            List {
+                ForEach(diaries) { diary in
+                    DiaryMemoCard(diary: diary)
                 }
-                .padding()
+            }
+            .navigationTitle("이전 메모")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        memoListShow.toggle()
+                    } label: {
+                        Image(systemName: "xmark")
+                    }
+                }
             }
         }
     }
@@ -255,6 +258,22 @@ extension DiaryForm {
                         .font(.caption)
                 })
             } else {
+                VStack(spacing: 12) {
+                    FlavorSummary(
+                        sum: input.extractionSum,
+                        count: input.flavorRecords.count,
+                        label: "flavor-record-picker-extraction",
+                        minLabel: "flavor-record-picker-extraction-under",
+                        maxLabel: "flavor-record-picker-extraction-over"
+                    )
+                    FlavorSummary(
+                        sum: input.strengthSum,
+                        count: input.flavorRecords.count,
+                        label: "flavor-record-picker-strength",
+                        minLabel: "flavor-record-picker-strength-under",
+                        maxLabel: "flavor-record-picker-strength-over"
+                    )
+                }
                 ScrollView(.horizontal) {
                     HStack {
                         ForEach(input.flavorRecords, id: \.label) { record in

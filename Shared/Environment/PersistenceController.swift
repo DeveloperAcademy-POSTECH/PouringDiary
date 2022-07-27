@@ -71,7 +71,6 @@ struct PersistenceController {
                 }
 
             _ = Tag.presets.map { Tag.register(input: $0, context: container.viewContext) }
-            
         }
         container.viewContext.automaticallyMergesChangesFromParent = true
 

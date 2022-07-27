@@ -153,7 +153,7 @@ extension Tag {
         .init(content: "EK43", color: .purple, category: .equipment),
 
         .init(content: "하리오 V60", color: .red, category: .equipment),
-        .init(content: "블루보틀", color: .red, category: .equipment),
+        .init(content: "블루보틀", color: .red, category: .equipment)
     ]
 }
 #endif

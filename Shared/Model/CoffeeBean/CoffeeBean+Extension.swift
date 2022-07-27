@@ -59,7 +59,7 @@ extension CoffeeBean: UUIDObject { }
 extension CoffeeBean {
     static var presets: [CoffeeBean.Input] {
         return [
-            .init(name: "Flavor Blend", information: "우리동네 맛집 카페 대표 원두", image: nil),
+            .init(name: "Flavor Blend", information: "우리동네 맛집 카페 대표 원두", image: nil)
         ]
     }
 }
