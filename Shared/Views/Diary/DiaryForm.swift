@@ -129,8 +129,6 @@ extension DiaryForm {
                         .font(.headline)
                         .padding(.vertical, 4)
                     Divider()
-                    // Text 짤림현상이 String 끝에 개행문자가 있으면 해결됩니다
-                    // 왜인지 잘 모르겠습니다
                     Text(recipe.steps ?? "")
                         .font(.body)
                         .padding(.vertical, 4)
@@ -303,7 +301,7 @@ extension DiaryForm {
     }
 
     private func toolbar() -> some ToolbarContent {
-        ToolbarItem(placement: .automatic) {
+        ToolbarItem(placement: .navigationBarTrailing) {
             HStack {
                 Button(action: {
                     guard let bean = selectedCoffeeBean, let recipe = selectedRecipe else { return }
@@ -357,7 +355,7 @@ extension DiaryForm {
         selectedCoffeeBean = diary.coffeeBean
         input = diary.input
 
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now().advanced(by: .milliseconds(50))) {
             if input.memo.last != "\n" {
                 input.memo.append(contentsOf: "\n")
             } else {
