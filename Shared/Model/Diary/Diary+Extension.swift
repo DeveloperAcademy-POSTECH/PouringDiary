@@ -84,7 +84,6 @@ extension Diary {
                 bean
             )
         } else {
-
             request.predicate = NSPredicate(format: "id == %@", UUID().uuidString)
         }
         request.sortDescriptors = [NSSortDescriptor(SortDescriptor<Diary>(\.created, order: .reverse))]

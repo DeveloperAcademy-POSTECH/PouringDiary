@@ -13,8 +13,8 @@
 		E215CF2D28596AFB00198F26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E215CF1728596AFB00198F26 /* Assets.xcassets */; };
 		E21CBB4D2859CC24008CEDC3 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */; };
 		E21F3FC0286F396900BFB481 /* CoffeeBeanList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F3FBF286F396900BFB481 /* CoffeeBeanList.swift */; };
-		E23CB3AD2897A0590001BB7B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E23CB3AC2897A0590001BB7B /* CloudKit.framework */; };
 		E246D6C1289211280034AEFA /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E246D6C0289211280034AEFA /* Color+Extension.swift */; };
+		E2492A2F28927AE30060E51C /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2492A2E28927AE30060E51C /* PhotoPicker.swift */; };
 		E26960B8286502FC00862F8E /* CoffeeBeanForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960B7286502FC00862F8E /* CoffeeBeanForm.swift */; };
 		E26960BB2865156E00862F8E /* TagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960BA2865156E00862F8E /* TagItem.swift */; };
 		E269FE7C288D2F8D00AF17D3 /* PouringDiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E269FE7A288D2F8D00AF17D3 /* PouringDiary.xcdatamodeld */; };
@@ -54,8 +54,8 @@
 		E215CF2428596AFB00198F26 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		E21F3FBF286F396900BFB481 /* CoffeeBeanList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanList.swift; sourceTree = "<group>"; };
-		E23CB3AC2897A0590001BB7B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.5.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		E246D6C0289211280034AEFA /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
+		E2492A2E28927AE30060E51C /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		E26960B7286502FC00862F8E /* CoffeeBeanForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanForm.swift; sourceTree = "<group>"; };
 		E26960BA2865156E00862F8E /* TagItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagItem.swift; sourceTree = "<group>"; };
 		E269FE7B288D2F8D00AF17D3 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
@@ -95,7 +95,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E23CB3AD2897A0590001BB7B /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,7 +109,6 @@
 				E215CF1128596AFB00198F26 /* Shared */,
 				E215CF2328596AFB00198F26 /* macOS */,
 				E215CF1D28596AFB00198F26 /* Products */,
-				E23CB3AB2897A0590001BB7B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,12 +161,12 @@
 			path = Tag;
 			sourceTree = "<group>";
 		};
-		E23CB3AB2897A0590001BB7B /* Frameworks */ = {
+		E2492A2D28927AD80060E51C /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				E23CB3AC2897A0590001BB7B /* CloudKit.framework */,
+				E2492A2E28927AE30060E51C /* PhotoPicker.swift */,
 			);
-			name = Frameworks;
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		E26960B5286502D100862F8E /* CoffeeBean */ = {
@@ -271,6 +269,7 @@
 		E2FE3FA92862A035004F4626 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E2492A2D28927AD80060E51C /* Utils */,
 				E2E6BC3228860C3D0049C490 /* Modifiers */,
 				E2B3DEAA287CF81400DCCBAB /* Diary */,
 				E2FF0542287425DB00C737EE /* Recipe */,
@@ -425,6 +424,7 @@
 				E2FF0544287425EE00C737EE /* RecipeList.swift in Sources */,
 				E2ABD2A82890C3D900CBFCFF /* FlavorSummary.swift in Sources */,
 				E2BC211C287FB1560000CEC1 /* FlavorRecordPicker.swift in Sources */,
+				E2492A2F28927AE30060E51C /* PhotoPicker.swift in Sources */,
 				E246D6C1289211280034AEFA /* Color+Extension.swift in Sources */,
 				E2FE3FB32862BC6F004F4626 /* NSManagedObjectContext+Extension.swift in Sources */,
 				E2B3DEB2287D3A7500DCCBAB /* RecipePicker.swift in Sources */,
@@ -579,7 +579,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "PouringDiary (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2B2B4NCTA5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -595,7 +595,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.2;
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = academy.isaac.PouringDiary.debug;
 				PRODUCT_NAME = PouringDiary;
 				SDKROOT = iphoneos;
@@ -613,7 +613,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "PouringDiary (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2B2B4NCTA5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -629,7 +629,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.2;
+				MARKETING_VERSION = 0.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = academy.isaac.PouringDiary;
 				PRODUCT_NAME = PouringDiary;
 				SDKROOT = iphoneos;
