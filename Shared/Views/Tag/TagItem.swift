@@ -23,6 +23,6 @@ struct TagItem: View {
 
 struct TagItem_Previews: PreviewProvider {
     static var previews: some View {
-        return TagItem(tag: Tag.Input(content: "샘플 태그", color: .red))
+        return TagItem(tag: Tag.Input(content: "샘플 태그", color: .tag1))
     }
 }

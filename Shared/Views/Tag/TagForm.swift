@@ -20,7 +20,7 @@ struct TagForm: View {
         self._input = State(
             initialValue: Tag.Input(
                 content: "",
-                color: .gray,
+                color: .tag1,
                 category: category
             )
         )

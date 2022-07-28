@@ -39,27 +39,31 @@ extension Tag {
     /// 태그의 색상 리스트를 관리합니다.
     /// Color의 rawValue를 활용해서 CoreData에 저장합니다
     public enum Color: Int, CaseIterable {
-        case red
-        case gray
-        case green
-        case pink
-        case blue
-        case purple
+        case tag1
+        case tag2
+        case tag3
+        case tag4
+        case tag5
+        case tag6
+        case tag7
 
+        // https://etsy.me/3ONBGOs 참조하여 컬러셋 구성
         var color: SUColor {
             switch self {
-            case .red:
-                return .red
-            case .gray:
-                return .gray
-            case .green:
-                return .green
-            case .pink:
-                return .pink
-            case .blue:
-                return .blue
-            case .purple:
-                return .purple
+            case .tag1:
+                return SUColor(hex: 0xF2D8BE)
+            case .tag2:
+                return SUColor(hex: 0xD3CABF)
+            case .tag3:
+                return SUColor(hex: 0xE5CBC2)
+            case .tag4:
+                return SUColor(hex: 0xD6AA8B)
+            case .tag5:
+                return SUColor(hex: 0xA97452)
+            case .tag6:
+                return SUColor(hex: 0x919D95)
+            case .tag7:
+                return SUColor(hex: 0x46536C)
             }
         }
     }
@@ -73,7 +77,7 @@ extension Tag {
     public var input: Tag.Input {
         return Tag.Input(
             content: self.content ?? "",
-            color: Color(rawValue: Int(self.color)) ?? .blue,
+            color: Color(rawValue: Int(self.color)) ?? .tag1,
             category: Category(from: self.category)
         )
     }
@@ -136,24 +140,24 @@ enum TagError: Error {
 #if DEBUG
 extension Tag {
     static var presets: [Tag.Input] = [
-        .init(content: "에티오피아", color: .blue),
-        .init(content: "브라질", color: .blue),
-        .init(content: "과테말라", color: .blue),
-        .init(content: "캐냐", color: .blue),
+        .init(content: "에티오피아", color: .tag1),
+        .init(content: "브라질", color: .tag1),
+        .init(content: "과테말라", color: .tag1),
+        .init(content: "캐냐", color: .tag1),
 
-        .init(content: "Natural", color: .pink),
-        .init(content: "Washed", color: .pink),
+        .init(content: "Natural", color: .tag2),
+        .init(content: "Washed", color: .tag2),
 
-        .init(content: "강배전", color: .gray),
-        .init(content: "중배전", color: .gray),
-        .init(content: "약배전", color: .gray),
+        .init(content: "강배전", color: .tag3),
+        .init(content: "중배전", color: .tag3),
+        .init(content: "약배전", color: .tag3),
 
-        .init(content: "코만단테", color: .purple, category: .equipment),
-        .init(content: "바라짜 앤코", color: .purple, category: .equipment),
-        .init(content: "EK43", color: .purple, category: .equipment),
+        .init(content: "코만단테", color: .tag4, category: .equipment),
+        .init(content: "바라짜 앤코", color: .tag4, category: .equipment),
+        .init(content: "EK43", color: .tag4, category: .equipment),
 
-        .init(content: "하리오 V60", color: .red, category: .equipment),
-        .init(content: "블루보틀", color: .red, category: .equipment)
+        .init(content: "하리오 V60", color: .tag5, category: .equipment),
+        .init(content: "블루보틀", color: .tag5, category: .equipment)
     ]
 }
 #endif

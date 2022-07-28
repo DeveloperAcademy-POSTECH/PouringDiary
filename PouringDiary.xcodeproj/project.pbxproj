@@ -13,6 +13,7 @@
 		E215CF2D28596AFB00198F26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E215CF1728596AFB00198F26 /* Assets.xcassets */; };
 		E21CBB4D2859CC24008CEDC3 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */; };
 		E21F3FC0286F396900BFB481 /* CoffeeBeanList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F3FBF286F396900BFB481 /* CoffeeBeanList.swift */; };
+		E246D6C1289211280034AEFA /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E246D6C0289211280034AEFA /* Color+Extension.swift */; };
 		E26960B8286502FC00862F8E /* CoffeeBeanForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960B7286502FC00862F8E /* CoffeeBeanForm.swift */; };
 		E26960BB2865156E00862F8E /* TagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960BA2865156E00862F8E /* TagItem.swift */; };
 		E269FE7C288D2F8D00AF17D3 /* PouringDiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E269FE7A288D2F8D00AF17D3 /* PouringDiary.xcdatamodeld */; };
@@ -52,6 +53,7 @@
 		E215CF2428596AFB00198F26 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		E21F3FBF286F396900BFB481 /* CoffeeBeanList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanList.swift; sourceTree = "<group>"; };
+		E246D6C0289211280034AEFA /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		E26960B7286502FC00862F8E /* CoffeeBeanForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanForm.swift; sourceTree = "<group>"; };
 		E26960BA2865156E00862F8E /* TagItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagItem.swift; sourceTree = "<group>"; };
 		E269FE7B288D2F8D00AF17D3 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 			children = (
 				E2B3DEB5287E103D00DCCBAB /* Date+Extension.swift */,
 				E2E6BC2F28860C250049C490 /* Shape+Extension.swift */,
+				E246D6C0289211280034AEFA /* Color+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -410,6 +413,7 @@
 				E2FF0544287425EE00C737EE /* RecipeList.swift in Sources */,
 				E2ABD2A82890C3D900CBFCFF /* FlavorSummary.swift in Sources */,
 				E2BC211C287FB1560000CEC1 /* FlavorRecordPicker.swift in Sources */,
+				E246D6C1289211280034AEFA /* Color+Extension.swift in Sources */,
 				E2FE3FB32862BC6F004F4626 /* NSManagedObjectContext+Extension.swift in Sources */,
 				E2B3DEB2287D3A7500DCCBAB /* RecipePicker.swift in Sources */,
 				E29D02562877CC7F00A84A5D /* CoffeeBeanPicker.swift in Sources */,
@@ -559,11 +563,11 @@
 		E215CF3228596AFB00198F26 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIconDebug;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "PouringDiary (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2B2B4NCTA5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -580,7 +584,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 0.0.1;
-				PRODUCT_BUNDLE_IDENTIFIER = academy.isaac.PouringDiary;
+				PRODUCT_BUNDLE_IDENTIFIER = academy.isaac.PouringDiary.debug;
 				PRODUCT_NAME = PouringDiary;
 				SDKROOT = iphoneos;
 				SUPPORTS_MACCATALYST = YES;
@@ -597,7 +601,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "PouringDiary (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_TEAM = 2B2B4NCTA5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
