@@ -12,15 +12,19 @@ struct MainTabView: View {
         TabView {
             DiaryList()
                 .tabItem {
-                    Label("일지", systemImage: "book.closed")
+                    Label("main-tab-journal", systemImage: "book.closed")
                 }
             RecipeList()
                 .tabItem {
-                    Label("레시피", systemImage: "paperclip")
+                    Label("main-tab-recipe", systemImage: "paperclip")
                 }
             CoffeeBeanList()
                 .tabItem {
-                    Label("원두", systemImage: "cup.and.saucer")
+                    Label("main-tab-bean", systemImage: "cup.and.saucer")
+                }
+            SharePostList()
+                .tabItem {
+                    Label("main-tab-post", systemImage: "person.2")
                 }
         }
     }

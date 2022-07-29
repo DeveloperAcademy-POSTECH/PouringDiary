@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="20086" systemVersion="21F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CoffeeBean" representedClassName=".CoffeeBean" syncable="YES" codeGenerationType="class">
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="information" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="diaries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Diary" inverseName="coffeeBean" inverseEntity="Diary"/>
+        <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="beans" inverseEntity="Tag"/>
+    </entity>
+    <entity name="Diary" representedClassName="Diary" syncable="YES" codeGenerationType="class">
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="flavorRecords" optional="YES" attributeType="Binary"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="memo" optional="YES" attributeType="String"/>
+        <relationship name="coffeeBean" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoffeeBean" inverseName="diaries" inverseEntity="CoffeeBean"/>
+        <relationship name="recipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="diaries" inverseEntity="Recipe"/>
+    </entity>
+    <entity name="ImageData" representedClassName="ImageData" syncable="YES" codeGenerationType="class">
+        <attribute name="data" optional="YES" attributeType="Binary"/>
+        <relationship name="overlays" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SharePost" inverseName="overlayImage" inverseEntity="SharePost"/>
+        <relationship name="sources" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SharePost" inverseName="sourceImage" inverseEntity="SharePost"/>
+    </entity>
+    <entity name="PublicTag" representedClassName="PublicTag" syncable="YES" codeGenerationType="class">
+        <attribute name="category" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="color" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+    </entity>
+    <entity name="Recipe" representedClassName="Recipe" syncable="YES" codeGenerationType="class">
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="information" optional="YES" attributeType="String"/>
+        <attribute name="steps" optional="YES" attributeType="String"/>
+        <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="diaries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Diary" inverseName="recipe" inverseEntity="Diary"/>
+        <relationship name="equipmentTags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="equipments" inverseEntity="Tag"/>
+        <relationship name="recipeTags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="recipes" inverseEntity="Tag"/>
+    </entity>
+    <entity name="SharePost" representedClassName="SharePost" syncable="YES" codeGenerationType="class">
+        <attribute name="created" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="thumbnail" optional="YES" attributeType="Binary"/>
+        <relationship name="overlayImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImageData" inverseName="overlays" inverseEntity="ImageData"/>
+        <relationship name="sourceImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImageData" inverseName="sources" inverseEntity="ImageData"/>
+    </entity>
+    <entity name="Tag" representedClassName=".Tag" syncable="YES" codeGenerationType="class">
+        <attribute name="category" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="color" optional="YES" attributeType="Integer 16" valueTransformerName="NSSecureUnarchiveFromDataTransformerName" defaultValueString="0" usesScalarValueType="YES" customClassName=".UIColor"/>
+        <attribute name="content" optional="YES" attributeType="String"/>
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <relationship name="beans" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CoffeeBean" inverseName="tags" inverseEntity="CoffeeBean"/>
+        <relationship name="equipments" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipe" inverseName="equipmentTags" inverseEntity="Recipe"/>
+        <relationship name="recipes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Recipe" inverseName="recipeTags" inverseEntity="Recipe"/>
+    </entity>
+    <configuration name="Private" usedWithCloudKit="YES">
+        <memberEntity name="CoffeeBean"/>
+        <memberEntity name="Diary"/>
+        <memberEntity name="Recipe"/>
+        <memberEntity name="Tag"/>
+    </configuration>
+    <configuration name="Public" usedWithCloudKit="YES">
+        <memberEntity name="PublicTag"/>
+    </configuration>
+    <elements>
+        <element name="CoffeeBean" positionX="-78.63671875" positionY="18.19140625" width="128" height="14"/>
+        <element name="Diary" positionX="-256.48046875" positionY="-28.765625" width="128" height="119"/>
+        <element name="ImageData" positionX="-195.609375" positionY="113.75390625" width="128" height="88"/>
+        <element name="PublicTag" positionX="230.30859375" positionY="-64.4375" width="128" height="104"/>
+        <element name="Recipe" positionX="114.0703125" positionY="-84.03515625" width="128" height="14"/>
+        <element name="SharePost" positionX="270.8515625" positionY="124.40234375" width="128" height="118"/>
+        <element name="Tag" positionX="-60.92578125" positionY="-139.19140625" width="128" height="149"/>
+    </elements>
+</model>

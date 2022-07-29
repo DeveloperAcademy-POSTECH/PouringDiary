@@ -13,6 +13,9 @@
 		E215CF2D28596AFB00198F26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E215CF1728596AFB00198F26 /* Assets.xcassets */; };
 		E21CBB4D2859CC24008CEDC3 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */; };
 		E21F3FC0286F396900BFB481 /* CoffeeBeanList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F3FBF286F396900BFB481 /* CoffeeBeanList.swift */; };
+		E23CB3A428937C700001BB7B /* SharedPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23CB3A328937C700001BB7B /* SharedPost.swift */; };
+		E23CB3A728937EC90001BB7B /* SharePostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23CB3A628937EC90001BB7B /* SharePostList.swift */; };
+		E23CB3AA2893BEA60001BB7B /* MappingModel_v0.1.0.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = E23CB3A92893BEA60001BB7B /* MappingModel_v0.1.0.xcmappingmodel */; };
 		E246D6C1289211280034AEFA /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E246D6C0289211280034AEFA /* Color+Extension.swift */; };
 		E2492A2F28927AE30060E51C /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2492A2E28927AE30060E51C /* PhotoPicker.swift */; };
 		E26960B8286502FC00862F8E /* CoffeeBeanForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960B7286502FC00862F8E /* CoffeeBeanForm.swift */; };
@@ -54,6 +57,10 @@
 		E215CF2428596AFB00198F26 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		E21F3FBF286F396900BFB481 /* CoffeeBeanList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanList.swift; sourceTree = "<group>"; };
+		E23CB3A328937C700001BB7B /* SharedPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPost.swift; sourceTree = "<group>"; };
+		E23CB3A628937EC90001BB7B /* SharePostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePostList.swift; sourceTree = "<group>"; };
+		E23CB3A82893BE180001BB7B /* PouringNote v0.1.0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PouringNote v0.1.0.xcdatamodel"; sourceTree = "<group>"; };
+		E23CB3A92893BEA60001BB7B /* MappingModel_v0.1.0.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = MappingModel_v0.1.0.xcmappingmodel; sourceTree = "<group>"; };
 		E246D6C0289211280034AEFA /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		E2492A2E28927AE30060E51C /* PhotoPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoPicker.swift; sourceTree = "<group>"; };
 		E26960B7286502FC00862F8E /* CoffeeBeanForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanForm.swift; sourceTree = "<group>"; };
@@ -148,6 +155,7 @@
 				E215CF1628596AFB00198F26 /* PersistenceController.swift */,
 				E2D8D0CA287F686E009A6427 /* Localizable.strings */,
 				E2ABD2A5288FD1C000CBFCFF /* InfoPlist.strings */,
+				E23CB3A92893BEA60001BB7B /* MappingModel_v0.1.0.xcmappingmodel */,
 			);
 			path = Environment;
 			sourceTree = "<group>";
@@ -159,6 +167,22 @@
 				E2D255D6288BD21D00D2932F /* PublicTag+Extension.swift */,
 			);
 			path = Tag;
+			sourceTree = "<group>";
+		};
+		E23CB3A228937C620001BB7B /* SharedPost */ = {
+			isa = PBXGroup;
+			children = (
+				E23CB3A328937C700001BB7B /* SharedPost.swift */,
+			);
+			path = SharedPost;
+			sourceTree = "<group>";
+		};
+		E23CB3A528937EAD0001BB7B /* SharePost */ = {
+			isa = PBXGroup;
+			children = (
+				E23CB3A628937EC90001BB7B /* SharePostList.swift */,
+			);
+			path = SharePost;
 			sourceTree = "<group>";
 		};
 		E2492A2D28927AD80060E51C /* Utils */ = {
@@ -193,6 +217,7 @@
 		E29A754028599F35007379FD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E23CB3A228937C620001BB7B /* SharedPost */,
 				E2B3DEA7287C11EB00DCCBAB /* Diary */,
 				E2FF053E2874152700C737EE /* Recipe */,
 				E2AC03582863F9590005FFD2 /* CoffeeBean */,
@@ -270,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				E2492A2D28927AD80060E51C /* Utils */,
+				E23CB3A528937EAD0001BB7B /* SharePost */,
 				E2E6BC3228860C3D0049C490 /* Modifiers */,
 				E2B3DEAA287CF81400DCCBAB /* Diary */,
 				E2FF0542287425DB00C737EE /* Recipe */,
@@ -427,7 +453,10 @@
 				E2492A2F28927AE30060E51C /* PhotoPicker.swift in Sources */,
 				E246D6C1289211280034AEFA /* Color+Extension.swift in Sources */,
 				E2FE3FB32862BC6F004F4626 /* NSManagedObjectContext+Extension.swift in Sources */,
+				E23CB3A428937C700001BB7B /* SharedPost.swift in Sources */,
+				E23CB3AA2893BEA60001BB7B /* MappingModel_v0.1.0.xcmappingmodel in Sources */,
 				E2B3DEB2287D3A7500DCCBAB /* RecipePicker.swift in Sources */,
+				E23CB3A728937EC90001BB7B /* SharePostList.swift in Sources */,
 				E29D02562877CC7F00A84A5D /* CoffeeBeanPicker.swift in Sources */,
 				E21F3FC0286F396900BFB481 /* CoffeeBeanList.swift in Sources */,
 				E283540428810ABA00BA4A7D /* FlavorItem.swift in Sources */,
@@ -595,7 +624,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = academy.isaac.PouringDiary.debug;
 				PRODUCT_NAME = PouringDiary;
 				SDKROOT = iphoneos;
@@ -629,7 +658,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 0.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = academy.isaac.PouringDiary;
 				PRODUCT_NAME = PouringDiary;
 				SDKROOT = iphoneos;
@@ -668,9 +697,10 @@
 		E269FE7A288D2F8D00AF17D3 /* PouringDiary.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				E23CB3A82893BE180001BB7B /* PouringNote v0.1.0.xcdatamodel */,
 				E269FE7B288D2F8D00AF17D3 /* Shared.xcdatamodel */,
 			);
-			currentVersion = E269FE7B288D2F8D00AF17D3 /* Shared.xcdatamodel */;
+			currentVersion = E23CB3A82893BE180001BB7B /* PouringNote v0.1.0.xcdatamodel */;
 			path = PouringDiary.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
