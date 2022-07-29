@@ -22,6 +22,11 @@
 "짠맛" = "짠맛";
 "자극적인" = "자극적인";
 
+// MARK: Main Tab
+"main-tab-journal" = "일지";
+"main-tab-recipe" = "레시피";
+"main-tab-bean" = "원두";
+"main-tab-post" = "포스팅";
 
 // MARK: Form
 "등록" = "등록";
