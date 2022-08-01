@@ -18,7 +18,7 @@ struct CoffeeBeanList: View {
                 if beans.isEmpty {
                     HStack(alignment: .center) {
                         Spacer()
-                        Text("아직 등록된 원두가 없습니다")
+                        Text("coffee-bean-list-empty")
                             .font(.subheadline)
                             .multilineTextAlignment(.center)
                             .padding()
