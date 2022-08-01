@@ -50,6 +50,12 @@ struct TagPicker: View {
         NavigationView {
             VStack {
                 HStack {
+                    Button {
+                        selectedColor = nil
+                    } label: {
+                        Text("tag-picker-select-all")
+                            .font(.caption2)
+                    }
                     ForEach(Tag.Color.allCases, id: \.rawValue) { color in
                         Button(action: {
                             if selectedColor == color {
