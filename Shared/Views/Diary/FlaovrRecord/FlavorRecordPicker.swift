@@ -97,7 +97,7 @@ extension FlavorRecordPicker {
                     if selected {
                         selectedRecords = selectedRecords.filter { $0 != record }
                     } else {
-                        if selectedRecords.count < 5 {
+                        if selectedRecords.count < 3 {
                             selectedRecords.append(record)
                         }
                     }
