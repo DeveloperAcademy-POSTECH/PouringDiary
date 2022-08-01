@@ -16,21 +16,25 @@ extension Diary {
 
         static var presets: [FlavorRecord] {
             return [
-                FlavorRecord(label: "강한", strength: 0.9, extraction: 0.1),
-                FlavorRecord(label: "쓴맛", strength: 0.6, extraction: 0.3),
-                FlavorRecord(label: "텁텁한", strength: 0.4, extraction: 0.6),
-                FlavorRecord(label: "드라이한", strength: 0.2, extraction: 0.8),
-                FlavorRecord(label: "우디한", strength: -0.2, extraction: 0.8),
-                FlavorRecord(label: "떫은", strength: -0.5, extraction: 0.5),
-                FlavorRecord(label: "물맛", strength: -0.8, extraction: 0.2),
-                FlavorRecord(label: "약한", strength: -1, extraction: 0),
-                FlavorRecord(label: "묽은", strength: -0.8, extraction: -0.2),
-                FlavorRecord(label: "밋밋한", strength: -0.5, extraction: -0.5),
-                FlavorRecord(label: "너티한", strength: -0.3, extraction: -0.7),
-                FlavorRecord(label: "신맛", strength: -0.1, extraction: -0.9),
-                FlavorRecord(label: "날카로운", strength: 0.3, extraction: -0.7),
-                FlavorRecord(label: "짠맛", strength: 0.6, extraction: -0.4),
-                FlavorRecord(label: "자극적인", strength: 9, extraction: -0.1)
+                FlavorRecord(label: "flavor-record-harsh", strength: 0.9, extraction: 0.1),
+                FlavorRecord(label: "flavor-record-overwhelming", strength: 0.7, extraction: 0.3),
+                FlavorRecord(label: "flavor-record-intense", strength: 0.5, extraction: 0.5),
+                FlavorRecord(label: "flavor-record-dry", strength: 0.3, extraction: 0.7),
+                FlavorRecord(label: "flavor-record-bitter", strength: 0.1, extraction: 0.9),
+                FlavorRecord(label: "flavor-record-powdary", strength: -0.1, extraction: 0.9),
+                FlavorRecord(label: "flavor-record-empty", strength: -0.3, extraction: 0.7),
+                FlavorRecord(label: "flavor-record-astringent", strength: -0.5, extraction: 0.5),
+                FlavorRecord(label: "flavor-record-limp", strength: -0.7, extraction: 0.3),
+                FlavorRecord(label: "flavor-record-muted", strength: -0.9, extraction: 0.1),
+                FlavorRecord(label: "flavor-record-faint", strength: -0.9, extraction: -0.1),
+                FlavorRecord(label: "flavor-record-sparse", strength: -0.7, extraction: -0.3),
+                FlavorRecord(label: "flavor-record-watery", strength: -0.5, extraction: -0.5),
+                FlavorRecord(label: "flavor-record-bland", strength: -0.3, extraction: -0.7),
+                FlavorRecord(label: "flavor-record-sour", strength: -0.1, extraction: -0.9),
+                FlavorRecord(label: "flavor-record-salty", strength: 0.1, extraction: -0.9),
+                FlavorRecord(label: "flavor-record-quickfinish", strength: 0.3, extraction: -0.7),
+                FlavorRecord(label: "flavor-record-dull", strength: 0.5, extraction: -0.5),
+                FlavorRecord(label: "flavor-record-soupy", strength: 0.9, extraction: -0.1)
             ]
         }
     }
