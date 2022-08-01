@@ -6,22 +6,26 @@
   
 */
 // MARK: FlavorRecord
-"강한" = "진한";
-"쓴맛" = "한약같은";
-"텁텁한" = "텁텁한";
-"드라이한" = "드라이한";
-"우디한" = "우디한";
-"떫은" = "떫은";
-"물맛" = "물맛";
-"약한" = "약한";
-"묽은" = "묽은";
-"밋밋한" = "밋밋한";
-"너티한" = "너티한";
-"신맛" = "신맛";
-"날카로운" = "날카로운";
-"짠맛" = "짠맛";
-"자극적인" = "자극적인";
 
+"flavor-record-harsh" = "진한";           // 진한 농도
+"flavor-record-overwhelming" = "한약같은";
+"flavor-record-intense" = "맛이 강렬한";
+"flavor-record-dry" = "드라이한";
+"flavor-record-bitter" = "쓴맛";
+"flavor-record-powdary" = "텁텁한";    // 과다 추출
+"flavor-record-empty" = "맛이 비는";
+"flavor-record-astringent" = "우디한";
+"flavor-record-limp" = "떫은";
+"flavor-record-muted" = "muted";        
+"flavor-record-faint" = "묽은";        // 약한 농도
+"flavor-record-sparse" = "향이 부족한";
+"flavor-record-watery" = "물맛이 나는";
+"flavor-record-bland" = "밋밋한";
+"flavor-record-sour" = "신맛";
+"flavor-record-salty" = "짠맛";        // 과소 추출
+"flavor-record-quickfinish" = "빨리 끝나는";
+"flavor-record-dull" = "향이 단조로운";
+"flavor-record-soupy" = "자극적인";
 
 // MARK: Form
 "등록" = "등록";
@@ -90,6 +94,7 @@
 "내 태그" ="내 태그";
 "준비된 태그를 다운로드 해보세요" ="준비된 태그를 다운로드 해보세요";
 "프리셋 태그와 함께 나만의 태그를 구성해보세요" ="프리셋 태그와 함께 나만의 태그를 구성해보세요";
+"tag-picker-select-all" = "전체";
 
 // MARK: TagForm
 "태그 이름을 입력해주세요" = "태그 이름을 입력해주세요";
@@ -111,10 +116,11 @@
 
 // MARK: CoffeeBeanList
 "원두 목록" = "원두 목록";
+"coffee-bean-list-empty" = "아직 등록된 원두가 없습니다";
 
 // MARK: FlavorRecordPicker
 "flavor-record-picker-title" = "약점 찾기";
-"flavor-record-picker-information" = "이번 추출에서 느껴지는 부정적인 향미를 \n5개까지 골라주세요";
+"flavor-record-picker-information" = "이번 추출에서 느껴지는 부정적인 향미를 \n3개까지 골라주세요";
 "flavor-record-picker-extraction" = "추출";
 "flavor-record-picker-strength" = "농도";
 "flavor-record-picker-extraction-under" = "과소";

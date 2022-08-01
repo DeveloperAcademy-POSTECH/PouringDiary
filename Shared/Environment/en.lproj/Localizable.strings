@@ -6,21 +6,26 @@
   
 */
 // MARK: FlavorRecord
-"강한" = "Strong";
-"쓴맛" = "Harsh";
-"텁텁한" = "Svere";
-"드라이한" = "Dry";
-"우디한" = "Woody";
-"떫은" = "Limp";
-"물맛" = "Watery";
-"약한" = "Weak";
-"묽은" = "Faint";
-"밋밋한" = "Inspid";
-"너티한" = "Nutty";
-"신맛" = "Sour";
-"날카로운" = "Sharp";
-"짠맛" = "Salty";
-"자극적인" = "Intense";
+
+"flavor-record-harsh" = "harsh";
+"flavor-record-overwhelming" = "overwhelming";
+"flavor-record-intense" = "intense";
+"flavor-record-dry" = "dry";
+"flavor-record-bitter" = "bitter";
+"flavor-record-powdary" = "powdary";
+"flavor-record-empty" = "empty";
+"flavor-record-astringent" = "astringent";
+"flavor-record-limp" = "limp";
+"flavor-record-muted" = "muted";
+"flavor-record-faint" = "faint";
+"flavor-record-sparse" = "sparse";
+"flavor-record-watery" = "watery";
+"flavor-record-bland" = "bland";
+"flavor-record-sour" = "sour";
+"flavor-record-salty" = "salty";
+"flavor-record-quickfinish" = "quick finish";
+"flavor-record-dull" = "dull";
+"flavor-record-soupy" = "soupy";
 
 // MARK: Form
 "등록" = "Save";
@@ -89,6 +94,7 @@
 "내 태그" = "my tags";
 "준비된 태그를 다운로드 해보세요" = "Download TAG presets";
 "프리셋 태그와 함께 나만의 태그를 구성해보세요" = "Manage your tag with presets";
+"tag-picker-select-all" = "All";
 
 // MARK: TagForm
 "태그 이름을 입력해주세요" = "Tag name";
@@ -110,10 +116,11 @@
 
 // MARK: CoffeeBeanList
 "원두 목록" = "Coffee Beans";
+"coffee-bean-list-empty" = "There is no coffee beans yet";
 
 // MARK: FlavorRecordPicker
 "flavor-record-picker-title" = "Flavors";
-"flavor-record-picker-information" = "Pick unpleasant flavors up to 5";
+"flavor-record-picker-information" = "Pick unpleasant flavors up to 3";
 "flavor-record-picker-extraction" = "extraction";
 "flavor-record-picker-strength" = "strength";
 "flavor-record-picker-extraction-under" = "under";
