@@ -25,7 +25,6 @@ extension Diary {
                 FlavorRecord(label: "flavor-record-empty", strength: -0.3, extraction: 0.7),
                 FlavorRecord(label: "flavor-record-astringent", strength: -0.5, extraction: 0.5),
                 FlavorRecord(label: "flavor-record-limp", strength: -0.7, extraction: 0.3),
-                FlavorRecord(label: "flavor-record-muted", strength: -0.9, extraction: 0.1),
                 FlavorRecord(label: "flavor-record-faint", strength: -0.9, extraction: -0.1),
                 FlavorRecord(label: "flavor-record-sparse", strength: -0.7, extraction: -0.3),
                 FlavorRecord(label: "flavor-record-watery", strength: -0.5, extraction: -0.5),

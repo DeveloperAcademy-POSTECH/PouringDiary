@@ -20,11 +20,25 @@ struct PublicTagList: View {
                 Section("장비") {
                     ForEach(presets.filter { $0.category == Tag.Category.equipment.rawValue }) { tag in
                         TagItem(tag: tag.tagInput)
+                            .contextMenu {
+                                Button {
+                                    tag.saveToPrivate()
+                                } label: {
+                                    Label("저장", systemImage: "square.and.arrow.down")
+                                }
+                            }
                     }
                 }
                 Section("태그") {
                     ForEach(presets.filter { $0.category == Tag.Category.regular.rawValue }) { tag in
                         TagItem(tag: tag.tagInput)
+                            .contextMenu {
+                                Button {
+                                    tag.saveToPrivate()
+                                } label: {
+                                    Label("저장", systemImage: "square.and.arrow.down")
+                                }
+                            }
                     }
                 }
             }

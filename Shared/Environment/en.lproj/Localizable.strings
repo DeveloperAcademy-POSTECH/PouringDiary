@@ -16,7 +16,6 @@
 "flavor-record-empty" = "empty";
 "flavor-record-astringent" = "astringent";
 "flavor-record-limp" = "limp";
-"flavor-record-muted" = "muted";
 "flavor-record-faint" = "faint";
 "flavor-record-sparse" = "sparse";
 "flavor-record-watery" = "watery";
@@ -29,6 +28,7 @@
 
 // MARK: Form
 "등록" = "Save";
+"추가" = "Add";
 "저장" = "Save";
 "수정" = "Edit";
 "수정하기" = "Edit";

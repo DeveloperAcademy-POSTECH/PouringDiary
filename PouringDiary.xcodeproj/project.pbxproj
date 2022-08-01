@@ -13,6 +13,7 @@
 		E215CF2D28596AFB00198F26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E215CF1728596AFB00198F26 /* Assets.xcassets */; };
 		E21CBB4D2859CC24008CEDC3 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */; };
 		E21F3FC0286F396900BFB481 /* CoffeeBeanList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F3FBF286F396900BFB481 /* CoffeeBeanList.swift */; };
+		E23CB3AD2897A0590001BB7B /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E23CB3AC2897A0590001BB7B /* CloudKit.framework */; };
 		E246D6C1289211280034AEFA /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E246D6C0289211280034AEFA /* Color+Extension.swift */; };
 		E26960B8286502FC00862F8E /* CoffeeBeanForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960B7286502FC00862F8E /* CoffeeBeanForm.swift */; };
 		E26960BB2865156E00862F8E /* TagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960BA2865156E00862F8E /* TagItem.swift */; };
@@ -53,6 +54,7 @@
 		E215CF2428596AFB00198F26 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		E21F3FBF286F396900BFB481 /* CoffeeBeanList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanList.swift; sourceTree = "<group>"; };
+		E23CB3AC2897A0590001BB7B /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS15.5.sdk/System/Library/Frameworks/CloudKit.framework; sourceTree = DEVELOPER_DIR; };
 		E246D6C0289211280034AEFA /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
 		E26960B7286502FC00862F8E /* CoffeeBeanForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanForm.swift; sourceTree = "<group>"; };
 		E26960BA2865156E00862F8E /* TagItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagItem.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E23CB3AD2897A0590001BB7B /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,6 +110,7 @@
 				E215CF1128596AFB00198F26 /* Shared */,
 				E215CF2328596AFB00198F26 /* macOS */,
 				E215CF1D28596AFB00198F26 /* Products */,
+				E23CB3AB2897A0590001BB7B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -157,6 +161,14 @@
 				E2D255D6288BD21D00D2932F /* PublicTag+Extension.swift */,
 			);
 			path = Tag;
+			sourceTree = "<group>";
+		};
+		E23CB3AB2897A0590001BB7B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E23CB3AC2897A0590001BB7B /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		E26960B5286502D100862F8E /* CoffeeBean */ = {

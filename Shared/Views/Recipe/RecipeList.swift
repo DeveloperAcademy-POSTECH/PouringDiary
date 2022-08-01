@@ -66,7 +66,7 @@ extension RecipeList {
                 NavigationLink(destination: {
                     RecipeForm()
                 }, label: {
-                    Image(systemName: "plus")
+                    Text("추가")
                 })
             }
         }

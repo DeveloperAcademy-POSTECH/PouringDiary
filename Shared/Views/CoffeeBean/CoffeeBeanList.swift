@@ -67,7 +67,7 @@ extension CoffeeBeanList {
                 NavigationLink(destination: {
                     CoffeeBeanForm()
                 }, label: {
-                    Image(systemName: "plus")
+                    Text("추가")
                 })
             }
         }

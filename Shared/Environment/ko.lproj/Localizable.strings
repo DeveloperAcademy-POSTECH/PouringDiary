@@ -16,19 +16,19 @@
 "flavor-record-empty" = "맛이 비는";
 "flavor-record-astringent" = "우디한";
 "flavor-record-limp" = "떫은";
-"flavor-record-muted" = "muted";        
 "flavor-record-faint" = "묽은";        // 약한 농도
 "flavor-record-sparse" = "향이 부족한";
 "flavor-record-watery" = "물맛이 나는";
 "flavor-record-bland" = "밋밋한";
 "flavor-record-sour" = "신맛";
 "flavor-record-salty" = "짠맛";        // 과소 추출
-"flavor-record-quickfinish" = "빨리 끝나는";
+"flavor-record-quickfinish" = "향이 빠르게 없어짐";
 "flavor-record-dull" = "향이 단조로운";
 "flavor-record-soupy" = "자극적인";
 
 // MARK: Form
 "등록" = "등록";
+"추가" = "추가";
 "저장" = "저장";
 "수정" = "수정";
 "수정하기" = "수정하기";

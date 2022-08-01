@@ -105,7 +105,7 @@ extension DiaryList {
                 NavigationLink(destination: {
                     DiaryForm()
                 }, label: {
-                    Image(systemName: "plus")
+                    Text("추가")
                 })
             }
         }

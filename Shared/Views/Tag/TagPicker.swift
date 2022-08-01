@@ -84,6 +84,9 @@ struct TagPicker: View {
                 }
                 .padding(EdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16))
                 List {
+                    if allTags.isEmpty {
+                        publicTagSection
+                    }
                     Section {
                         ForEach(
                             notSelected(),
@@ -94,6 +97,9 @@ struct TagPicker: View {
                     } header: {
                         Text("내 태그")
                             .font(.caption)
+                    }
+                    if !allTags.isEmpty {
+                        publicTagSection
                     }
                 }
                 .searchable(
@@ -125,7 +131,7 @@ struct TagPicker: View {
                             TagForm(with: $isTagFormShow, category: category)
                         },
                         label: {
-                            Image(systemName: "plus")
+                            Text("추가")
                         }
                     )
                 }
