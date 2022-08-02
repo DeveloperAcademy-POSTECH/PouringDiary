@@ -595,7 +595,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.2;
+				MARKETING_VERSION = 0.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = academy.isaac.PouringDiary.debug;
 				PRODUCT_NAME = PouringDiary;
 				SDKROOT = iphoneos;
@@ -629,7 +629,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.2;
+				MARKETING_VERSION = 0.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = academy.isaac.PouringDiary;
 				PRODUCT_NAME = PouringDiary;
 				SDKROOT = iphoneos;
