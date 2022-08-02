@@ -43,7 +43,7 @@ struct DiaryList: View {
             .toolbar(content: toolbar)
             .navigationTitle("일지 목록")
         }
-        .searchable(text: $searchQuery)
+        .searchable(text: $searchQuery, placement: .navigationBarDrawer(displayMode: .always))
         .onChange(of: searchQuery) { query in
             if !query.isEmpty {
                 if query.first == "#" {
