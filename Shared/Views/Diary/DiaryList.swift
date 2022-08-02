@@ -13,28 +13,52 @@ struct DiaryList: View {
     @FetchRequest(sortDescriptors: [SortDescriptor(\.created, order: .reverse)])
     private var diaries: FetchedResults<Diary>
 
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.color)])
+    private var allTags: FetchedResults<Tag>
+
     @State private var detailViewShow: Bool = false
+    @State private var searchQuery: String = ""
+    @State private var searchTag: Tag?
 
     var body: some View {
         NavigationView {
             List {
-                if diaries.isEmpty {
-                    HStack(alignment: .center) {
-                        Spacer()
-                        Text("아직 작성된 일지가 없습니다.\n원두와 레시피를 등록하신 뒤에\n일지 작성이 가능합니다")
-                            .font(.subheadline)
-                            .multilineTextAlignment(.center)
-                            .padding()
-                        Spacer()
+                if searchQuery.first == "#" {
+                    ScrollView(.horizontal) {
+                        HStack {
+                            ForEach(allTags) { tag in
+                                Button {
+                                    searchTag = tag
+                                } label: {
+                                    TagItem(tag: tag.input)
+                                }
+                            }
+                        }
                     }
                 }
-                ForEach(diaries, id: \.id) { diary in
-                    DiaryCard(diary: diary)
-                }
-                .onDelete(perform: deleteDiaries)
+                emptyResultSection
+                searchTagSection
+                diaryList
             }
             .toolbar(content: toolbar)
             .navigationTitle("일지 목록")
+        }
+        .searchable(text: $searchQuery)
+        .onChange(of: searchQuery) { query in
+            if !query.isEmpty {
+                if query.first == "#" {
+                    let content = query.replacingOccurrences(of: "#", with: "")
+                    allTags.nsPredicate = Tag.searchPredicate(by: content)
+                } else {
+                    diaries.nsPredicate = Diary.searchByText(query: query)
+                }
+            } else {
+                diaries.nsPredicate = Diary.searchByTag(tag: searchTag)
+                allTags.nsPredicate = nil
+            }
+        }
+        .onChange(of: searchTag) { tag in
+            diaries.nsPredicate = Diary.searchByTag(tag: tag)
         }
         .navigationViewStyle(.stack)
     }
@@ -109,6 +133,64 @@ extension DiaryList {
                 })
             }
         }
+    }
+
+    @ViewBuilder
+    private var emptyResultSection: some View {
+        if diaries.isEmpty {
+            if searchTag == nil && searchQuery.isEmpty {
+                HStack(alignment: .center) {
+                    Spacer()
+                    Text("아직 작성된 일지가 없습니다.\n원두와 레시피를 등록하신 뒤에\n일지 작성이 가능합니다")
+                        .font(.subheadline)
+                        .multilineTextAlignment(.center)
+                        .padding()
+                    Spacer()
+                }
+            } else {
+                HStack(alignment: .center) {
+                    Spacer()
+                    Text("검색 결과가 없습니다")
+                        .font(.subheadline)
+                        .multilineTextAlignment(.center)
+                        .padding()
+                    Spacer()
+                }
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var searchTagSection: some View {
+        if let tag = searchTag {
+            Section {
+                HStack {
+                    Button {
+                        searchTag = nil
+                    } label: {
+                        TagItem(tag: tag.input)
+                    }
+                    Spacer()
+                }
+            } header: {
+                Text("다음 태그를 포함")
+                    .font(.caption)
+            } footer: {
+                HStack {
+                    Spacer()
+                    Text("태그 검색은 1개의 태그로만 가능합니다.")
+                        .font(.caption2)
+                }
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var diaryList: some View {
+        ForEach(diaries, id: \.id) { diary in
+            DiaryCard(diary: diary)
+        }
+        .onDelete(perform: deleteDiaries)
     }
 }
 
