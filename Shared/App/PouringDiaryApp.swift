@@ -12,7 +12,7 @@ struct PouringDiaryApp: App {
     var body: some Scene {
         WindowGroup {
             MainTabView()
-                .modifier(AppEnvironment(inMemory: true))
+                .modifier(AppEnvironment())
         }
     }
 }
