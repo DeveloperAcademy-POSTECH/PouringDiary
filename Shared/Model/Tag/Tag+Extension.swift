@@ -128,15 +128,6 @@ extension Tag {
             return NSPredicate(format: "category == %i", category.rawValue)
         }
     }
-
-    static func searchPredicate(by query: String) -> NSPredicate? {
-        let queryTrimmed = query.trimmingCharacters(in: .whitespacesAndNewlines)
-        if !queryTrimmed.isEmpty {
-            return NSPredicate(format: "content CONTAINS %@", queryTrimmed)
-        } else {
-            return nil
-        }
-    }
 }
 
 extension Tag: UUIDObject {}

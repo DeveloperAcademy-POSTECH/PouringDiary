@@ -90,29 +90,6 @@ extension Diary {
         request.sortDescriptors = [NSSortDescriptor(SortDescriptor<Diary>(\.created, order: .reverse))]
         return request
     }
-
-    static func searchByText(query: String) -> NSPredicate {
-        return NSPredicate(
-            format: "coffeeBean.name CONTAINS[cd] %@ OR recipe.title CONTAINS[cd] %@",
-            query,
-            query
-        )
-    }
-
-    static func searchByTag(tag: Tag?) -> NSPredicate? {
-        if let tag = tag {
-            let format = """
-    coffeeBean.tags CONTAINS %@ || recipe.equipmentTags CONTAINS %@ || recipe.recipeTags CONTAINS %@
-    """
-            return NSPredicate(
-                format: format,
-                tag,
-                tag,
-                tag
-            )
-        }
-        return nil
-    }
 }
 
 extension Diary: UUIDObject { }
