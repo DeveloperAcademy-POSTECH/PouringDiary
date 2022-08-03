@@ -83,20 +83,25 @@ extension Tag {
     }
 
     /// `Tag.Input`을 활용해서 새로운 태그를 등록합니다
-    static func register(input: Tag.Input, context: NSManagedObjectContext) {
-        context.perform {
+    static func register(input: Tag.Input, context: NSManagedObjectContext) async -> Tag? {
+        do {
             let newTag = Tag(context: context)
-            newTag.id = UUID()
-            newTag.color = Int16(input.color.rawValue)
-            newTag.content = input.content
-            newTag.created = Date()
-            newTag.category = Int16(input.category.rawValue)
-            context.saveContext()
+            try await context.perform(schedule: .immediate) {
+                newTag.id = UUID()
+                newTag.color = Int16(input.color.rawValue)
+                newTag.content = input.content
+                newTag.created = Date()
+                newTag.category = Int16(input.category.rawValue)
+                try context.save()
+            }
+            return newTag
+        } catch {
+            return nil
         }
     }
 
     /// Tag 엔티티를 삭제합니다.
-    static func delete(tags: [Tag], context: NSManagedObjectContext) {
+    static func delete(tags: [Tag], context: NSManagedObjectContext) async {
         context.delete(tags)
     }
 }

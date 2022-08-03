@@ -69,9 +69,6 @@ struct PersistenceController {
                 .map {
                     $1.url = URL(fileURLWithPath: "/dev/null\($0)")
                 }
-#if DEBUG
-            _ = Tag.presets.map { Tag.register(input: $0, context: container.viewContext) }
-#endif
         }
         container.viewContext.automaticallyMergesChangesFromParent = true
 
@@ -82,4 +79,11 @@ struct PersistenceController {
             }
         })
     }
+#if DEBUG
+    func prepare() async {
+        for tag in Tag.presets {
+            _ = await Tag.register(input: tag, context: container.viewContext)
+        }
+    }
+#endif
 }

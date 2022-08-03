@@ -10,8 +10,8 @@ import CloudKit
 import CoreData
 
 extension PublicTag {
-    func saveToPrivate() {
-        Tag.register(
+    func saveToPrivate() async {
+        _ = await Tag.register(
             input: tagInput,
             context: managedObjectContext!
         )
