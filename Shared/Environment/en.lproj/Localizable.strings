@@ -32,6 +32,12 @@
 "main-tab-bean" = "Coffee bean";
 "main-tab-post" = "Posts";
 
+// MARK: Main Tab
+"main-tab-journal" = "Journals";
+"main-tab-recipe" = "Recipe";
+"main-tab-bean" = "Coffee bean";
+"main-tab-post" = "Posts";
+
 // MARK: Form
 "등록" = "Save";
 "추가" = "Add";
