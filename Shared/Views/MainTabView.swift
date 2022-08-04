@@ -24,7 +24,7 @@ struct MainTabView: View {
                 }
             SharePostList()
                 .tabItem {
-                    Label("main-tab-post", systemImage: "person.2")
+                    Label("main-tab-post", systemImage: "camera.on.rectangle")
                 }
         }
     }

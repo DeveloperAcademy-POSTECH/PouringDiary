@@ -13,7 +13,7 @@
 		E215CF2D28596AFB00198F26 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E215CF1728596AFB00198F26 /* Assets.xcassets */; };
 		E21CBB4D2859CC24008CEDC3 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */; };
 		E21F3FC0286F396900BFB481 /* CoffeeBeanList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F3FBF286F396900BFB481 /* CoffeeBeanList.swift */; };
-		E23CB3A428937C700001BB7B /* SharedPost.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23CB3A328937C700001BB7B /* SharedPost.swift */; };
+		E23CB3A428937C700001BB7B /* SharedPost+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23CB3A328937C700001BB7B /* SharedPost+Extension.swift */; };
 		E23CB3A728937EC90001BB7B /* SharePostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23CB3A628937EC90001BB7B /* SharePostList.swift */; };
 		E23CB3AA2893BEA60001BB7B /* MappingModel_v0.1.0.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = E23CB3A92893BEA60001BB7B /* MappingModel_v0.1.0.xcmappingmodel */; };
 		E246D6C1289211280034AEFA /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E246D6C0289211280034AEFA /* Color+Extension.swift */; };
@@ -36,6 +36,13 @@
 		E2B3DEB6287E103D00DCCBAB /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B3DEB5287E103D00DCCBAB /* Date+Extension.swift */; };
 		E2B481D428653DC100FBA847 /* TagPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B481D328653DC100FBA847 /* TagPicker.swift */; };
 		E2B481D92865453300FBA847 /* TagForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B481D82865453300FBA847 /* TagForm.swift */; };
+		E2B6F035289B132E0081D8EB /* ImageData+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B6F034289B132E0081D8EB /* ImageData+Extension.swift */; };
+		E2B6F037289B20700081D8EB /* PermissionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B6F036289B20700081D8EB /* PermissionController.swift */; };
+		E2B6F03D289B4D730081D8EB /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = E2B6F03C289B4D730081D8EB /* FirebaseAnalyticsWithoutAdIdSupport */; };
+		E2B6F03F289B4DDE0081D8EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B6F03E289B4DDE0081D8EB /* AppDelegate.swift */; };
+		E2B6F041289B4E450081D8EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2B6F040289B4E450081D8EB /* GoogleService-Info.plist */; };
+		E2B6F044289B52020081D8EB /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E2B6F043289B52020081D8EB /* FirebaseAnalyticsSwift */; };
+		E2B6F046289B52020081D8EB /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = E2B6F045289B52020081D8EB /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		E2BC211C287FB1560000CEC1 /* FlavorRecordPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BC211B287FB1560000CEC1 /* FlavorRecordPicker.swift */; };
 		E2D255D7288BD21D00D2932F /* PublicTag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D255D6288BD21D00D2932F /* PublicTag+Extension.swift */; };
 		E2D8D0C1287EB918009A6427 /* Diary+FlavorRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D8D0C0287EB918009A6427 /* Diary+FlavorRecord.swift */; };
@@ -57,7 +64,7 @@
 		E215CF2428596AFB00198F26 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
 		E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		E21F3FBF286F396900BFB481 /* CoffeeBeanList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanList.swift; sourceTree = "<group>"; };
-		E23CB3A328937C700001BB7B /* SharedPost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedPost.swift; sourceTree = "<group>"; };
+		E23CB3A328937C700001BB7B /* SharedPost+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SharedPost+Extension.swift"; sourceTree = "<group>"; };
 		E23CB3A628937EC90001BB7B /* SharePostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePostList.swift; sourceTree = "<group>"; };
 		E23CB3A82893BE180001BB7B /* PouringNote v0.1.0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PouringNote v0.1.0.xcdatamodel"; sourceTree = "<group>"; };
 		E23CB3A92893BEA60001BB7B /* MappingModel_v0.1.0.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = MappingModel_v0.1.0.xcmappingmodel; sourceTree = "<group>"; };
@@ -82,6 +89,10 @@
 		E2B3DEB5287E103D00DCCBAB /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
 		E2B481D328653DC100FBA847 /* TagPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagPicker.swift; sourceTree = "<group>"; };
 		E2B481D82865453300FBA847 /* TagForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagForm.swift; sourceTree = "<group>"; };
+		E2B6F034289B132E0081D8EB /* ImageData+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageData+Extension.swift"; sourceTree = "<group>"; };
+		E2B6F036289B20700081D8EB /* PermissionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PermissionController.swift; sourceTree = "<group>"; };
+		E2B6F03E289B4DDE0081D8EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E2B6F040289B4E450081D8EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E2BC211B287FB1560000CEC1 /* FlavorRecordPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavorRecordPicker.swift; sourceTree = "<group>"; };
 		E2D255D6288BD21D00D2932F /* PublicTag+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PublicTag+Extension.swift"; sourceTree = "<group>"; };
 		E2D8D0C0287EB918009A6427 /* Diary+FlavorRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Diary+FlavorRecord.swift"; sourceTree = "<group>"; };
@@ -102,6 +113,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E2B6F044289B52020081D8EB /* FirebaseAnalyticsSwift in Frameworks */,
+				E2B6F046289B52020081D8EB /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				E2B6F03D289B4D730081D8EB /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -151,7 +165,9 @@
 			children = (
 				E269FE7A288D2F8D00AF17D3 /* PouringDiary.xcdatamodeld */,
 				E215CF1728596AFB00198F26 /* Assets.xcassets */,
+				E2B6F040289B4E450081D8EB /* GoogleService-Info.plist */,
 				E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */,
+				E2B6F036289B20700081D8EB /* PermissionController.swift */,
 				E215CF1628596AFB00198F26 /* PersistenceController.swift */,
 				E2D8D0CA287F686E009A6427 /* Localizable.strings */,
 				E2ABD2A5288FD1C000CBFCFF /* InfoPlist.strings */,
@@ -172,7 +188,7 @@
 		E23CB3A228937C620001BB7B /* SharedPost */ = {
 			isa = PBXGroup;
 			children = (
-				E23CB3A328937C700001BB7B /* SharedPost.swift */,
+				E23CB3A328937C700001BB7B /* SharedPost+Extension.swift */,
 			);
 			path = SharedPost;
 			sourceTree = "<group>";
@@ -217,6 +233,7 @@
 		E29A754028599F35007379FD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E2B6F033289B130F0081D8EB /* ImageData */,
 				E23CB3A228937C620001BB7B /* SharedPost */,
 				E2B3DEA7287C11EB00DCCBAB /* Diary */,
 				E2FF053E2874152700C737EE /* Recipe */,
@@ -265,6 +282,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		E2B6F033289B130F0081D8EB /* ImageData */ = {
+			isa = PBXGroup;
+			children = (
+				E2B6F034289B132E0081D8EB /* ImageData+Extension.swift */,
+			);
+			path = ImageData;
+			sourceTree = "<group>";
+		};
 		E2BC211A287FB12D0000CEC1 /* FlaovrRecord */ = {
 			isa = PBXGroup;
 			children = (
@@ -311,6 +336,7 @@
 			isa = PBXGroup;
 			children = (
 				E215CF1428596AFB00198F26 /* PouringDiaryApp.swift */,
+				E2B6F03E289B4DDE0081D8EB /* AppDelegate.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -350,6 +376,11 @@
 			dependencies = (
 			);
 			name = "PouringDiary (iOS)";
+			packageProductDependencies = (
+				E2B6F03C289B4D730081D8EB /* FirebaseAnalyticsWithoutAdIdSupport */,
+				E2B6F043289B52020081D8EB /* FirebaseAnalyticsSwift */,
+				E2B6F045289B52020081D8EB /* FirebaseAnalyticsWithoutAdIdSupport */,
+			);
 			productName = "PouringDiary (iOS)";
 			productReference = E215CF1C28596AFB00198F26 /* PouringDiary.app */;
 			productType = "com.apple.product-type.application";
@@ -379,6 +410,10 @@
 				ko,
 			);
 			mainGroup = E215CF0C28596AFA00198F26;
+			packageReferences = (
+				E2B6F03B289B4D730081D8EB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				E2B6F042289B52020081D8EB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = E215CF1D28596AFB00198F26 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -394,6 +429,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E215CF2D28596AFB00198F26 /* Assets.xcassets in Resources */,
+				E2B6F041289B4E450081D8EB /* GoogleService-Info.plist in Resources */,
 				E2ABD2A3288FD1C000CBFCFF /* InfoPlist.strings in Resources */,
 				E2D8D0C7287F686E009A6427 /* Localizable.strings in Resources */,
 			);
@@ -433,6 +469,7 @@
 				E2ABD2AA2890C71100CBFCFF /* DiaryMemoCard.swift in Sources */,
 				E26960B8286502FC00862F8E /* CoffeeBeanForm.swift in Sources */,
 				E2B3DEA9287C122B00DCCBAB /* Diary+Extension.swift in Sources */,
+				E2B6F037289B20700081D8EB /* PermissionController.swift in Sources */,
 				E29A754C2859B767007379FD /* Tag+Extension.swift in Sources */,
 				E215CF2728596AFB00198F26 /* PouringDiaryApp.swift in Sources */,
 				E215CF2B28596AFB00198F26 /* PersistenceController.swift in Sources */,
@@ -447,13 +484,15 @@
 				E2D8D0C1287EB918009A6427 /* Diary+FlavorRecord.swift in Sources */,
 				E2B3DEAC287CF84100DCCBAB /* DiaryList.swift in Sources */,
 				E2FF0546287425FC00C737EE /* RecipeForm.swift in Sources */,
+				E2B6F03F289B4DDE0081D8EB /* AppDelegate.swift in Sources */,
 				E2FF0544287425EE00C737EE /* RecipeList.swift in Sources */,
 				E2ABD2A82890C3D900CBFCFF /* FlavorSummary.swift in Sources */,
 				E2BC211C287FB1560000CEC1 /* FlavorRecordPicker.swift in Sources */,
 				E2492A2F28927AE30060E51C /* PhotoPicker.swift in Sources */,
 				E246D6C1289211280034AEFA /* Color+Extension.swift in Sources */,
 				E2FE3FB32862BC6F004F4626 /* NSManagedObjectContext+Extension.swift in Sources */,
-				E23CB3A428937C700001BB7B /* SharedPost.swift in Sources */,
+				E23CB3A428937C700001BB7B /* SharedPost+Extension.swift in Sources */,
+				E2B6F035289B132E0081D8EB /* ImageData+Extension.swift in Sources */,
 				E23CB3AA2893BEA60001BB7B /* MappingModel_v0.1.0.xcmappingmodel in Sources */,
 				E2B3DEB2287D3A7500DCCBAB /* RecipePicker.swift in Sources */,
 				E23CB3A728937EC90001BB7B /* SharePostList.swift in Sources */,
@@ -692,6 +731,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E2B6F03B289B4D730081D8EB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+		E2B6F042289B52020081D8EB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E2B6F03C289B4D730081D8EB /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E2B6F03B289B4D730081D8EB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+		E2B6F043289B52020081D8EB /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E2B6F042289B52020081D8EB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		E2B6F045289B52020081D8EB /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E2B6F042289B52020081D8EB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsWithoutAdIdSupport;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		E269FE7A288D2F8D00AF17D3 /* PouringDiary.xcdatamodeld */ = {

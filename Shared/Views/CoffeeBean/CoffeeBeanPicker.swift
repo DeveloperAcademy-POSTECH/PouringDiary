@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAnalyticsSwift
 
 struct CoffeeBeanPicker: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -39,6 +40,7 @@ struct CoffeeBeanPicker: View {
                 }
             }
             .navigationTitle("원두 선택")
+            .analyticsScreen(name: "Coffee Bean Picker")
         }
     }
 }

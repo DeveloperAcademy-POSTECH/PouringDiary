@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Photos
 
 struct SharePostList: View {
     @Environment(\.managedObjectContext)
@@ -14,10 +15,33 @@ struct SharePostList: View {
     @FetchRequest(sortDescriptors: [SortDescriptor(\.created, order: .reverse)])
     private var posts: FetchedResults<SharePost>
 
+    @State private var isPickerShow: Bool = false
+    @State private var pickedImages: [Data] = []
+
     var body: some View {
         NavigationView {
-            Text("NOT IMPLEMENTED")
+            VStack {
+                if let sourceData = pickedImages.first, let uiImage = UIImage(data: sourceData) {
+                    Image(uiImage: uiImage)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                }
+                Button {
+                    pickedImages.removeAll()
+                    isPickerShow.toggle()
+                } label: {
+                    Text("Image \(pickedImages.count)")
+                }
+            }
+            .sheet(isPresented: $isPickerShow) {
+                PhotoPicker(
+                    configuration: .init(photoLibrary: .shared()),
+                    isPresented: $isPickerShow,
+                    images: $pickedImages
+                )
+            }
         }
+        .navigationViewStyle(.stack)
     }
 }
 

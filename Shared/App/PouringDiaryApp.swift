@@ -9,6 +9,8 @@ import SwiftUI
 
 @main
 struct PouringDiaryApp: App {
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+
     var body: some Scene {
         WindowGroup {
             MainTabView()

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import FirebaseAnalyticsSwift
 
 struct RecipeForm: View {
     // Environment
@@ -62,6 +63,7 @@ struct RecipeForm: View {
             TagPicker(with: .equipment, selected: $equipmentTags)
         }
         .navigationTitle(isEditing ? "레시피 수정" : "레시피 등록")
+        .analyticsScreen(name: "Recipe Form - \(isEditing ? "Edit" : "New")")
     }
 }
 

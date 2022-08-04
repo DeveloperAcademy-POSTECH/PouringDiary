@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAnalyticsSwift
 
 struct DiaryList: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -37,6 +38,7 @@ struct DiaryList: View {
             .navigationTitle("일지 목록")
         }
         .navigationViewStyle(.stack)
+        .analyticsScreen(name: "Diary List")
     }
 }
 

@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import FirebaseAnalyticsSwift
 
 struct DiaryForm: View {
     // Environment
@@ -87,6 +88,7 @@ struct DiaryForm: View {
         .onChange(of: selectedCoffeeBean, perform: { _ in updateSameSourcedDiary() })
         .onChange(of: selectedRecipe, perform: { _ in updateSameSourcedDiary() })
         .task(prepare)
+        .analyticsScreen(name: "Diary Form - \(isEditing ? "Edit" : "New")")
     }
 }
 
