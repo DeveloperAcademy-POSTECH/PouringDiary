@@ -13,6 +13,7 @@ import PhotosUI
 struct PhotoPicker: UIViewControllerRepresentable {
     let configuration: PHPickerConfiguration
     @Binding var isPresented: Bool
+    @Binding var isLoading: Bool
     @Binding var images: [Data]
 
     func makeUIViewController(context: Context) -> PHPickerViewController {
@@ -35,29 +36,20 @@ struct PhotoPicker: UIViewControllerRepresentable {
         }
 
         func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+            parent.isLoading = true
             var resultCount = 0
             for result in results {
                 resultCount += 1
                 result.itemProvider.loadObject(ofClass: UIImage.self) { [weak self] reading, _ in
-                    if let image = reading as? UIImage, let data = image.png() {
+                    if let image = reading as? UIImage, let data = image.jpegData(compressionQuality: 0.7) {
                         self?.parent.images.append(data)
                     }
                     if resultCount == results.count {
+                        self?.parent.isLoading = false
                         self?.parent.isPresented = false
                     }
                 }
             }
         }
-    }
-}
-
-extension UIImage {
-    func png(isOpaque: Bool = true) -> Data? { flattened(isOpaque: isOpaque)?.pngData() }
-    func flattened(isOpaque: Bool = true) -> UIImage? {
-        if imageOrientation == .up { return self }
-        UIGraphicsBeginImageContextWithOptions(size, isOpaque, scale)
-        defer { UIGraphicsEndImageContext() }
-        draw(in: CGRect(origin: .zero, size: size))
-        return UIGraphicsGetImageFromCurrentImageContext()
     }
 }

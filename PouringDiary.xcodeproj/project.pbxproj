@@ -14,7 +14,7 @@
 		E21CBB4D2859CC24008CEDC3 /* AppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */; };
 		E21F3FC0286F396900BFB481 /* CoffeeBeanList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E21F3FBF286F396900BFB481 /* CoffeeBeanList.swift */; };
 		E23CB3A428937C700001BB7B /* SharedPost+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23CB3A328937C700001BB7B /* SharedPost+Extension.swift */; };
-		E23CB3A728937EC90001BB7B /* SharePostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23CB3A628937EC90001BB7B /* SharePostList.swift */; };
+		E23CB3A728937EC90001BB7B /* SharePostForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E23CB3A628937EC90001BB7B /* SharePostForm.swift */; };
 		E23CB3AA2893BEA60001BB7B /* MappingModel_v0.1.0.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = E23CB3A92893BEA60001BB7B /* MappingModel_v0.1.0.xcmappingmodel */; };
 		E246D6C1289211280034AEFA /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E246D6C0289211280034AEFA /* Color+Extension.swift */; };
 		E2492A2F28927AE30060E51C /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2492A2E28927AE30060E51C /* PhotoPicker.swift */; };
@@ -62,10 +62,11 @@
 		E215CF1728596AFB00198F26 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E215CF1C28596AFB00198F26 /* PouringDiary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PouringDiary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E215CF2428596AFB00198F26 /* macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = macOS.entitlements; sourceTree = "<group>"; };
+		E21BCA70289C9A0000ABC1F2 /* ci_pre_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_pre_xcodebuild.sh; sourceTree = "<group>"; };
 		E21CBB4C2859CC24008CEDC3 /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
 		E21F3FBF286F396900BFB481 /* CoffeeBeanList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanList.swift; sourceTree = "<group>"; };
 		E23CB3A328937C700001BB7B /* SharedPost+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SharedPost+Extension.swift"; sourceTree = "<group>"; };
-		E23CB3A628937EC90001BB7B /* SharePostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePostList.swift; sourceTree = "<group>"; };
+		E23CB3A628937EC90001BB7B /* SharePostForm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePostForm.swift; sourceTree = "<group>"; };
 		E23CB3A82893BE180001BB7B /* PouringNote v0.1.0.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "PouringNote v0.1.0.xcdatamodel"; sourceTree = "<group>"; };
 		E23CB3A92893BEA60001BB7B /* MappingModel_v0.1.0.xcmappingmodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcmappingmodel; path = MappingModel_v0.1.0.xcmappingmodel; sourceTree = "<group>"; };
 		E246D6C0289211280034AEFA /* Color+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extension.swift"; sourceTree = "<group>"; };
@@ -125,6 +126,7 @@
 		E215CF0C28596AFA00198F26 = {
 			isa = PBXGroup;
 			children = (
+				E21BCA6F289C99D800ABC1F2 /* ci_scripts */,
 				E2F1258B288676C0000451BF /* PouringDiary--iOS--Info.plist */,
 				E2D8D0C3287EBA90009A6427 /* PouringDiary (iOS).entitlements */,
 				E215CF1128596AFB00198F26 /* Shared */,
@@ -158,6 +160,14 @@
 				E215CF2428596AFB00198F26 /* macOS.entitlements */,
 			);
 			path = macOS;
+			sourceTree = "<group>";
+		};
+		E21BCA6F289C99D800ABC1F2 /* ci_scripts */ = {
+			isa = PBXGroup;
+			children = (
+				E21BCA70289C9A0000ABC1F2 /* ci_pre_xcodebuild.sh */,
+			);
+			path = ci_scripts;
 			sourceTree = "<group>";
 		};
 		E21CBB4B2859CC18008CEDC3 /* Environment */ = {
@@ -196,7 +206,7 @@
 		E23CB3A528937EAD0001BB7B /* SharePost */ = {
 			isa = PBXGroup;
 			children = (
-				E23CB3A628937EC90001BB7B /* SharePostList.swift */,
+				E23CB3A628937EC90001BB7B /* SharePostForm.swift */,
 			);
 			path = SharePost;
 			sourceTree = "<group>";
@@ -495,7 +505,7 @@
 				E2B6F035289B132E0081D8EB /* ImageData+Extension.swift in Sources */,
 				E23CB3AA2893BEA60001BB7B /* MappingModel_v0.1.0.xcmappingmodel in Sources */,
 				E2B3DEB2287D3A7500DCCBAB /* RecipePicker.swift in Sources */,
-				E23CB3A728937EC90001BB7B /* SharePostList.swift in Sources */,
+				E23CB3A728937EC90001BB7B /* SharePostForm.swift in Sources */,
 				E29D02562877CC7F00A84A5D /* CoffeeBeanPicker.swift in Sources */,
 				E21F3FC0286F396900BFB481 /* CoffeeBeanList.swift in Sources */,
 				E283540428810ABA00BA4A7D /* FlavorItem.swift in Sources */,
@@ -653,9 +663,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "PouringDiary--iOS--Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "푸어링노트";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
@@ -687,9 +700,12 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "PouringDiary--iOS--Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "푸어링노트";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;

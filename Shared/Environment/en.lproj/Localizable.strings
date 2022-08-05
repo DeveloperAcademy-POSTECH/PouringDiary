@@ -139,3 +139,5 @@
 "flavor-record-picker-extraction-over" = "over";
 "flavor-record-picker-strength-under" = "low";
 "flavor-record-picker-strength-over" = "high";
+
+// MARK: Public Tags (이건 맨 마지막 섹션으로 유지할것)
