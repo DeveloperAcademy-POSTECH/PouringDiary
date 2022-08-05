@@ -9,6 +9,43 @@ import SwiftUI
 import Photos
 
 struct SharePostForm: View {
+    struct ImageConfig {
+        private var scale: CGFloat = 1
+        private var scaleDelta: CGFloat = 0
+
+        private var offset: CGSize = .zero
+        private var offsetDelta: CGSize = .zero
+
+        var preview: UIImage?
+
+        var finalOffset: CGSize {
+            return CGSize(
+                width: offset.width + offsetDelta.width,
+                height: offset.height + offsetDelta.height
+            )
+        }
+        var finalScale: CGFloat {
+            return scale - scaleDelta
+        }
+
+        mutating func magnificationOnChange(value: MagnificationGesture.Value) {
+            scaleDelta = 1 - value
+        }
+
+        mutating func magnificationOnEnd(value: MagnificationGesture.Value) {
+            scale = finalScale
+            scaleDelta = 0
+        }
+
+        mutating func dragOnChange(gesture: DragGesture.Value) {
+            offsetDelta = gesture.translation
+        }
+
+        mutating func dragOnEnd(gesture: DragGesture.Value) {
+            offset = finalOffset
+            offsetDelta = .zero
+        }
+    }
     @Environment(\.managedObjectContext)
     private var viewContext
 
@@ -18,33 +55,31 @@ struct SharePostForm: View {
     @State private var isPickerShow: Bool = false
     @State private var isLoadingPhoto: Bool = false
     @State private var pickedImages: [Data] = []
-    @State private var sourceScale: CGFloat = 1
-    @State private var sourceOffset: CGSize = .zero
+
+    @State private var source: ImageConfig = .init()
 
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
                 GeometryReader { proxy in
                     ZStack {
-                        if let sourceData = pickedImages.first, let uiImage = UIImage(data: sourceData) {
+                        if let uiImage = source.preview {
                             ScrollView(.init()) {
                                 Image(uiImage: uiImage)
                                     .resizable()
                                     .tag(uiImage)
                                     .aspectRatio(contentMode: .fill)
-                                    .scaleEffect(CGFloat(sourceScale))
-                                    .offset(sourceOffset)
-                                    .gesture(MagnificationGesture().onChanged({ value in
-                                        withAnimation(.spring()) {
-                                            sourceScale = value
-                                        }
-                                    }))
-                                    .simultaneousGesture(DragGesture()
-                                        .onChanged({ gesture in
-                                            withAnimation(.spring()) {
-                                                sourceOffset = gesture.translation
-                                            }
-                                        })
+                                    .scaleEffect(source.finalScale)
+                                    .offset(source.finalOffset)
+                                    .gesture(
+                                        MagnificationGesture()
+                                            .onChanged { source.magnificationOnChange(value: $0) }
+                                            .onEnded { source.magnificationOnEnd(value: $0) }
+                                    )
+                                    .simultaneousGesture(
+                                        DragGesture()
+                                            .onChanged { source.dragOnChange(gesture: $0) }
+                                            .onEnded { source.dragOnEnd(gesture: $0) }
                                     )
                             }
                         }
@@ -89,6 +124,11 @@ struct SharePostForm: View {
                                 .tint(Color.white)
                         }
                     }
+                }
+            }
+            .onChange(of: pickedImages) { images in
+                if let imageData = images.first {
+                    source.preview = UIImage(data: imageData)
                 }
             }
         }
