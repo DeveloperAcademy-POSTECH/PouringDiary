@@ -18,6 +18,8 @@
 		E23CB3AA2893BEA60001BB7B /* MappingModel_v0.1.0.xcmappingmodel in Sources */ = {isa = PBXBuildFile; fileRef = E23CB3A92893BEA60001BB7B /* MappingModel_v0.1.0.xcmappingmodel */; };
 		E246D6C1289211280034AEFA /* Color+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E246D6C0289211280034AEFA /* Color+Extension.swift */; };
 		E2492A2F28927AE30060E51C /* PhotoPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2492A2E28927AE30060E51C /* PhotoPicker.swift */; };
+		E24C64EF28A2FBD900EAECB2 /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E24C64EE28A2FBD900EAECB2 /* FirebaseAnalyticsSwift */; };
+		E24C64F128A2FBD900EAECB2 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = E24C64F028A2FBD900EAECB2 /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		E26960B8286502FC00862F8E /* CoffeeBeanForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960B7286502FC00862F8E /* CoffeeBeanForm.swift */; };
 		E26960BB2865156E00862F8E /* TagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960BA2865156E00862F8E /* TagItem.swift */; };
 		E269FE7C288D2F8D00AF17D3 /* PouringDiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E269FE7A288D2F8D00AF17D3 /* PouringDiary.xcdatamodeld */; };
@@ -38,11 +40,8 @@
 		E2B481D92865453300FBA847 /* TagForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B481D82865453300FBA847 /* TagForm.swift */; };
 		E2B6F035289B132E0081D8EB /* ImageData+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B6F034289B132E0081D8EB /* ImageData+Extension.swift */; };
 		E2B6F037289B20700081D8EB /* PermissionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B6F036289B20700081D8EB /* PermissionController.swift */; };
-		E2B6F03D289B4D730081D8EB /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = E2B6F03C289B4D730081D8EB /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		E2B6F03F289B4DDE0081D8EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B6F03E289B4DDE0081D8EB /* AppDelegate.swift */; };
 		E2B6F041289B4E450081D8EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2B6F040289B4E450081D8EB /* GoogleService-Info.plist */; };
-		E2B6F044289B52020081D8EB /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = E2B6F043289B52020081D8EB /* FirebaseAnalyticsSwift */; };
-		E2B6F046289B52020081D8EB /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */ = {isa = PBXBuildFile; productRef = E2B6F045289B52020081D8EB /* FirebaseAnalyticsWithoutAdIdSupport */; };
 		E2BC211C287FB1560000CEC1 /* FlavorRecordPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BC211B287FB1560000CEC1 /* FlavorRecordPicker.swift */; };
 		E2D255D7288BD21D00D2932F /* PublicTag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D255D6288BD21D00D2932F /* PublicTag+Extension.swift */; };
 		E2D8D0C1287EB918009A6427 /* Diary+FlavorRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D8D0C0287EB918009A6427 /* Diary+FlavorRecord.swift */; };
@@ -114,9 +113,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2B6F044289B52020081D8EB /* FirebaseAnalyticsSwift in Frameworks */,
-				E2B6F046289B52020081D8EB /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
-				E2B6F03D289B4D730081D8EB /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
+				E24C64EF28A2FBD900EAECB2 /* FirebaseAnalyticsSwift in Frameworks */,
+				E24C64F128A2FBD900EAECB2 /* FirebaseAnalyticsWithoutAdIdSupport in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -387,9 +385,8 @@
 			);
 			name = "PouringDiary (iOS)";
 			packageProductDependencies = (
-				E2B6F03C289B4D730081D8EB /* FirebaseAnalyticsWithoutAdIdSupport */,
-				E2B6F043289B52020081D8EB /* FirebaseAnalyticsSwift */,
-				E2B6F045289B52020081D8EB /* FirebaseAnalyticsWithoutAdIdSupport */,
+				E24C64EE28A2FBD900EAECB2 /* FirebaseAnalyticsSwift */,
+				E24C64F028A2FBD900EAECB2 /* FirebaseAnalyticsWithoutAdIdSupport */,
 			);
 			productName = "PouringDiary (iOS)";
 			productReference = E215CF1C28596AFB00198F26 /* PouringDiary.app */;
@@ -421,8 +418,7 @@
 			);
 			mainGroup = E215CF0C28596AFA00198F26;
 			packageReferences = (
-				E2B6F03B289B4D730081D8EB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
-				E2B6F042289B52020081D8EB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				E24C64ED28A2FBD900EAECB2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = E215CF1D28596AFB00198F26 /* Products */;
 			projectDirPath = "";
@@ -749,15 +745,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E2B6F03B289B4D730081D8EB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
-		E2B6F042289B52020081D8EB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+		E24C64ED28A2FBD900EAECB2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
 			requirement = {
@@ -768,19 +756,14 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E2B6F03C289B4D730081D8EB /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+		E24C64EE28A2FBD900EAECB2 /* FirebaseAnalyticsSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E2B6F03B289B4D730081D8EB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalyticsWithoutAdIdSupport;
-		};
-		E2B6F043289B52020081D8EB /* FirebaseAnalyticsSwift */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E2B6F042289B52020081D8EB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = E24C64ED28A2FBD900EAECB2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalyticsSwift;
 		};
-		E2B6F045289B52020081D8EB /* FirebaseAnalyticsWithoutAdIdSupport */ = {
+		E24C64F028A2FBD900EAECB2 /* FirebaseAnalyticsWithoutAdIdSupport */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E2B6F042289B52020081D8EB /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			package = E24C64ED28A2FBD900EAECB2 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseAnalyticsWithoutAdIdSupport;
 		};
 /* End XCSwiftPackageProductDependency section */
