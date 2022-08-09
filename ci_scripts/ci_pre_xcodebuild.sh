@@ -10,5 +10,5 @@
 echo ${CI_FB_PLIST} >> ../Shared/Environment/GoogleService-Info.plist
 echo "Firebase GoogleService-Info.plist created at"
 cd ../Shared/Environment/
-echo pwd
-echo cat GoogleService-Info.plist
+echo | pwd
+echo | cat GoogleService-Info.plist
