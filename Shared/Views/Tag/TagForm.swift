@@ -46,8 +46,14 @@ extension TagForm {
     private func toolbar() -> some ToolbarContent {
         return ToolbarItem(placement: .automatic) {
             Button("저장하기") {
-                Tag.register(input: input, context: viewContext)
-                isPresent.toggle()
+                Task {
+                    do {
+                        _ = try await Tag.register(input: input, context: viewContext)
+                        isPresent.toggle()
+                    } catch {
+                        isPresent.toggle()
+                    }
+                }
             }
             .disabled(input.content.isEmpty)
         }

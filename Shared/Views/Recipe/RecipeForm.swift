@@ -207,26 +207,27 @@ extension RecipeForm {
 
     @Sendable
     private func saveOrRegister() {
-        let relation = Recipe.RelationInput(
-            tags: recipeTags,
-            equipments: equipmentTags
-        )
-        if let recipeId = recipeId {
-            Recipe.save(
-                objectId: recipeId,
-                input: input,
-                relation: relation,
-                context: viewContext
+        Task {
+            let relation = Recipe.RelationInput(
+                tags: recipeTags,
+                equipments: equipmentTags
             )
-        } else {
-            Recipe.register(
-                input: input,
-                relation: relation,
-                context: viewContext
-            )
+            if let recipeId = recipeId {
+                Recipe.save(
+                    objectId: recipeId,
+                    input: input,
+                    relation: relation,
+                    context: viewContext
+                )
+            } else {
+                _ = try? await Recipe.register(
+                    input: input,
+                    relation: relation,
+                    context: viewContext
+                )
+            }
+            presentationMode.wrappedValue.dismiss()
         }
-        presentationMode.wrappedValue.dismiss()
-
     }
 }
 

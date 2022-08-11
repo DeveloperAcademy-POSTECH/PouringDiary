@@ -136,19 +136,21 @@ extension CoffeeBeanForm {
     private func toolbar() -> some ToolbarContent {
         ToolbarItem(placement: .automatic) {
             Button(action: {
-                if isEditing {
-                    CoffeeBean.save(
-                        objectId: beanId!,
-                        input: input,
-                        tags: selectedTags,
-                        context: viewContext
-                    )
-                } else {
-                    CoffeeBean.register(
-                        input: input,
-                        tags: selectedTags,
-                        context: viewContext
-                    )
+                Task {
+                    if isEditing {
+                        CoffeeBean.save(
+                            objectId: beanId!,
+                            input: input,
+                            tags: selectedTags,
+                            context: viewContext
+                        )
+                    } else {
+                        _ = try? await CoffeeBean.register(
+                            input: input,
+                            tags: selectedTags,
+                            context: viewContext
+                        )
+                    }
                 }
                 presentationMode.wrappedValue.dismiss()
             }, label: {

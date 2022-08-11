@@ -48,6 +48,7 @@ extension DiaryList {
         @ObservedObject var diary: Diary
 
         @State var copiedFormShow: Bool = false
+        @State var shareFormShow: Bool = false
 
         var body: some View {
             NavigationLink(
@@ -83,6 +84,12 @@ extension DiaryList {
                                 label: { EmptyView() }
                             )
                             .hidden()
+                            NavigationLink(
+                                isActive: $shareFormShow,
+                                destination: { SharePostForm(diary: diary) },
+                                label: { EmptyView() }
+                            )
+                            .hidden()
                         }
                         .padding()
                     }
@@ -91,6 +98,11 @@ extension DiaryList {
                             copiedFormShow.toggle()
                         } label: {
                             Label("복제", systemImage: "doc.on.doc")
+                        }
+                        Button {
+                            shareFormShow.toggle()
+                        } label: {
+                            Label("공유", systemImage: "square.and.arrow.up")
                         }
                     }
                     .padding(4)

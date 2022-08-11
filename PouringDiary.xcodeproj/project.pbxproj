@@ -24,6 +24,7 @@
 		E26960BB2865156E00862F8E /* TagItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E26960BA2865156E00862F8E /* TagItem.swift */; };
 		E269FE7C288D2F8D00AF17D3 /* PouringDiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E269FE7A288D2F8D00AF17D3 /* PouringDiary.xcdatamodeld */; };
 		E283540428810ABA00BA4A7D /* FlavorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E283540328810ABA00BA4A7D /* FlavorItem.swift */; };
+		E295E58F28A3A7F500AC809A /* SharePostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E295E58E28A3A7F500AC809A /* SharePostList.swift */; };
 		E29A754C2859B767007379FD /* Tag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A754B2859B767007379FD /* Tag+Extension.swift */; };
 		E29D02562877CC7F00A84A5D /* CoffeeBeanPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D02552877CC7F00A84A5D /* CoffeeBeanPicker.swift */; };
 		E2ABD29F288F7E3100CBFCFF /* PublicTagList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABD29E288F7E3100CBFCFF /* PublicTagList.swift */; };
@@ -74,6 +75,7 @@
 		E26960BA2865156E00862F8E /* TagItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagItem.swift; sourceTree = "<group>"; };
 		E269FE7B288D2F8D00AF17D3 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		E283540328810ABA00BA4A7D /* FlavorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavorItem.swift; sourceTree = "<group>"; };
+		E295E58E28A3A7F500AC809A /* SharePostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePostList.swift; sourceTree = "<group>"; };
 		E29A754B2859B767007379FD /* Tag+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+Extension.swift"; sourceTree = "<group>"; };
 		E29D02552877CC7F00A84A5D /* CoffeeBeanPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanPicker.swift; sourceTree = "<group>"; };
 		E2ABD29E288F7E3100CBFCFF /* PublicTagList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicTagList.swift; sourceTree = "<group>"; };
@@ -205,6 +207,7 @@
 			isa = PBXGroup;
 			children = (
 				E23CB3A628937EC90001BB7B /* SharePostForm.swift */,
+				E295E58E28A3A7F500AC809A /* SharePostList.swift */,
 			);
 			path = SharePost;
 			sourceTree = "<group>";
@@ -472,6 +475,7 @@
 				E2B481D92865453300FBA847 /* TagForm.swift in Sources */,
 				E2B3DEB6287E103D00DCCBAB /* Date+Extension.swift in Sources */,
 				E2FF05402874175800C737EE /* Recipe+Extension.swift in Sources */,
+				E295E58F28A3A7F500AC809A /* SharePostList.swift in Sources */,
 				E2ABD2AA2890C71100CBFCFF /* DiaryMemoCard.swift in Sources */,
 				E26960B8286502FC00862F8E /* CoffeeBeanForm.swift in Sources */,
 				E2B3DEA9287C122B00DCCBAB /* Diary+Extension.swift in Sources */,

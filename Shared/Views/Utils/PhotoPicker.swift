@@ -17,6 +17,7 @@ struct PhotoPicker: UIViewControllerRepresentable {
     @Binding var images: [Data]
 
     func makeUIViewController(context: Context) -> PHPickerViewController {
+        isLoading = false
         let controller = PHPickerViewController(configuration: configuration)
         controller.delegate = context.coordinator
         return controller
@@ -36,6 +37,10 @@ struct PhotoPicker: UIViewControllerRepresentable {
         }
 
         func picker(_ picker: PHPickerViewController, didFinishPicking results: [PHPickerResult]) {
+            if results.isEmpty {
+                parent.isLoading = false
+                parent.isPresented = false
+            }
             parent.isLoading = true
             var resultCount = 0
             for result in results {
@@ -51,17 +56,5 @@ struct PhotoPicker: UIViewControllerRepresentable {
                 }
             }
         }
-    }
-}
-
-extension UIImage {
-
-    func resizeImageTo(size: CGSize) -> UIImage? {
-
-        UIGraphicsBeginImageContextWithOptions(size, false, 0.0)
-        self.draw(in: CGRect(origin: CGPoint.zero, size: size))
-        let resizedImage = UIGraphicsGetImageFromCurrentImageContext()!
-        UIGraphicsEndImageContext()
-        return resizedImage
     }
 }

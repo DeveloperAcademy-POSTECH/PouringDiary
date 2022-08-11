@@ -306,23 +306,25 @@ extension DiaryForm {
         ToolbarItem(placement: .navigationBarTrailing) {
             HStack {
                 Button(action: {
-                    guard let bean = selectedCoffeeBean, let recipe = selectedRecipe else { return }
-                    let relation = Diary.RelationInput(bean: bean, recipe: recipe)
-                    if isEditing {
-                        Diary.save(
-                            objectId: objectId!,
-                            input: input,
-                            relation: relation,
-                            context: viewContext
-                        )
-                    } else {
-                        Diary.register(
-                            input: input,
-                            relation: relation,
-                            context: viewContext
-                        )
+                    Task {
+                        guard let bean = selectedCoffeeBean, let recipe = selectedRecipe else { return }
+                        let relation = Diary.RelationInput(bean: bean, recipe: recipe)
+                        if isEditing {
+                            Diary.save(
+                                objectId: objectId!,
+                                input: input,
+                                relation: relation,
+                                context: viewContext
+                            )
+                        } else {
+                            _ = try? await Diary.register(
+                                input: input,
+                                relation: relation,
+                                context: viewContext
+                            )
+                        }
+                        presentationMode.wrappedValue.dismiss()
                     }
-                    presentationMode.wrappedValue.dismiss()
                 }, label: {
                     Text(isEditing ? "수정" : "등록")
                 })

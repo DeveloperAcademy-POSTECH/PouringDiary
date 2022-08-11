@@ -20,8 +20,7 @@
     </entity>
     <entity name="ImageData" representedClassName="ImageData" syncable="YES" codeGenerationType="class">
         <attribute name="data" optional="YES" attributeType="Binary"/>
-        <relationship name="overlays" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SharePost" inverseName="overlayImage" inverseEntity="SharePost"/>
-        <relationship name="sources" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SharePost" inverseName="sourceImage" inverseEntity="SharePost"/>
+        <relationship name="posts" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SharePost" inverseName="image" inverseEntity="SharePost"/>
     </entity>
     <entity name="PublicTag" representedClassName="PublicTag" syncable="YES" codeGenerationType="class">
         <attribute name="category" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -46,8 +45,7 @@
         <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <attribute name="thumbnail" optional="YES" attributeType="Binary"/>
         <relationship name="diary" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Diary" inverseName="posts" inverseEntity="Diary"/>
-        <relationship name="overlayImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImageData" inverseName="overlays" inverseEntity="ImageData"/>
-        <relationship name="sourceImage" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImageData" inverseName="sources" inverseEntity="ImageData"/>
+        <relationship name="image" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ImageData" inverseName="posts" inverseEntity="ImageData"/>
     </entity>
     <entity name="Tag" representedClassName=".Tag" syncable="YES" codeGenerationType="class">
         <attribute name="category" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -70,13 +68,22 @@
     <configuration name="Public" usedWithCloudKit="YES">
         <memberEntity name="PublicTag"/>
     </configuration>
+    <configuration name="Test">
+        <memberEntity name="CoffeeBean"/>
+        <memberEntity name="Diary"/>
+        <memberEntity name="ImageData"/>
+        <memberEntity name="PublicTag"/>
+        <memberEntity name="Recipe"/>
+        <memberEntity name="SharePost"/>
+        <memberEntity name="Tag"/>
+    </configuration>
     <elements>
         <element name="CoffeeBean" positionX="-78.63671875" positionY="18.19140625" width="128" height="14"/>
         <element name="Diary" positionX="-256.48046875" positionY="-28.765625" width="128" height="134"/>
-        <element name="ImageData" positionX="-195.609375" positionY="113.75390625" width="128" height="88"/>
+        <element name="ImageData" positionX="-195.609375" positionY="113.75390625" width="128" height="59"/>
         <element name="PublicTag" positionX="230.30859375" positionY="-64.4375" width="128" height="104"/>
         <element name="Recipe" positionX="114.0703125" positionY="-84.03515625" width="128" height="14"/>
-        <element name="SharePost" positionX="270.8515625" positionY="124.40234375" width="128" height="134"/>
+        <element name="SharePost" positionX="270.8515625" positionY="124.40234375" width="128" height="119"/>
         <element name="Tag" positionX="-60.92578125" positionY="-139.19140625" width="128" height="149"/>
     </elements>
 </model>

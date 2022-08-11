@@ -22,7 +22,7 @@ struct MainTabView: View {
                 .tabItem {
                     Label("main-tab-bean", systemImage: "cup.and.saucer")
                 }
-            SharePostForm()
+            Text("Not Implemented")
                 .tabItem {
                     Label("main-tab-post", systemImage: "camera.on.rectangle")
                 }
