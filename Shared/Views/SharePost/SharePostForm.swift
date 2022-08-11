@@ -6,18 +6,19 @@
 //
 
 import SwiftUI
+import CoreData
 import Photos
 import PhotosUI
 
 struct SharePostForm: View {
     @Environment(\.managedObjectContext)
     private var viewContext
-
-    @ObservedObject var diary: Diary
+    private var diaryId: NSManagedObjectID?
 
     @State private var isPickerShow: Bool = false
     @State private var isLoadingPhoto: Bool = false
     @State private var pickedImages: [Data] = []
+    @State private var diary: Diary?
 
     @State private var layers: [SourceConfig] = [.init()]
 
@@ -27,9 +28,18 @@ struct SharePostForm: View {
         return config
     }
 
+    init(diaryId: NSManagedObjectID) {
+        self.diaryId = diaryId
+    }
+
+    init() { }
+
     var body: some View {
         NavigationView {
             VStack(alignment: .center) {
+                if let diary = diary {
+                    Text(diary.coffeeBean?.name ?? "")
+                }
                 GeometryReader { proxy in
                     ZStack {
                             ForEach(layers.indices, id: \.self) { index in
@@ -60,6 +70,11 @@ struct SharePostForm: View {
                     isPickerShow.toggle()
                 } label: {
                     Text("Image \(pickedImages.count)")
+                }
+            }
+            .task {
+                if let id = diaryId {
+                    diary = Diary.get(by: id, context: viewContext)
                 }
             }
             .sheet(isPresented: $isPickerShow) {
@@ -165,6 +180,6 @@ extension SharePostForm {
 
 struct SharePostForm_Previews: PreviewProvider {
     static var previews: some View {
-        SharePostForm(diary: .init())
+        SharePostForm()
     }
 }

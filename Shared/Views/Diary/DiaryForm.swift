@@ -323,8 +323,8 @@ extension DiaryForm {
                                 context: viewContext
                             )
                         }
-                        presentationMode.wrappedValue.dismiss()
                     }
+                    presentationMode.wrappedValue.dismiss()
                 }, label: {
                     Text(isEditing ? "수정" : "등록")
                 })

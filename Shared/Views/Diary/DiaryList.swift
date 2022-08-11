@@ -86,7 +86,7 @@ extension DiaryList {
                             .hidden()
                             NavigationLink(
                                 isActive: $shareFormShow,
-                                destination: { SharePostForm(diary: diary) },
+                                destination: { SharePostForm(diaryId: diary.objectID) },
                                 label: { EmptyView() }
                             )
                             .hidden()

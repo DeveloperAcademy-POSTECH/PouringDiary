@@ -226,8 +226,8 @@ extension RecipeForm {
                     context: viewContext
                 )
             }
-            presentationMode.wrappedValue.dismiss()
         }
+        presentationMode.wrappedValue.dismiss()
     }
 }
 
