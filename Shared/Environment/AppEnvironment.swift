@@ -15,7 +15,7 @@ struct AppEnvironment: ViewModifier {
 
     init(inMemory: Bool = false) {
         self.inMemory = inMemory
-        controller = inMemory ? PersistenceController.preview : PersistenceController.shared
+        controller = PersistenceController(inMemory: inMemory)
     }
 
     func body(content: Content) -> some View {

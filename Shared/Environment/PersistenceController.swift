@@ -9,16 +9,6 @@ import CoreData
 import CloudKit
 
 struct PersistenceController {
-    static let shared: PersistenceController = {
-        let result = PersistenceController()
-        return result
-    }()
-
-    static var preview: PersistenceController = {
-        let result = PersistenceController(inMemory: true)
-        return result
-    }()
-
     let container: NSPersistentContainer
 
     init(inMemory: Bool = false) {

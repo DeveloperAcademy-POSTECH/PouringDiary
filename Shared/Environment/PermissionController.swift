@@ -9,8 +9,6 @@ import Foundation
 import Photos
 
 class PermissionController {
-    static let shared = PersistenceController()
-
     var currentPhotosPermissionStatus: PHAuthorizationStatus
     init() {
         currentPhotosPermissionStatus = PHPhotoLibrary.authorizationStatus(for: .readWrite)
