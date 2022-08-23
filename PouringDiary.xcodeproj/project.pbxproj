@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E209732428A6251800396E5F /* Sequence+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E209732328A6251800396E5F /* Sequence+Extensions.swift */; };
+		E209732628A64C4800396E5F /* SharePostForm+Views.swift in Sources */ = {isa = PBXBuildFile; fileRef = E209732528A64C4800396E5F /* SharePostForm+Views.swift */; };
+		E209732828A709DB00396E5F /* SharePostForm+ContentLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E209732728A709DB00396E5F /* SharePostForm+ContentLayer.swift */; };
 		E215CF2728596AFB00198F26 /* PouringDiaryApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1428596AFB00198F26 /* PouringDiaryApp.swift */; };
 		E215CF2928596AFB00198F26 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1528596AFB00198F26 /* MainTabView.swift */; };
 		E215CF2B28596AFB00198F26 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E215CF1628596AFB00198F26 /* PersistenceController.swift */; };
@@ -25,6 +28,8 @@
 		E269FE7C288D2F8D00AF17D3 /* PouringDiary.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E269FE7A288D2F8D00AF17D3 /* PouringDiary.xcdatamodeld */; };
 		E283540428810ABA00BA4A7D /* FlavorItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E283540328810ABA00BA4A7D /* FlavorItem.swift */; };
 		E295E58F28A3A7F500AC809A /* SharePostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E295E58E28A3A7F500AC809A /* SharePostList.swift */; };
+		E296BD6428B577E0003CA3E2 /* SharePostForm+Tasks.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296BD6328B577E0003CA3E2 /* SharePostForm+Tasks.swift */; };
+		E296BD6628B57960003CA3E2 /* DiaryForm+Sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296BD6528B57960003CA3E2 /* DiaryForm+Sections.swift */; };
 		E29A754C2859B767007379FD /* Tag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A754B2859B767007379FD /* Tag+Extension.swift */; };
 		E29D02562877CC7F00A84A5D /* CoffeeBeanPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D02552877CC7F00A84A5D /* CoffeeBeanPicker.swift */; };
 		E2ABD29F288F7E3100CBFCFF /* PublicTagList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABD29E288F7E3100CBFCFF /* PublicTagList.swift */; };
@@ -56,6 +61,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E209732328A6251800396E5F /* Sequence+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extensions.swift"; sourceTree = "<group>"; };
+		E209732528A64C4800396E5F /* SharePostForm+Views.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SharePostForm+Views.swift"; sourceTree = "<group>"; };
+		E209732728A709DB00396E5F /* SharePostForm+ContentLayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SharePostForm+ContentLayer.swift"; sourceTree = "<group>"; };
 		E215CF1428596AFB00198F26 /* PouringDiaryApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PouringDiaryApp.swift; sourceTree = "<group>"; };
 		E215CF1528596AFB00198F26 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		E215CF1628596AFB00198F26 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
@@ -76,6 +84,8 @@
 		E269FE7B288D2F8D00AF17D3 /* Shared.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Shared.xcdatamodel; sourceTree = "<group>"; };
 		E283540328810ABA00BA4A7D /* FlavorItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavorItem.swift; sourceTree = "<group>"; };
 		E295E58E28A3A7F500AC809A /* SharePostList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePostList.swift; sourceTree = "<group>"; };
+		E296BD6328B577E0003CA3E2 /* SharePostForm+Tasks.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SharePostForm+Tasks.swift"; sourceTree = "<group>"; };
+		E296BD6528B57960003CA3E2 /* DiaryForm+Sections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiaryForm+Sections.swift"; sourceTree = "<group>"; };
 		E29A754B2859B767007379FD /* Tag+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+Extension.swift"; sourceTree = "<group>"; };
 		E29D02552877CC7F00A84A5D /* CoffeeBeanPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanPicker.swift; sourceTree = "<group>"; };
 		E2ABD29E288F7E3100CBFCFF /* PublicTagList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicTagList.swift; sourceTree = "<group>"; };
@@ -123,6 +133,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E209732228A6250500396E5F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				E209732328A6251800396E5F /* Sequence+Extensions.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		E215CF0C28596AFA00198F26 = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +156,7 @@
 		E215CF1128596AFB00198F26 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				E209732228A6250500396E5F /* Utils */,
 				E21CBB4B2859CC18008CEDC3 /* Environment */,
 				E2FE3FAA2862A042004F4626 /* App */,
 				E29A754028599F35007379FD /* Model */,
@@ -207,6 +226,9 @@
 			isa = PBXGroup;
 			children = (
 				E23CB3A628937EC90001BB7B /* SharePostForm.swift */,
+				E296BD6328B577E0003CA3E2 /* SharePostForm+Tasks.swift */,
+				E209732528A64C4800396E5F /* SharePostForm+Views.swift */,
+				E209732728A709DB00396E5F /* SharePostForm+ContentLayer.swift */,
 				E295E58E28A3A7F500AC809A /* SharePostList.swift */,
 			);
 			path = SharePost;
@@ -277,6 +299,7 @@
 			children = (
 				E2BC211A287FB12D0000CEC1 /* FlaovrRecord */,
 				E2B3DEAE287CF84A00DCCBAB /* DiaryForm.swift */,
+				E296BD6528B57960003CA3E2 /* DiaryForm+Sections.swift */,
 				E2B3DEAB287CF84100DCCBAB /* DiaryList.swift */,
 				E2ABD2A92890C71100CBFCFF /* DiaryMemoCard.swift */,
 			);
@@ -473,13 +496,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2B481D92865453300FBA847 /* TagForm.swift in Sources */,
+				E296BD6628B57960003CA3E2 /* DiaryForm+Sections.swift in Sources */,
 				E2B3DEB6287E103D00DCCBAB /* Date+Extension.swift in Sources */,
 				E2FF05402874175800C737EE /* Recipe+Extension.swift in Sources */,
 				E295E58F28A3A7F500AC809A /* SharePostList.swift in Sources */,
 				E2ABD2AA2890C71100CBFCFF /* DiaryMemoCard.swift in Sources */,
+				E209732428A6251800396E5F /* Sequence+Extensions.swift in Sources */,
 				E26960B8286502FC00862F8E /* CoffeeBeanForm.swift in Sources */,
 				E2B3DEA9287C122B00DCCBAB /* Diary+Extension.swift in Sources */,
 				E2B6F037289B20700081D8EB /* PermissionController.swift in Sources */,
+				E209732828A709DB00396E5F /* SharePostForm+ContentLayer.swift in Sources */,
 				E29A754C2859B767007379FD /* Tag+Extension.swift in Sources */,
 				E215CF2728596AFB00198F26 /* PouringDiaryApp.swift in Sources */,
 				E215CF2B28596AFB00198F26 /* PersistenceController.swift in Sources */,
@@ -497,12 +523,14 @@
 				E2B6F03F289B4DDE0081D8EB /* AppDelegate.swift in Sources */,
 				E2FF0544287425EE00C737EE /* RecipeList.swift in Sources */,
 				E2ABD2A82890C3D900CBFCFF /* FlavorSummary.swift in Sources */,
+				E209732628A64C4800396E5F /* SharePostForm+Views.swift in Sources */,
 				E2BC211C287FB1560000CEC1 /* FlavorRecordPicker.swift in Sources */,
 				E2492A2F28927AE30060E51C /* PhotoPicker.swift in Sources */,
 				E246D6C1289211280034AEFA /* Color+Extension.swift in Sources */,
 				E2FE3FB32862BC6F004F4626 /* NSManagedObjectContext+Extension.swift in Sources */,
 				E23CB3A428937C700001BB7B /* SharedPost+Extension.swift in Sources */,
 				E2B6F035289B132E0081D8EB /* ImageData+Extension.swift in Sources */,
+				E296BD6428B577E0003CA3E2 /* SharePostForm+Tasks.swift in Sources */,
 				E23CB3AA2893BEA60001BB7B /* MappingModel_v0.1.0.xcmappingmodel in Sources */,
 				E2B3DEB2287D3A7500DCCBAB /* RecipePicker.swift in Sources */,
 				E23CB3A728937EC90001BB7B /* SharePostForm.swift in Sources */,

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import CoreData
 import FirebaseAnalyticsSwift
 
 struct DiaryList: View {
@@ -15,6 +16,8 @@ struct DiaryList: View {
     private var diaries: FetchedResults<Diary>
 
     @State private var detailViewShow: Bool = false
+    @State private var diaryId: NSManagedObjectID?
+    @State var shareFormShow: Bool = false
 
     var body: some View {
         NavigationView {
@@ -30,9 +33,19 @@ struct DiaryList: View {
                     }
                 }
                 ForEach(diaries, id: \.id) { diary in
-                    DiaryCard(diary: diary)
+                    DiaryCard(
+                        diary: diary,
+                        shareFormShow: $shareFormShow,
+                        diaryId: $diaryId
+                    )
                 }
                 .onDelete(perform: deleteDiaries)
+            }
+            .onChange(of: diaryId) { _ in
+                shareFormShow.toggle()
+            }
+            .sheet(isPresented: $shareFormShow) {
+                SharePostForm(diaryId: diaryId!)
             }
             .toolbar(content: toolbar)
             .navigationTitle("일지 목록")
@@ -48,7 +61,8 @@ extension DiaryList {
         @ObservedObject var diary: Diary
 
         @State var copiedFormShow: Bool = false
-        @State var shareFormShow: Bool = false
+        @Binding var shareFormShow: Bool
+        @Binding var diaryId: NSManagedObjectID?
 
         var body: some View {
             NavigationLink(
@@ -84,11 +98,6 @@ extension DiaryList {
                                 label: { EmptyView() }
                             )
                             .hidden()
-                            NavigationLink(
-                                isActive: $shareFormShow,
-                                destination: { SharePostForm(diaryId: diary.objectID) },
-                                label: { EmptyView() }
-                            )
                             .hidden()
                         }
                         .padding()
@@ -100,9 +109,9 @@ extension DiaryList {
                             Label("복제", systemImage: "doc.on.doc")
                         }
                         Button {
-                            shareFormShow.toggle()
+                            diaryId = diary.objectID
                         } label: {
-                            Label("공유", systemImage: "square.and.arrow.up")
+                            Label("share-context-menu", systemImage: "square.and.arrow.up")
                         }
                     }
                     .padding(4)

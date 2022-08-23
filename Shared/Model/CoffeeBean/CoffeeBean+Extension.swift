@@ -79,7 +79,7 @@ extension CoffeeBean {
             (
                 .init(name: "저 카페 캐냐", information: "우리동네 맛집 카페 대표 원두", image: nil),
                 IndexSet([3, 5, 8])
-            ),
+            )
         ]
     }
 }

@@ -69,6 +69,8 @@
 "diary-form-flavor-section-header" = "Find weakness in my coffee";
 "diary-form-flavor-section-footer" = "Check unpleasant flavors in this one and improve your next extraction";
 "diary-form-flavor-section-picker-label" = "check unpleasant flavors";
+"diary-form-section-tools-header" = "tools";
+"diary-form-section-tools-footer" = "This actions also perform with long press in journal list";
 
 // MARK: DiaryList
 "일지" = "Jounals";
@@ -139,5 +141,18 @@
 "flavor-record-picker-extraction-over" = "over";
 "flavor-record-picker-strength-under" = "low";
 "flavor-record-picker-strength-over" = "high";
+
+// MARK: Share Form
+"share-form-layer-label-initial" = "";
+"share-form-layer-label-image" = "Image";
+"share-form-layer-label-flavor" = "Flavor records";
+"share-form-layer-label-recipe" = "Recipe";
+"share-form-layer-label-bean" = "Coffee bean";
+"share-form-layer-label-memo" = "Journal memo";
+"share-form-title" = "New Share";
+"share-context-menu" = "share";
+"share-form-layer-image-placeholder" = "Add Photo";
+"share-form-change-photo" = "Change photo";
+"share-form-save-photo-app" = "Save to photo app";
 
 // MARK: Public Tags (이건 맨 마지막 섹션으로 유지할것)
