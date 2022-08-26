@@ -163,6 +163,28 @@ extension DiaryForm {
     }
 
     @ViewBuilder
+    var toolSection: some View {
+        Section {
+            Button {
+                duplicateShow.toggle()
+            } label: {
+                Text("복제")
+                    .font(.caption)
+            }
+            Button {
+                shareShow.toggle()
+            } label: {
+                Text("share-context-menu")
+                    .font(.caption)
+            }
+        } header: {
+            Text("diary-form-section-tools-header")
+        } footer: {
+            Text("diary-form-section-tools-footer")
+        }
+    }
+
+    @ViewBuilder
     var flavorSection: some View {
         Section(content: {
             if input.flavorRecords.isEmpty {

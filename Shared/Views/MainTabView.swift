@@ -22,10 +22,6 @@ struct MainTabView: View {
                 .tabItem {
                     Label("main-tab-bean", systemImage: "cup.and.saucer")
                 }
-            Text("Not Implemented")
-                .tabItem {
-                    Label("main-tab-post", systemImage: "camera.on.rectangle")
-                }
         }
     }
 }

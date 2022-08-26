@@ -66,22 +66,7 @@ struct DiaryForm: View {
             memoSection
             flavorSection
             if isEditing {
-                Section {
-                    Button {
-                        duplicateShow.toggle()
-                    } label: {
-                        Text("복제")
-                    }
-                    Button {
-                        shareShow.toggle()
-                    } label: {
-                        Text("share-context-menu")
-                    }
-                } header: {
-                    Text("diary-form-section-tools-header")
-                } footer: {
-                    Text("diary-form-section-tools-footer")
-                }
+                toolSection
             }
         }
         .navigationTitle(isEditing ? "일지 수정" : "일지 작성")

@@ -12,6 +12,7 @@ import PhotosUI
 
 struct SharePostForm: View {
     @Environment(\.managedObjectContext) var viewContext
+    @Environment(\.presentationMode) var presentationMode
 
     @State var diary: Diary?
 
@@ -76,6 +77,15 @@ struct SharePostForm: View {
                         layers.replaceSubrange(0...0, with: [config])
                         // 현재는 사진 한 장을 교체하는 방식이어서 위의 코드로 대체합니다.
                         // layers.append(config)
+                    }
+                }
+                .toolbar {
+                    ToolbarItem(placement: .navigationBarLeading) {
+                        Button {
+                            presentationMode.wrappedValue.dismiss()
+                        } label: {
+                            Image(systemName: "xmark")
+                        }
                     }
                 }
                 .navigationTitle("share-form-title")
