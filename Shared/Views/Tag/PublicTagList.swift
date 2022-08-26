@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAnalyticsSwift
 
 struct PublicTagList: View {
 
@@ -22,7 +23,9 @@ struct PublicTagList: View {
                         TagItem(tag: tag.tagInput)
                             .contextMenu {
                                 Button {
-                                    tag.saveToPrivate()
+                                    Task {
+                                        await tag.saveToPrivate()
+                                    }
                                 } label: {
                                     Label("저장", systemImage: "square.and.arrow.down")
                                 }
@@ -34,7 +37,9 @@ struct PublicTagList: View {
                         TagItem(tag: tag.tagInput)
                             .contextMenu {
                                 Button {
-                                    tag.saveToPrivate()
+                                    Task {
+                                        await tag.saveToPrivate()
+                                    }
                                 } label: {
                                     Label("저장", systemImage: "square.and.arrow.down")
                                 }
@@ -44,6 +49,7 @@ struct PublicTagList: View {
             }
         }
         .navigationBarTitleDisplayMode(.inline)
+        .analyticsScreen(name: "Public Tag List")
     }
 }
 

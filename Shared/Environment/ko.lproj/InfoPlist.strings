@@ -7,3 +7,4 @@
 */
 
 "CFBundleDisplayName" = "푸어링 노트";
+"NSPhotoLibraryUsageDescription" = "공유 포스팅을 위해서 이미지 열람 및 저장 권한이 필요합니다";

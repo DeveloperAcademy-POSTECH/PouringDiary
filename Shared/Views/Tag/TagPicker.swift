@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAnalyticsSwift
 
 /**
  `@Binding var selected: [Tag]`를 통해서 태그들을 선택해주는 컴포넌트입니다.
@@ -138,6 +139,7 @@ struct TagPicker: View {
             }
             .navigationTitle(navigationTitle)
             .navigationBarTitleDisplayMode(.large)
+            .analyticsScreen(name: "Tag Picker")
         }
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAnalyticsSwift
 
 struct CoffeeBeanList: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -47,6 +48,7 @@ struct CoffeeBeanList: View {
             .toolbar(content: toolBar)
         }
         .navigationViewStyle(.stack)
+        .analyticsScreen(name: "Coffee Bean List")
     }
 }
 
