@@ -10,14 +10,23 @@ import SwiftUI
 import CoreData
 
 struct AppEnvironment: ViewModifier {
-    let container: NSPersistentCloudKitContainer
+    private let inMemory: Bool
+    private let controller: PersistenceController
 
     init(inMemory: Bool = false) {
-        container = inMemory ? PersistenceController.preview.container : PersistenceController.shared.container
+        self.inMemory = inMemory
+        controller = PersistenceController(inMemory: inMemory)
     }
 
     func body(content: Content) -> some View {
         content
-            .environment(\.managedObjectContext, container.viewContext)
+            .environment(\.managedObjectContext, controller.container.viewContext)
+#if DEBUG
+            .task {
+                if inMemory {
+                    await controller.preparePresets()
+                }
+            }
+#endif
     }
 }

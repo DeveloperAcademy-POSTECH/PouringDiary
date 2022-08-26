@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import FirebaseAnalyticsSwift
 
 /**
  원두를 새로 등록하거나 수정하는 뷰입니다.
@@ -47,7 +48,7 @@ struct CoffeeBeanForm: View {
         self.input = editing.input
 
         // TODO: TextEditor 버그 임시 해결 방법(추후 수정 필요)
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now().advanced(by: .milliseconds(50))) {
             if self.input.information.last != "\n" {
                 self.input.information.append(contentsOf: "\n")
             } else {
@@ -68,6 +69,7 @@ struct CoffeeBeanForm: View {
         }
         .navigationTitle(navigationTitle)
         .task(prepare)
+        .analyticsScreen(name: "Coffee Bean Form - \(isEditing ? "Edit" : "New")")
     }
 }
 
@@ -134,19 +136,21 @@ extension CoffeeBeanForm {
     private func toolbar() -> some ToolbarContent {
         ToolbarItem(placement: .automatic) {
             Button(action: {
-                if isEditing {
-                    CoffeeBean.save(
-                        objectId: beanId!,
-                        input: input,
-                        tags: selectedTags,
-                        context: viewContext
-                    )
-                } else {
-                    CoffeeBean.register(
-                        input: input,
-                        tags: selectedTags,
-                        context: viewContext
-                    )
+                Task {
+                    if isEditing {
+                        CoffeeBean.save(
+                            objectId: beanId!,
+                            input: input,
+                            tags: selectedTags,
+                            context: viewContext
+                        )
+                    } else {
+                        _ = try? await CoffeeBean.register(
+                            input: input,
+                            tags: selectedTags,
+                            context: viewContext
+                        )
+                    }
                 }
                 presentationMode.wrappedValue.dismiss()
             }, label: {

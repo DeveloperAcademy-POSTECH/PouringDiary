@@ -7,6 +7,7 @@
 
 import SwiftUI
 import CoreData
+import FirebaseAnalyticsSwift
 
 struct RecipeForm: View {
     // Environment
@@ -62,6 +63,7 @@ struct RecipeForm: View {
             TagPicker(with: .equipment, selected: $equipmentTags)
         }
         .navigationTitle(isEditing ? "레시피 수정" : "레시피 등록")
+        .analyticsScreen(name: "Recipe Form - \(isEditing ? "Edit" : "New")")
     }
 }
 
@@ -205,26 +207,27 @@ extension RecipeForm {
 
     @Sendable
     private func saveOrRegister() {
-        let relation = Recipe.RelationInput(
-            tags: recipeTags,
-            equipments: equipmentTags
-        )
-        if let recipeId = recipeId {
-            Recipe.save(
-                objectId: recipeId,
-                input: input,
-                relation: relation,
-                context: viewContext
+        Task {
+            let relation = Recipe.RelationInput(
+                tags: recipeTags,
+                equipments: equipmentTags
             )
-        } else {
-            Recipe.register(
-                input: input,
-                relation: relation,
-                context: viewContext
-            )
+            if let recipeId = recipeId {
+                Recipe.save(
+                    objectId: recipeId,
+                    input: input,
+                    relation: relation,
+                    context: viewContext
+                )
+            } else {
+                _ = try? await Recipe.register(
+                    input: input,
+                    relation: relation,
+                    context: viewContext
+                )
+            }
         }
         presentationMode.wrappedValue.dismiss()
-
     }
 }
 
