@@ -87,7 +87,6 @@ struct PersistenceController {
         ]
     }
 }
-
 #if DEBUG
 // Extension for Preset Generation
 extension PersistenceController {
@@ -130,5 +129,12 @@ extension PersistenceController {
             fatalError(error.localizedDescription)
         }
     }
+#if DEBUG
+    func prepare() async {
+        for tag in Tag.presets {
+            _ = await Tag.register(input: tag, context: container.viewContext)
+        }
+    }
+#endif
 }
 #endif

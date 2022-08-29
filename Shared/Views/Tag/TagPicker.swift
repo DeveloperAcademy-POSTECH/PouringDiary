@@ -94,7 +94,11 @@ struct TagPicker: View {
                             id: \.objectID,
                             content: tagToggleButton
                         )
-                        .onDelete(perform: deleteItems)
+                        .onDelete { indexSet in
+                            Task {
+                                await deleteItems(indexSet: indexSet)
+                            }
+                        }
                     } header: {
                         Text("내 태그")
                             .font(.caption)
@@ -197,9 +201,9 @@ extension TagPicker {
     }
 
     /// 선택된 인덱스들에 대한 태그 삭제
-    private func deleteItems(indexSet: IndexSet) {
+    private func deleteItems(indexSet: IndexSet) async {
         let tags = indexSet.map { notSelected()[$0] }
-        Tag.delete(tags: tags, context: viewContext)
+        await Tag.delete(tags: tags, context: viewContext)
     }
 }
 
