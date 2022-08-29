@@ -132,7 +132,7 @@ extension PersistenceController {
 #if DEBUG
     func prepare() async {
         for tag in Tag.presets {
-            _ = await Tag.register(input: tag, context: container.viewContext)
+            _ = try? await Tag.register(input: tag, context: container.viewContext)
         }
     }
 #endif

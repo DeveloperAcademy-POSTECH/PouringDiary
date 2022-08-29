@@ -24,7 +24,7 @@ class TagTests: XCTestCase {
     private func createBulk(count: Int) async -> [Tag] {
         var result: [Tag] = []
         for index in 0..<count {
-            let tag = await Tag.register(
+            let tag = try? await Tag.register(
                 input: .init(
                     content: "TAG+\(index)",
                     color: .init(rawValue: index % Tag.Color.allCases.count)!
@@ -39,7 +39,7 @@ class TagTests: XCTestCase {
     // MARK: Tag 생성
     func testTagCanRegister() async throws {
         let context = controller.container.viewContext
-        let newTag = await Tag.register(
+        let newTag = try? await Tag.register(
             input: .init(content: "에티오피아", color: .tag1),
             context: context
         )
