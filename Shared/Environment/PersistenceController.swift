@@ -129,12 +129,5 @@ extension PersistenceController {
             fatalError(error.localizedDescription)
         }
     }
-#if DEBUG
-    func prepare() async {
-        for tag in Tag.presets {
-            _ = try? await Tag.register(input: tag, context: container.viewContext)
-        }
-    }
-#endif
 }
 #endif
