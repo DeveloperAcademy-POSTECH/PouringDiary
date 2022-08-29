@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAnalyticsSwift
 
 struct PublicTagList: View {
 
@@ -48,6 +49,7 @@ struct PublicTagList: View {
             }
         }
         .navigationBarTitleDisplayMode(.inline)
+        .analyticsScreen(name: "Public Tag List")
     }
 }
 

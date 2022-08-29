@@ -83,7 +83,8 @@ extension Tag {
     }
 
     /// `Tag.Input`을 활용해서 새로운 태그를 등록합니다
-    static func register(input: Tag.Input, context: NSManagedObjectContext) async -> Tag? {
+
+    static func register(input: Tag.Input, context: NSManagedObjectContext) async throws -> Tag {
         do {
             let newTag = Tag(context: context)
             try await context.perform(schedule: .immediate) {
@@ -96,7 +97,7 @@ extension Tag {
             }
             return newTag
         } catch {
-            return nil
+            throw error
         }
     }
 
@@ -124,7 +125,6 @@ extension Tag {
                     color.rawValue
                 )
             }
-            print(queryTrimmed)
             return NSPredicate(format: "category == %i && content CONTAINS %@", category.rawValue, queryTrimmed)
         } else {
             if let color = color {
@@ -156,6 +156,9 @@ extension Tag {
         .init(content: "강배전", color: .tag3),
         .init(content: "중배전", color: .tag3),
         .init(content: "약배전", color: .tag3),
+
+        .init(content: "핫", color: .tag6),
+        .init(content: "이이스", color: .tag6),
 
         .init(content: "코만단테", color: .tag4, category: .equipment),
         .init(content: "바라짜 앤코", color: .tag4, category: .equipment),

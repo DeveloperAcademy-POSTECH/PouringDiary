@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseAnalyticsSwift
 
 /**
  새로운 태그를 등록하기 위한 뷰입니다
@@ -36,6 +37,7 @@ struct TagForm: View {
         .toolbar(content: toolbar)
         .navigationTitle("새로운 태그")
         .navigationBarTitleDisplayMode(.large)
+        .analyticsScreen(name: "Tag Form")
     }
 }
 
@@ -45,8 +47,12 @@ extension TagForm {
         return ToolbarItem(placement: .automatic) {
             Button("저장하기") {
                 Task {
-                    _ = await Tag.register(input: input, context: viewContext)
-                    isPresent.toggle()
+                    do {
+                        _ = try await Tag.register(input: input, context: viewContext)
+                        isPresent.toggle()
+                    } catch {
+                        isPresent.toggle()
+                    }
                 }
             }
             .disabled(input.content.isEmpty)

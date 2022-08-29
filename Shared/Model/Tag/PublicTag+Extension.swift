@@ -11,7 +11,8 @@ import CoreData
 
 extension PublicTag {
     func saveToPrivate() async {
-        _ = await Tag.register(
+
+        _ = try? await Tag.register(
             input: tagInput,
             context: managedObjectContext!
         )

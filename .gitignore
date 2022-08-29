@@ -40,7 +40,6 @@ Packages
 .build/
 xcuserdata
 DerivedData/
-*.xcodeproj
 
 
 ### Xcode ###
@@ -52,11 +51,12 @@ xcuserdata/
 *.xccheckout
 
 ### Xcode Patch ###
-*.xcodeproj/*
 !*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
 **/xcshareddata/WorkspaceSettings.xcsettings
+*.xcodeproj/xcshareddata/*
 
 # End of https://www.toptal.com/developers/gitignore/api/xcode,macos,swiftpackagemanager
+Shared/Environment/GoogleService-Info.plist
