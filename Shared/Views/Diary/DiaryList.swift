@@ -20,7 +20,7 @@ struct DiaryList: View {
 
     @State private var detailViewShow: Bool = false
     @State private var searchQuery: String = ""
-    @State private var searchTag: Tag?
+    @State private var searchTags: [Tag] = []
 
     @State private var diaryId: NSManagedObjectID?
     @State var shareFormShow: Bool = false
@@ -32,10 +32,12 @@ struct DiaryList: View {
                     ScrollView(.horizontal) {
                         HStack {
                             ForEach(allTags) { tag in
-                                Button {
-                                    searchTag = tag
-                                } label: {
-                                    TagItem(tag: tag.input)
+                                if !searchTags.contains(tag) {
+                                    Button {
+                                        searchTags.append(tag)
+                                    } label: {
+                                        TagItem(tag: tag.input)
+                                    }
                                 }
                             }
                         }
@@ -69,12 +71,12 @@ struct DiaryList: View {
                     diaries.nsPredicate = Diary.searchByText(query: query)
                 }
             } else {
-                diaries.nsPredicate = Diary.searchByTag(tag: searchTag)
+                diaries.nsPredicate = Diary.searchByTag(tags: searchTags)
                 allTags.nsPredicate = nil
             }
         }
-        .onChange(of: searchTag) { tag in
-            diaries.nsPredicate = Diary.searchByTag(tag: tag)
+        .onChange(of: searchTags) { tags in
+            diaries.nsPredicate = Diary.searchByTag(tags: tags)
         }
         .navigationViewStyle(.stack)
         .analyticsScreen(name: "Diary List")
@@ -163,7 +165,7 @@ extension DiaryList {
     @ViewBuilder
     private var emptyResultSection: some View {
         if diaries.isEmpty {
-            if searchTag == nil && searchQuery.isEmpty {
+            if searchTags.isEmpty && searchQuery.isEmpty {
                 HStack(alignment: .center) {
                     Spacer()
                     Text("아직 작성된 일지가 없습니다.\n원두와 레시피를 등록하신 뒤에\n일지 작성이 가능합니다")
@@ -187,25 +189,22 @@ extension DiaryList {
 
     @ViewBuilder
     private var searchTagSection: some View {
-        if let tag = searchTag {
+        if !searchTags.isEmpty {
             Section {
-                HStack {
-                    Button {
-                        searchTag = nil
-                    } label: {
-                        TagItem(tag: tag.input)
+                ScrollView(.horizontal) {
+                    HStack {
+                        ForEach(searchTags) { tag in
+                            Button {
+                                searchTags.remove(at: searchTags.firstIndex(of: tag)!)
+                            } label: {
+                                TagItem(tag: tag.input)
+                            }
+                        }
                     }
-                    Spacer()
                 }
             } header: {
                 Text("다음 태그를 포함")
                     .font(.caption)
-            } footer: {
-                HStack {
-                    Spacer()
-                    Text("태그 검색은 1개의 태그로만 가능합니다.")
-                        .font(.caption2)
-                }
             }
         }
     }
@@ -236,5 +235,6 @@ extension DiaryList {
 struct DiaryList_Previews: PreviewProvider {
     static var previews: some View {
         DiaryList()
+            .modifier(AppEnvironment(inMemory: true))
     }
 }
