@@ -17,6 +17,9 @@
         <relationship name="coffeeBean" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CoffeeBean" inverseName="diaries" inverseEntity="CoffeeBean"/>
         <relationship name="recipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Recipe" inverseName="diaries" inverseEntity="Recipe"/>
     </entity>
+    <entity name="ImageData" representedClassName="ImageData" syncable="YES" codeGenerationType="class">
+        <attribute name="data" optional="YES" attributeType="Binary"/>
+    </entity>
     <entity name="PublicTag" representedClassName="PublicTag" syncable="YES" codeGenerationType="class">
         <attribute name="category" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="color" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -33,6 +36,11 @@
         <relationship name="diaries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Diary" inverseName="recipe" inverseEntity="Diary"/>
         <relationship name="equipmentTags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="equipments" inverseEntity="Tag"/>
         <relationship name="recipeTags" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Tag" inverseName="recipes" inverseEntity="Tag"/>
+    </entity>
+    <entity name="SharePost" representedClassName="SharePost" syncable="YES" codeGenerationType="class">
+        <attribute name="created" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="thumbnail" optional="YES" attributeType="String"/>
     </entity>
     <entity name="Tag" representedClassName=".Tag" syncable="YES" codeGenerationType="class">
         <attribute name="category" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
@@ -55,9 +63,11 @@
     </configuration>
     <elements>
         <element name="CoffeeBean" positionX="-78.63671875" positionY="18.19140625" width="128" height="14"/>
-        <element name="Diary" positionX="18" positionY="0" width="128" height="119"/>
-        <element name="PublicTag" positionX="27" positionY="0" width="128" height="104"/>
+        <element name="Diary" positionX="-256.48046875" positionY="-28.765625" width="128" height="119"/>
+        <element name="ImageData" positionX="-53.625" positionY="157.80859375" width="128" height="44"/>
+        <element name="PublicTag" positionX="230.30859375" positionY="-64.4375" width="128" height="104"/>
         <element name="Recipe" positionX="114.0703125" positionY="-84.03515625" width="128" height="14"/>
+        <element name="SharePost" positionX="270.8515625" positionY="124.40234375" width="128" height="74"/>
         <element name="Tag" positionX="-60.92578125" positionY="-139.19140625" width="128" height="149"/>
     </elements>
 </model>

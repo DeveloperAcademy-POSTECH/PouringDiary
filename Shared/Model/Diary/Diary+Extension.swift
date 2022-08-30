@@ -24,17 +24,23 @@ extension Diary {
         input: Input,
         relation: RelationInput,
         context: NSManagedObjectContext
-    ) {
-        let encoder = JSONEncoder()
-        guard let recordData = try? encoder.encode(input.flavorRecords) else { return }
+    ) async throws -> Diary {
         let newDiary = Diary(context: context)
-        newDiary.id = UUID()
-        newDiary.created = Date()
-        newDiary.memo = input.memo
-        newDiary.flavorRecords = recordData
-        newDiary.recipe = relation.recipe
-        newDiary.coffeeBean = relation.bean
-        context.saveContext()
+        do {
+            let encoder = JSONEncoder()
+            let recordData = try encoder.encode(input.flavorRecords)
+
+            newDiary.id = UUID()
+            newDiary.created = Date()
+            newDiary.memo = input.memo
+            newDiary.flavorRecords = recordData
+            newDiary.recipe = relation.recipe
+            newDiary.coffeeBean = relation.bean
+            try context.save()
+        } catch {
+            throw error
+        }
+        return newDiary
     }
 
     static func save(
@@ -84,34 +90,10 @@ extension Diary {
                 bean
             )
         } else {
-
             request.predicate = NSPredicate(format: "id == %@", UUID().uuidString)
         }
         request.sortDescriptors = [NSSortDescriptor(SortDescriptor<Diary>(\.created, order: .reverse))]
         return request
-    }
-
-    static func searchByText(query: String) -> NSPredicate {
-        return NSPredicate(
-            format: "coffeeBean.name CONTAINS[cd] %@ OR recipe.title CONTAINS[cd] %@",
-            query,
-            query
-        )
-    }
-
-    static func searchByTag(tag: Tag?) -> NSPredicate? {
-        if let tag = tag {
-            let format = """
-    coffeeBean.tags CONTAINS %@ || recipe.equipmentTags CONTAINS %@ || recipe.recipeTags CONTAINS %@
-    """
-            return NSPredicate(
-                format: format,
-                tag,
-                tag,
-                tag
-            )
-        }
-        return nil
     }
 }
 
@@ -147,12 +129,38 @@ extension Diary.Input {
 
 #if DEBUG
 extension Diary {
-    static var presets: [Diary.Input] {
+    // DiaryInput / 원두 인덱스 / 레시피 인덱스 순
+    typealias PresetInput = (diary: Diary.Input, bean: Int, recipe: Int)
+    static var presets: [PresetInput] {
         return [
-            .init(memo: "그라인더 15클릭으로 진행\n추출 완료까지 2분 12초", flavorRecords: [
-                FlavorRecord(label: "텁텁한", strength: 0.4, extraction: 0.6),
-                FlavorRecord(label: "드라이한", strength: 0.2, extraction: 0.8)
-            ])
+            (
+                .init(memo: "그라인더 15클릭으로 진행\n추출 완료까지 2분 12초", flavorRecords: [
+                    FlavorRecord(label: "flavor-record-sparse", strength: -0.7, extraction: -0.3),
+                    FlavorRecord(label: "flavor-record-watery", strength: -0.5, extraction: -0.5)
+                ]),
+                0,
+                1
+            ),
+            (
+                .init(memo: "그라인더 13클릭으로 진행\n추출 완료까지 2분 30초", flavorRecords: [
+                    FlavorRecord(label: "flavor-record-powdary", strength: -0.1, extraction: 0.9)
+                ]),
+                0,
+                1
+            ),
+            (
+                .init(memo: "그라인더 11클릭으로 진행\n추출 완료까지 2분\n제일 잘 내려진 것 같다", flavorRecords: [
+                    FlavorRecord(label: "텁텁한", strength: 0.4, extraction: 0.6),
+                    FlavorRecord(label: "드라이한", strength: 0.2, extraction: 0.8)
+                ]),
+                1,
+                0
+            ),
+            (
+                .init(memo: "이 원두로 첫 추출\n 유튜브로 봤던 레시피 도전\n그라인더 15클릭으로 추출 진행 \n 1차에 20g 더 부어버림 ㅠ_ㅠ", flavorRecords: []),
+                2,
+                0
+            )
         ]
     }
 }

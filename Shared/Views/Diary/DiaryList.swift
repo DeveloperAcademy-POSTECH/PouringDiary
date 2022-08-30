@@ -6,6 +6,8 @@
 //
 
 import SwiftUI
+import CoreData
+import FirebaseAnalyticsSwift
 
 struct DiaryList: View {
     @Environment(\.managedObjectContext) private var viewContext
@@ -13,32 +15,37 @@ struct DiaryList: View {
     @FetchRequest(sortDescriptors: [SortDescriptor(\.created, order: .reverse)])
     private var diaries: FetchedResults<Diary>
 
-    @FetchRequest(sortDescriptors: [SortDescriptor(\.color)])
-    private var allTags: FetchedResults<Tag>
-
     @State private var detailViewShow: Bool = false
-    @State private var searchQuery: String = ""
-    @State private var searchTag: Tag?
+    @State private var diaryId: NSManagedObjectID?
+    @State var shareFormShow: Bool = false
 
     var body: some View {
         NavigationView {
             List {
-                if searchQuery.first == "#" {
-                    ScrollView(.horizontal) {
-                        HStack {
-                            ForEach(allTags) { tag in
-                                Button {
-                                    searchTag = tag
-                                } label: {
-                                    TagItem(tag: tag.input)
-                                }
-                            }
-                        }
+                if diaries.isEmpty {
+                    HStack(alignment: .center) {
+                        Spacer()
+                        Text("아직 작성된 일지가 없습니다.\n원두와 레시피를 등록하신 뒤에\n일지 작성이 가능합니다")
+                            .font(.subheadline)
+                            .multilineTextAlignment(.center)
+                            .padding()
+                        Spacer()
                     }
                 }
-                emptyResultSection
-                searchTagSection
-                diaryList
+                ForEach(diaries, id: \.id) { diary in
+                    DiaryCard(
+                        diary: diary,
+                        shareFormShow: $shareFormShow,
+                        diaryId: $diaryId
+                    )
+                }
+                .onDelete(perform: deleteDiaries)
+            }
+            .onChange(of: diaryId) { _ in
+                shareFormShow.toggle()
+            }
+            .sheet(isPresented: $shareFormShow) {
+                SharePostForm(diaryId: diaryId!)
             }
             .toolbar(content: toolbar)
             .navigationTitle("일지 목록")
@@ -61,6 +68,7 @@ struct DiaryList: View {
             diaries.nsPredicate = Diary.searchByTag(tag: tag)
         }
         .navigationViewStyle(.stack)
+        .analyticsScreen(name: "Diary List")
     }
 }
 
@@ -70,6 +78,8 @@ extension DiaryList {
         @ObservedObject var diary: Diary
 
         @State var copiedFormShow: Bool = false
+        @Binding var shareFormShow: Bool
+        @Binding var diaryId: NSManagedObjectID?
 
         var body: some View {
             NavigationLink(
@@ -105,6 +115,7 @@ extension DiaryList {
                                 label: { EmptyView() }
                             )
                             .hidden()
+                            .hidden()
                         }
                         .padding()
                     }
@@ -113,6 +124,11 @@ extension DiaryList {
                             copiedFormShow.toggle()
                         } label: {
                             Label("복제", systemImage: "doc.on.doc")
+                        }
+                        Button {
+                            diaryId = diary.objectID
+                        } label: {
+                            Label("share-context-menu", systemImage: "square.and.arrow.up")
                         }
                     }
                     .padding(4)
@@ -133,64 +149,6 @@ extension DiaryList {
                 })
             }
         }
-    }
-
-    @ViewBuilder
-    private var emptyResultSection: some View {
-        if diaries.isEmpty {
-            if searchTag == nil && searchQuery.isEmpty {
-                HStack(alignment: .center) {
-                    Spacer()
-                    Text("아직 작성된 일지가 없습니다.\n원두와 레시피를 등록하신 뒤에\n일지 작성이 가능합니다")
-                        .font(.subheadline)
-                        .multilineTextAlignment(.center)
-                        .padding()
-                    Spacer()
-                }
-            } else {
-                HStack(alignment: .center) {
-                    Spacer()
-                    Text("검색 결과가 없습니다")
-                        .font(.subheadline)
-                        .multilineTextAlignment(.center)
-                        .padding()
-                    Spacer()
-                }
-            }
-        }
-    }
-
-    @ViewBuilder
-    private var searchTagSection: some View {
-        if let tag = searchTag {
-            Section {
-                HStack {
-                    Button {
-                        searchTag = nil
-                    } label: {
-                        TagItem(tag: tag.input)
-                    }
-                    Spacer()
-                }
-            } header: {
-                Text("다음 태그를 포함")
-                    .font(.caption)
-            } footer: {
-                HStack {
-                    Spacer()
-                    Text("태그 검색은 1개의 태그로만 가능합니다.")
-                        .font(.caption2)
-                }
-            }
-        }
-    }
-
-    @ViewBuilder
-    private var diaryList: some View {
-        ForEach(diaries, id: \.id) { diary in
-            DiaryCard(diary: diary)
-        }
-        .onDelete(perform: deleteDiaries)
     }
 }
 

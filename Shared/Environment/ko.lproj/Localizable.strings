@@ -25,6 +25,11 @@
 "flavor-record-quickfinish" = "향이 빠르게 없어짐";
 "flavor-record-dull" = "향이 단조로운";
 "flavor-record-soupy" = "자극적인";
+// MARK: Main Tab
+"main-tab-journal" = "일지";
+"main-tab-recipe" = "레시피";
+"main-tab-bean" = "원두";
+"main-tab-post" = "포스팅";
 
 // MARK: Form
 "등록" = "등록";
@@ -57,6 +62,8 @@
 "diary-form-flavor-section-header" = "이번 커피 약점 찾기";
 "diary-form-flavor-section-footer" = "이번에 추출한 커피에서 부정적인 향미를 찾고 다음 추출에 더 발전된 레시피를 시도할 수 있게 돕습니다";
 "diary-form-flavor-section-picker-label" = "부정적 향미 찾기";
+"diary-form-section-tools-header" = "도구";
+"diary-form-section-tools-footer" = "일지 목록에서 목록을 길게 누르시면 동일한 기능을 사용하실 수 있습니다";
 
 // MARK: DiaryList
 "일지" = "일지";
@@ -127,3 +134,16 @@
 "flavor-record-picker-extraction-over" = "과다";
 "flavor-record-picker-strength-under" = "낮음";
 "flavor-record-picker-strength-over" = "높음";
+
+// MARK: Share Form
+"share-form-layer-label-initial" = " ";
+"share-form-layer-label-image" = "이미지";
+"share-form-layer-label-flavor" = "부정 향미";
+"share-form-layer-label-recipe" = "레시피";
+"share-form-layer-label-bean" = "원두";
+"share-form-layer-label-memo" = "메모";
+"share-form-title" = "새로운 일지 공유";
+"share-context-menu" = "공유";
+"share-form-layer-image-placeholder" = "커피 사진을 첨부해보세요";
+"share-form-change-photo" = "사진 교체";
+"share-form-save-photo-app" = "사진 앱에 저장";
