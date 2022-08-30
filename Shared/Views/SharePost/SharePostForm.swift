@@ -9,6 +9,7 @@ import SwiftUI
 import CoreData
 import Photos
 import PhotosUI
+import FirebaseAnalyticsSwift
 
 struct SharePostForm: View {
     @Environment(\.managedObjectContext) var viewContext
@@ -91,6 +92,7 @@ struct SharePostForm: View {
                 .navigationTitle("share-form-title")
         }
         .navigationViewStyle(.stack)
+        .analyticsScreen(name: "Share Diary Form")
     }
 }
 
