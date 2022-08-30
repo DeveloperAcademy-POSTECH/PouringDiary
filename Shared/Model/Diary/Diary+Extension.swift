@@ -95,6 +95,32 @@ extension Diary {
         request.sortDescriptors = [NSSortDescriptor(SortDescriptor<Diary>(\.created, order: .reverse))]
         return request
     }
+
+    static func searchByText(query: String) -> NSPredicate {
+        return NSPredicate(
+            format: "coffeeBean.name CONTAINS[cd] %@ OR recipe.title CONTAINS[cd] %@",
+            query,
+            query
+        )
+    }
+
+    static func searchByTag(tags: [Tag]) -> NSPredicate? {
+        if !tags.isEmpty {
+            let predicates: [NSPredicate] = tags.map { tag in
+                let format = """
+        coffeeBean.tags CONTAINS %@ || recipe.equipmentTags CONTAINS %@ || recipe.recipeTags CONTAINS %@
+        """
+                return NSPredicate(
+                    format: format,
+                    tag,
+                    tag,
+                    tag
+                )
+            }
+            return NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
+        }
+        return nil
+    }
 }
 
 extension Diary: UUIDObject { }

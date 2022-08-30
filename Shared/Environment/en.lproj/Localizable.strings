@@ -79,6 +79,7 @@
 = "There is no journal yet.\nAfter registering beans and recipes,\nyou can create a journal.";
 "원두 목록에서 원두를 선택하거나\n새로운 원두를 등록해주세요" = "Please select a bean from the list or \nregister a new one";
 "복제" = "duplicate";
+"diary-list-searchbar-placeholder" = "Coffee bean name, Recipe title, #Tags";
 
 // MARK: RecipeForm
 "레시피 수정" = "Edit Recipe";

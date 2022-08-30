@@ -32,6 +32,7 @@
 		E296BD6628B57960003CA3E2 /* DiaryForm+Sections.swift in Sources */ = {isa = PBXBuildFile; fileRef = E296BD6528B57960003CA3E2 /* DiaryForm+Sections.swift */; };
 		E29A754C2859B767007379FD /* Tag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29A754B2859B767007379FD /* Tag+Extension.swift */; };
 		E29D02562877CC7F00A84A5D /* CoffeeBeanPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E29D02552877CC7F00A84A5D /* CoffeeBeanPicker.swift */; };
+		E2ABC6C6289A5A1A003002F6 /* TagTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABC6C5289A5A1A003002F6 /* TagTests.swift */; };
 		E2ABD29F288F7E3100CBFCFF /* PublicTagList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABD29E288F7E3100CBFCFF /* PublicTagList.swift */; };
 		E2ABD2A3288FD1C000CBFCFF /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2ABD2A5288FD1C000CBFCFF /* InfoPlist.strings */; };
 		E2ABD2A82890C3D900CBFCFF /* FlavorSummary.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2ABD2A72890C3D900CBFCFF /* FlavorSummary.swift */; };
@@ -59,6 +60,16 @@
 		E2FF0544287425EE00C737EE /* RecipeList.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF0543287425EE00C737EE /* RecipeList.swift */; };
 		E2FF0546287425FC00C737EE /* RecipeForm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2FF0545287425FC00C737EE /* RecipeForm.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E2ABC6BE289A59D0003002F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E215CF0D28596AFA00198F26 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E215CF1B28596AFB00198F26;
+			remoteInfo = "PouringDiary (iOS)";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		E209732328A6251800396E5F /* Sequence+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Sequence+Extensions.swift"; sourceTree = "<group>"; };
@@ -88,6 +99,8 @@
 		E296BD6528B57960003CA3E2 /* DiaryForm+Sections.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiaryForm+Sections.swift"; sourceTree = "<group>"; };
 		E29A754B2859B767007379FD /* Tag+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tag+Extension.swift"; sourceTree = "<group>"; };
 		E29D02552877CC7F00A84A5D /* CoffeeBeanPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoffeeBeanPicker.swift; sourceTree = "<group>"; };
+		E2ABC6BA289A59D0003002F6 /* PouringDiaryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PouringDiaryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E2ABC6C5289A5A1A003002F6 /* TagTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagTests.swift; sourceTree = "<group>"; };
 		E2ABD29E288F7E3100CBFCFF /* PublicTagList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PublicTagList.swift; sourceTree = "<group>"; };
 		E2ABD2A4288FD1C000CBFCFF /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E2ABD2A6288FD1C400CBFCFF /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -130,6 +143,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E2ABC6B7289A59D0003002F6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -149,6 +169,8 @@
 				E2D8D0C3287EBA90009A6427 /* PouringDiary (iOS).entitlements */,
 				E215CF1128596AFB00198F26 /* Shared */,
 				E215CF2328596AFB00198F26 /* macOS */,
+				E2ABC69B289A5955003002F6 /* Tests */,
+				E2ABC6BB289A59D0003002F6 /* PouringDiaryTests */,
 				E215CF1D28596AFB00198F26 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -169,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				E215CF1C28596AFB00198F26 /* PouringDiary.app */,
+				E2ABC6BA289A59D0003002F6 /* PouringDiaryTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -275,6 +298,21 @@
 				E2FE3FA82862A020004F4626 /* Extensions */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		E2ABC69B289A5955003002F6 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		E2ABC6BB289A59D0003002F6 /* PouringDiaryTests */ = {
+			isa = PBXGroup;
+			children = (
+				E2ABC6C5289A5A1A003002F6 /* TagTests.swift */,
+			);
+			path = PouringDiaryTests;
 			sourceTree = "<group>";
 		};
 		E2AC03582863F9590005FFD2 /* CoffeeBean */ = {
@@ -418,6 +456,24 @@
 			productReference = E215CF1C28596AFB00198F26 /* PouringDiary.app */;
 			productType = "com.apple.product-type.application";
 		};
+		E2ABC6B9289A59D0003002F6 /* PouringDiaryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E2ABC6C0289A59D0003002F6 /* Build configuration list for PBXNativeTarget "PouringDiaryTests" */;
+			buildPhases = (
+				E2ABC6B6289A59D0003002F6 /* Sources */,
+				E2ABC6B7289A59D0003002F6 /* Frameworks */,
+				E2ABC6B8289A59D0003002F6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E2ABC6BF289A59D0003002F6 /* PBXTargetDependency */,
+			);
+			name = PouringDiaryTests;
+			productName = PouringDiaryTests;
+			productReference = E2ABC6BA289A59D0003002F6 /* PouringDiaryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -425,11 +481,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1330;
+				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					E215CF1B28596AFB00198F26 = {
 						CreatedOnToolsVersion = 13.3.1;
+					};
+					E2ABC6B9289A59D0003002F6 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = E215CF1B28596AFB00198F26;
 					};
 				};
 			};
@@ -451,6 +511,7 @@
 			projectRoot = "";
 			targets = (
 				E215CF1B28596AFB00198F26 /* PouringDiary (iOS) */,
+				E2ABC6B9289A59D0003002F6 /* PouringDiaryTests */,
 			);
 		};
 /* End PBXProject section */
@@ -464,6 +525,13 @@
 				E2B6F041289B4E450081D8EB /* GoogleService-Info.plist in Resources */,
 				E2ABD2A3288FD1C000CBFCFF /* InfoPlist.strings in Resources */,
 				E2D8D0C7287F686E009A6427 /* Localizable.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E2ABC6B8289A59D0003002F6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -543,7 +611,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E2ABC6B6289A59D0003002F6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E2ABC6C6289A5A1A003002F6 /* TagTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E2ABC6BF289A59D0003002F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E215CF1B28596AFB00198F26 /* PouringDiary (iOS) */;
+			targetProxy = E2ABC6BE289A59D0003002F6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		E2ABD2A5288FD1C000CBFCFF /* InfoPlist.strings */ = {
@@ -685,7 +769,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "PouringDiary (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2B2B4NCTA5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -704,7 +788,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = academy.isaac.PouringDiary.debug;
 				PRODUCT_NAME = PouringDiary;
 				SDKROOT = iphoneos;
@@ -722,7 +806,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "PouringDiary (iOS).entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2B2B4NCTA5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -741,7 +825,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = academy.isaac.PouringDiary;
 				PRODUCT_NAME = PouringDiary;
 				SDKROOT = iphoneos;
@@ -749,6 +833,47 @@
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E2ABC6C1289A59D0003002F6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2B2B4NCTA5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = academy.isaac.PouringDiaryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PouringDiary.app/PouringDiary";
+			};
+			name = Debug;
+		};
+		E2ABC6C2289A59D0003002F6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 2B2B4NCTA5;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = academy.isaac.PouringDiaryTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PouringDiary.app/PouringDiary";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -770,6 +895,15 @@
 			buildConfigurations = (
 				E215CF3228596AFB00198F26 /* Debug */,
 				E215CF3328596AFB00198F26 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E2ABC6C0289A59D0003002F6 /* Build configuration list for PBXNativeTarget "PouringDiaryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E2ABC6C1289A59D0003002F6 /* Debug */,
+				E2ABC6C2289A59D0003002F6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

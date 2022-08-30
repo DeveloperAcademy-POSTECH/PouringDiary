@@ -87,7 +87,6 @@ struct PersistenceController {
         ]
     }
 }
-
 #if DEBUG
 // Extension for Preset Generation
 extension PersistenceController {

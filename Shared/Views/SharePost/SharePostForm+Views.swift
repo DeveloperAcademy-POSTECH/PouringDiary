@@ -91,8 +91,13 @@ extension SharePostForm {
     @ViewBuilder
     private func coffeeBeanLayer(bean: CoffeeBean, index: Int) -> some View {
         Text("☕️  \(bean.name?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "")")
-            .padding()
-            .background(Color.white.opacity(0.4))
+            .modifier(
+                LayerBackground(
+                    backgroundColor: .black,
+                    textColor: .white,
+                    alpha: 0.9
+                )
+            )
             .scaleEffect(layers[index].finalScale)
             .offset(layers[index].finalOffset)
             .gesture(
@@ -125,8 +130,13 @@ extension SharePostForm {
                 maxLabel: "flavor-record-picker-strength-over"
             )
         }
-        .padding()
-        .background(Color.white.opacity(0.4))
+        .modifier(
+            LayerBackground(
+                backgroundColor: .black,
+                textColor: .white,
+                alpha: 0.9
+            )
+        )
         .scaleEffect(layers[index].finalScale)
         .offset(layers[index].finalOffset)
         .gesture(
@@ -144,8 +154,13 @@ extension SharePostForm {
     @ViewBuilder
     private func recipeLayer(recipe: Recipe, index: Int) -> some View {
         Text(recipe.steps?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "")
-            .padding()
-            .background(Color.white.opacity(0.4))
+            .modifier(
+                LayerBackground(
+                    backgroundColor: .black,
+                    textColor: .white,
+                    alpha: 0.9
+                )
+            )
             .scaleEffect(layers[index].finalScale)
             .offset(layers[index].finalOffset)
             .gesture(
@@ -163,8 +178,13 @@ extension SharePostForm {
     @ViewBuilder
     private func memoLayer(diary: Diary, index: Int) -> some View {
         Text(diary.memo?.trimmingCharacters(in: .whitespacesAndNewlines) ?? "")
-            .padding()
-            .background(Color.white.opacity(0.4))
+            .modifier(
+                LayerBackground(
+                    backgroundColor: .black,
+                    textColor: .white,
+                    alpha: 0.9
+                )
+            )
             .scaleEffect(layers[index].finalScale)
             .offset(layers[index].finalOffset)
             .gesture(
