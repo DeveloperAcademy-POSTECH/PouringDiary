@@ -9,7 +9,20 @@ import SwiftUI
 import UIKit
 
 extension SharePostForm {
-    enum Content {
+    struct LayerBackground: ViewModifier {
+        var backgroundColor: Color
+        var textColor: Color
+        var alpha: Double
+        var radius: CGFloat = 8
+        func body(content: Content) -> some View {
+            content
+                .foregroundColor(textColor)
+                .padding()
+                .background(backgroundColor.opacity(alpha))
+                .cornerRadius(radius)
+        }
+    }
+    enum LayerContent {
         case initial
         case image(UIImage)
         case coffeeBean(CoffeeBean)
@@ -74,7 +87,7 @@ extension SharePostForm {
         private let minScale: CGFloat
         private let maxScale: CGFloat
 
-        var content: Content = .initial
+        var content: LayerContent = .initial
         var isHidden: Bool = true
 
         private var label: LocalizedStringKey {
