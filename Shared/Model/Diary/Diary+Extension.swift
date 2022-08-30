@@ -104,17 +104,20 @@ extension Diary {
         )
     }
 
-    static func searchByTag(tag: Tag?) -> NSPredicate? {
-        if let tag = tag {
-            let format = """
-    coffeeBean.tags CONTAINS %@ || recipe.equipmentTags CONTAINS %@ || recipe.recipeTags CONTAINS %@
-    """
-            return NSPredicate(
-                format: format,
-                tag,
-                tag,
-                tag
-            )
+    static func searchByTag(tags: [Tag]) -> NSPredicate? {
+        if !tags.isEmpty {
+            let predicates: [NSPredicate] = tags.map { tag in
+                let format = """
+        coffeeBean.tags CONTAINS %@ || recipe.equipmentTags CONTAINS %@ || recipe.recipeTags CONTAINS %@
+        """
+                return NSPredicate(
+                    format: format,
+                    tag,
+                    tag,
+                    tag
+                )
+            }
+            return NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
         }
         return nil
     }
