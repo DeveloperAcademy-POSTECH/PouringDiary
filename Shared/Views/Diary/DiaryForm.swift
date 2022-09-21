@@ -100,14 +100,15 @@ struct DiaryForm: View {
         }
         .onChange(of: selectedCoffeeBean, perform: { _ in updateSameSourcedDiary() })
         .onChange(of: selectedRecipe, perform: { _ in updateSameSourcedDiary() })
-        .task(prepare)
+        .task {
+            prepare()
+        }
         .analyticsScreen(name: "Diary Form - \(isEditing ? "Edit" : "New")")
     }
 }
 
 // MARK: Actions
 extension DiaryForm {
-    @Sendable
     private func updateSameSourcedDiary() {
         guard
             let recipe = selectedRecipe,
@@ -122,7 +123,6 @@ extension DiaryForm {
     }
 
     @MainActor
-    @Sendable
     private func prepare() {
         preventScreenLock = true
         updateSameSourcedDiary()

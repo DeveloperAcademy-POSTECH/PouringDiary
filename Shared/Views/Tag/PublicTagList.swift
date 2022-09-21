@@ -55,6 +55,9 @@ struct PublicTagList: View {
 
 struct PublicTagList_Previews: PreviewProvider {
     static var previews: some View {
-        PublicTagList()
+        NavigationView {
+            PublicTagList()
+        }
+        .modifier(AppEnvironment(inMemory: true))
     }
 }

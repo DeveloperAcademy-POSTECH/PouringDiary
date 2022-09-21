@@ -33,9 +33,11 @@ struct CoffeeBeanList: View {
                         VStack(alignment: .leading) {
                             Text(bean.name ?? "")
                                 .font(.headline)
-                            HStack {
-                                ForEach(bean.tagArray) { tag in
-                                    TagItem(tag: tag.input)
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack {
+                                    ForEach(bean.tagArray) { tag in
+                                        TagItem(tag: tag.input)
+                                    }
                                 }
                             }
                         }
@@ -78,6 +80,9 @@ extension CoffeeBeanList {
 
 struct CoffeeBeanList_Previews: PreviewProvider {
     static var previews: some View {
-        CoffeeBeanList()
+        TabView {
+            CoffeeBeanList()
+        }
+        .modifier(AppEnvironment(inMemory: true))
     }
 }
