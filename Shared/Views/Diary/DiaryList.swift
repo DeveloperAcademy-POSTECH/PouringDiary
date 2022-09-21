@@ -224,7 +224,6 @@ extension DiaryList {
 
 // MARK: Actions
 extension DiaryList {
-    @Sendable
     private func deleteDiaries(indexSet: IndexSet) {
         let deletions = indexSet
             .map { diaries[$0] }
@@ -234,7 +233,9 @@ extension DiaryList {
 
 struct DiaryList_Previews: PreviewProvider {
     static var previews: some View {
-        DiaryList()
-            .modifier(AppEnvironment(inMemory: true))
+        TabView {
+            DiaryList()
+        }
+        .modifier(AppEnvironment(inMemory: true))
     }
 }

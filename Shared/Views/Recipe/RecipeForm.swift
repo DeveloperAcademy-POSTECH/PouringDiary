@@ -165,11 +165,8 @@ extension RecipeForm {
 
     @ViewBuilder
     private var informationSection: some View {
-        Section("기타 정보") {
-            TextField(text: $input.information) {
-                Text("그 외 필요한 정보들을 입력해주세요")
-                    .font(.caption)
-            }
+        Section("추가 정보") {
+            TextEditor(text: $input.information)
         }
     }
 

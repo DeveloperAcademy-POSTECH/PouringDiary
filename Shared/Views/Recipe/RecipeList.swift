@@ -35,9 +35,11 @@ struct RecipeList: View {
                         VStack(alignment: .leading) {
                             Text(recipe.title ?? "")
                                 .font(.headline)
-                            HStack {
-                                ForEach(recipe.tagArray) { tag in
-                                    TagItem(tag: tag.input)
+                            ScrollView(.horizontal, showsIndicators: false) {
+                                HStack {
+                                    ForEach(recipe.tagArray) { tag in
+                                        TagItem(tag: tag.input)
+                                    }
                                 }
                             }
                             HStack {
@@ -77,7 +79,6 @@ extension RecipeList {
 
 // MARK: Actions
 extension RecipeList {
-    @Sendable
     private func delete(_ indexSet: IndexSet) {
         let deletions = indexSet.map { recipes[$0] }
         Recipe.delete(recipes: deletions, context: viewContext)
@@ -86,7 +87,9 @@ extension RecipeList {
 
 struct RecipeList_Previews: PreviewProvider {
     static var previews: some View {
-        RecipeList()
-            .modifier(AppEnvironment(inMemory: true))
+        TabView {
+            RecipeList()
+        }
+        .modifier(AppEnvironment(inMemory: true))
     }
 }
