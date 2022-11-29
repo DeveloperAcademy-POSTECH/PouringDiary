@@ -50,6 +50,7 @@
 		E2B6F03F289B4DDE0081D8EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2B6F03E289B4DDE0081D8EB /* AppDelegate.swift */; };
 		E2B6F041289B4E450081D8EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E2B6F040289B4E450081D8EB /* GoogleService-Info.plist */; };
 		E2BC211C287FB1560000CEC1 /* FlavorRecordPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BC211B287FB1560000CEC1 /* FlavorRecordPicker.swift */; };
+		E2CF7118290A34DC007D5064 /* Wrap.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2CF7117290A34DC007D5064 /* Wrap.swift */; };
 		E2D255D7288BD21D00D2932F /* PublicTag+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D255D6288BD21D00D2932F /* PublicTag+Extension.swift */; };
 		E2D8D0C1287EB918009A6427 /* Diary+FlavorRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2D8D0C0287EB918009A6427 /* Diary+FlavorRecord.swift */; };
 		E2D8D0C7287F686E009A6427 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E2D8D0CA287F686E009A6427 /* Localizable.strings */; };
@@ -119,6 +120,7 @@
 		E2B6F03E289B4DDE0081D8EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E2B6F040289B4E450081D8EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		E2BC211B287FB1560000CEC1 /* FlavorRecordPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlavorRecordPicker.swift; sourceTree = "<group>"; };
+		E2CF7117290A34DC007D5064 /* Wrap.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wrap.swift; sourceTree = "<group>"; };
 		E2D255D6288BD21D00D2932F /* PublicTag+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PublicTag+Extension.swift"; sourceTree = "<group>"; };
 		E2D8D0C0287EB918009A6427 /* Diary+FlavorRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Diary+FlavorRecord.swift"; sourceTree = "<group>"; };
 		E2D8D0C3287EBA90009A6427 /* PouringDiary (iOS).entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "PouringDiary (iOS).entitlements"; sourceTree = "<group>"; };
@@ -372,6 +374,14 @@
 			path = FlaovrRecord;
 			sourceTree = "<group>";
 		};
+		E2CF7116290A34D2007D5064 /* Layouts */ = {
+			isa = PBXGroup;
+			children = (
+				E2CF7117290A34DC007D5064 /* Wrap.swift */,
+			);
+			path = Layouts;
+			sourceTree = "<group>";
+		};
 		E2E6BC3228860C3D0049C490 /* Modifiers */ = {
 			isa = PBXGroup;
 			children = (
@@ -391,6 +401,7 @@
 		E2FE3FA92862A035004F4626 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				E2CF7116290A34D2007D5064 /* Layouts */,
 				E2492A2D28927AD80060E51C /* Utils */,
 				E23CB3A528937EAD0001BB7B /* SharePost */,
 				E2E6BC3228860C3D0049C490 /* Modifiers */,
@@ -482,7 +493,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1340;
-				LastUpgradeCheck = 1340;
+				LastUpgradeCheck = 1400;
 				TargetAttributes = {
 					E215CF1B28596AFB00198F26 = {
 						CreatedOnToolsVersion = 13.3.1;
@@ -596,6 +607,7 @@
 				E2492A2F28927AE30060E51C /* PhotoPicker.swift in Sources */,
 				E246D6C1289211280034AEFA /* Color+Extension.swift in Sources */,
 				E2FE3FB32862BC6F004F4626 /* NSManagedObjectContext+Extension.swift in Sources */,
+				E2CF7118290A34DC007D5064 /* Wrap.swift in Sources */,
 				E23CB3A428937C700001BB7B /* SharedPost+Extension.swift in Sources */,
 				E2B6F035289B132E0081D8EB /* ImageData+Extension.swift in Sources */,
 				E296BD6428B577E0003CA3E2 /* SharePostForm+Tasks.swift in Sources */,
@@ -685,6 +697,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -744,6 +757,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -783,7 +797,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -822,7 +836,7 @@
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -849,7 +863,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2B2B4NCTA5;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = academy.isaac.PouringDiaryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -869,7 +883,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 2B2B4NCTA5;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = academy.isaac.PouringDiaryTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";

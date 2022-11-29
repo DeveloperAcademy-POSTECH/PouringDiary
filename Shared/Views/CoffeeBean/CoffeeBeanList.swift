@@ -33,11 +33,9 @@ struct CoffeeBeanList: View {
                         VStack(alignment: .leading) {
                             Text(bean.name ?? "")
                                 .font(.headline)
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                HStack {
-                                    ForEach(bean.tagArray) { tag in
-                                        TagItem(tag: tag.input)
-                                    }
+                            Wrap {
+                                ForEach(bean.tagArray) { tag in
+                                    TagItem(tag: tag.input)
                                 }
                             }
                         }

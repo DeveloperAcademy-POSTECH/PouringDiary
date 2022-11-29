@@ -17,17 +17,33 @@ struct CoffeeBeanPicker: View {
 
     @Binding var selectedBean: CoffeeBean?
 
+    @State private var searchText: String = ""
+
     var body: some View {
         NavigationView {
             List {
-                ForEach(beans, id: \.objectID) { bean in
+                if beans.isEmpty {
                     Button(action: {
-                        selectedBean = bean
-                        presentationMode.wrappedValue.dismiss()
+                        Task {
+                            try? await CoffeeBean.register(
+                                input: .init(name: searchText),
+                                tags: [],
+                                context: viewContext)
+                        }
                     }, label: {
-                        Text(bean.name ?? "")
-                            .font(.body)
+                        Text("coffee-bean-instant-add-\(searchText)")
                     })
+
+                } else {
+                    ForEach(beans, id: \.objectID) { bean in
+                        Button(action: {
+                            selectedBean = bean
+                            presentationMode.wrappedValue.dismiss()
+                        }, label: {
+                            Text(bean.name ?? "")
+                                .font(.body)
+                        })
+                    }
                 }
             }
             .toolbar {
@@ -41,6 +57,17 @@ struct CoffeeBeanPicker: View {
             }
             .navigationTitle("원두 선택")
             .analyticsScreen(name: "Coffee Bean Picker")
+        }
+        .searchable(
+            text: $searchText,
+            prompt: Text("coffee-bean-list-prompt")
+        )
+        .onChange(of: searchText) { text in
+            if !text.isEmpty {
+                beans.nsPredicate = CoffeeBean.searchByName(query: text)
+            } else {
+                beans.nsPredicate = nil
+            }
         }
     }
 }

@@ -14,6 +14,13 @@ extension CoffeeBean {
         var image: Data?
     }
 
+    static func searchByName(query: String) -> NSPredicate {
+        return NSPredicate(
+            format: "name CONTAINS[cd] %@",
+            query
+        )
+    }
+
     static func register(input: Input, tags: [Tag], context: NSManagedObjectContext) async throws -> CoffeeBean {
         do {
             let newBean = CoffeeBean(context: context)
@@ -78,7 +85,7 @@ extension CoffeeBean {
             ),
             (
                 .init(name: "저 카페 캐냐", information: "우리동네 맛집 카페 대표 원두", image: nil),
-                IndexSet([3, 5, 8])
+                IndexSet([1, 2, 3, 4, 5, 6, 7, 8])
             )
         ]
     }

@@ -80,6 +80,8 @@
 "원두 목록에서 원두를 선택하거나\n새로운 원두를 등록해주세요" = "Please select a bean from the list or \nregister a new one";
 "복제" = "duplicate";
 "diary-list-searchbar-placeholder" = "Coffee bean name, Recipe title, #Tags";
+"diary-list-leading-button-diary" = "View as Memo";
+"diary-list-leading-button-memo" = "View as Diary";
 
 // MARK: RecipeForm
 "레시피 수정" = "Edit Recipe";
@@ -132,6 +134,8 @@
 // MARK: CoffeeBeanList
 "원두 목록" = "Coffee Beans";
 "coffee-bean-list-empty" = "There is no coffee beans yet";
+"coffee-bean-instant-add-%@" = "Register coffee bean with \"%@\"";
+"coffee-bean-list-prompt" = "Search, Add";
 
 // MARK: FlavorRecordPicker
 "flavor-record-picker-title" = "Flavors";
