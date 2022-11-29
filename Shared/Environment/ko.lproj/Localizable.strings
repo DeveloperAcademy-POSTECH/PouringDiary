@@ -73,6 +73,8 @@
 "원두 목록에서 원두를 선택하거나\n새로운 원두를 등록해주세요" = "원두 목록에서 원두를 선택하거나\n새로운 원두를 등록해주세요";
 "복제" = "복제";
 "diary-list-searchbar-placeholder" = "원두, 레시피, #태그";
+"diary-list-leading-button-diary" = "메모로 보기";
+"diary-list-leading-button-memo" = "다이어리로 보기";
 
 // MARK: RecipeForm
 "레시피 수정" = "레시피 수정";
@@ -125,6 +127,8 @@
 // MARK: CoffeeBeanList
 "원두 목록" = "원두 목록";
 "coffee-bean-list-empty" = "아직 등록된 원두가 없습니다";
+"coffee-bean-instant-add-%@" = "\"%@\"로 새로운 원두 등록하기";
+"coffee-bean-list-prompt" = "검색, 추가";
 
 // MARK: FlavorRecordPicker
 "flavor-record-picker-title" = "약점 찾기";

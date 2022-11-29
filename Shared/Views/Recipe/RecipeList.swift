@@ -35,14 +35,10 @@ struct RecipeList: View {
                         VStack(alignment: .leading) {
                             Text(recipe.title ?? "")
                                 .font(.headline)
-                            ScrollView(.horizontal, showsIndicators: false) {
-                                HStack {
-                                    ForEach(recipe.tagArray) { tag in
-                                        TagItem(tag: tag.input)
-                                    }
+                            Wrap {
+                                ForEach(recipe.tagArray) { tag in
+                                    TagItem(tag: tag.input)
                                 }
-                            }
-                            HStack {
                                 ForEach(recipe.equipmentArray) { tag in
                                     TagItem(tag: tag.input)
                                 }

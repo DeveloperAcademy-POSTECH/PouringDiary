@@ -28,23 +28,9 @@ struct DiaryList: View {
     var body: some View {
         NavigationView {
             List {
-                if searchQuery.starts(with: "#") {
-                    ScrollView(.horizontal) {
-                        HStack {
-                            ForEach(allTags) { tag in
-                                if !searchTags.contains(tag) {
-                                    Button {
-                                        searchTags.append(tag)
-                                    } label: {
-                                        TagItem(tag: tag.input)
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
+                tagSearchSection
                 emptyResultSection
-                searchTagSection
+                searchedTagsSection
                 diaryList
             }
             .onChange(of: diaryId) { _ in
@@ -53,7 +39,7 @@ struct DiaryList: View {
             .sheet(isPresented: $shareFormShow) {
                 SharePostForm(diaryId: diaryId!)
             }
-            .toolbar(content: toolbar)
+            .toolbar(content: toolbarTrailing)
             .navigationTitle("일지 목록")
         }
         .searchable(
@@ -79,6 +65,7 @@ struct DiaryList: View {
             diaries.nsPredicate = Diary.searchByTag(tags: tags)
         }
         .navigationViewStyle(.stack)
+        .navigationBarTitleDisplayMode(.inline)
         .analyticsScreen(name: "Diary List")
     }
 }
@@ -149,8 +136,8 @@ extension DiaryList {
         }
     }
 
-    private func toolbar() -> some ToolbarContent {
-        ToolbarItem(placement: .automatic) {
+    private func toolbarTrailing() -> some ToolbarContent {
+        ToolbarItem(placement: .navigationBarTrailing) {
             HStack {
                 EditButton()
                 NavigationLink(destination: {
@@ -158,6 +145,25 @@ extension DiaryList {
                 }, label: {
                     Text("추가")
                 })
+            }
+        }
+    }
+
+    @ViewBuilder
+    private var tagSearchSection: some View {
+        if searchQuery.starts(with: "#") {
+            ScrollView(.horizontal) {
+                HStack {
+                    ForEach(allTags) { tag in
+                        if !searchTags.contains(tag) {
+                            Button {
+                                searchTags.append(tag)
+                            } label: {
+                                TagItem(tag: tag.input)
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -188,10 +194,10 @@ extension DiaryList {
     }
 
     @ViewBuilder
-    private var searchTagSection: some View {
+    private var searchedTagsSection: some View {
         if !searchTags.isEmpty {
             Section {
-                ScrollView(.horizontal) {
+                ViewThatFits {
                     HStack {
                         ForEach(searchTags) { tag in
                             Button {
