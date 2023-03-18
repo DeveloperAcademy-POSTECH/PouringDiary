@@ -20,6 +20,7 @@ extension Recipe {
         var equipments: [Tag]
     }
 
+    @MainActor
     static func register(
         input: Input,
         relation: RelationInput,
@@ -41,6 +42,7 @@ extension Recipe {
         return newRecipe
     }
 
+    @MainActor
     static func save(
         objectId: NSManagedObjectID,
         input: Input,
@@ -56,6 +58,7 @@ extension Recipe {
         context.saveContext()
     }
 
+    @MainActor
     static func delete(recipes: [Recipe], context: NSManagedObjectContext) {
         context.delete(recipes)
     }

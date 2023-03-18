@@ -210,7 +210,7 @@ extension RecipeForm {
                 equipments: equipmentTags
             )
             if let recipeId = recipeId {
-                Recipe.save(
+                await Recipe.save(
                     objectId: recipeId,
                     input: input,
                     relation: relation,

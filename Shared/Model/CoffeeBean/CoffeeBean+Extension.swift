@@ -21,6 +21,7 @@ extension CoffeeBean {
         )
     }
 
+    @MainActor
     static func register(input: Input, tags: [Tag], context: NSManagedObjectContext) async throws -> CoffeeBean {
         do {
             let newBean = CoffeeBean(context: context)
@@ -41,6 +42,7 @@ extension CoffeeBean {
         }
     }
 
+    @MainActor
     static func save(objectId: NSManagedObjectID, input: Input, tags: [Tag], context: NSManagedObjectContext) {
         guard let current = context.object(with: objectId) as? CoffeeBean else { return }
         current.name = input.name
@@ -49,6 +51,7 @@ extension CoffeeBean {
         context.saveContext()
     }
 
+    @MainActor
     static func delete(beans: [CoffeeBean], context: NSManagedObjectContext) {
         context.delete(beans)
     }

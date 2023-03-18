@@ -84,6 +84,7 @@ extension Tag {
 
     /// `Tag.Input`을 활용해서 새로운 태그를 등록합니다
 
+    @MainActor
     static func register(input: Tag.Input, context: NSManagedObjectContext) async throws -> Tag {
         do {
             let newTag = Tag(context: context)
@@ -102,6 +103,7 @@ extension Tag {
     }
 
     /// Tag 엔티티를 삭제합니다.
+    @MainActor
     static func delete(tags: [Tag], context: NSManagedObjectContext) async {
         context.delete(tags)
     }

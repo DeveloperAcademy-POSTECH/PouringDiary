@@ -84,38 +84,28 @@ extension DiaryList {
                 destination: {
                     DiaryForm(with: diary.objectID)
                 }, label: {
-                    HStack(alignment: .center) {
-                        VStack {
-                            Text(diary.created?.simpleYear ?? "")
-                                .frame(minWidth: 40)
+                    VStack(alignment: .leading, spacing: 6) {
+                        HStack {
+                            Spacer()
+                            Text(diary.created?.monthAndDate ?? "")
                                 .font(.caption2)
                                 .foregroundColor(.accentColor)
-                            Text(diary.created?.monthAndDate ?? "")
-                                .frame(minWidth: 40)
-                                .font(.title2)
-                            Text(diary.created?.simpleTime ?? "")
-                                .frame(minWidth: 40)
-                                .font(.caption2)
-                                .foregroundColor(.secondary)
                         }
                         .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 6))
-                        Divider()
-                            .background(Color.accentColor)
-                        VStack(alignment: .leading, spacing: 6) {
-                            Text("📝 \(diary.recipe?.title ?? "")")
-                                .font(.headline)
-                            Text("\(diary.coffeeBean?.name ?? "") ☕️")
-                                .font(.caption)
-                                .foregroundColor(.secondary)
-                            NavigationLink(
-                                isActive: $copiedFormShow,
-                                destination: { DiaryForm(recipe: diary.recipe, bean: diary.coffeeBean) },
-                                label: { EmptyView() }
-                            )
-                            .hidden()
-                            .hidden()
-                        }
-                        .padding()
+                        Text("\(diary.coffeeBean?.name ?? "") ☕️")
+                            .font(.headline)
+                            .padding(.bottom, 2)
+
+                        Text("\(String.init(localized: "레시피").uppercased()) - \(diary.recipe?.title ?? "")")
+                            .font(.caption)
+                            .foregroundColor(.secondary)
+
+                        NavigationLink(
+                            isActive: $copiedFormShow,
+                            destination: { DiaryForm(recipe: diary.recipe, bean: diary.coffeeBean) },
+                            label: { EmptyView() }
+                        )
+                        .hidden()
                     }
                     .contextMenu {
                         Button {
@@ -129,7 +119,6 @@ extension DiaryList {
                             Label("share-context-menu", systemImage: "square.and.arrow.up")
                         }
                     }
-                    .padding(4)
                 }
             )
             .listRowSeparatorTint(.accentColor)
