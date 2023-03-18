@@ -20,6 +20,7 @@ extension Diary {
         var recipe: Recipe
     }
 
+    @MainActor
     static func register(
         input: Input,
         relation: RelationInput,
@@ -43,6 +44,7 @@ extension Diary {
         return newDiary
     }
 
+    @MainActor
     static func save(
         objectId: NSManagedObjectID,
         input: Input,
@@ -59,6 +61,7 @@ extension Diary {
         context.saveContext()
     }
 
+    @MainActor
     static func delete(diaries: [Diary], context: NSManagedObjectContext) {
         context.delete(diaries)
     }

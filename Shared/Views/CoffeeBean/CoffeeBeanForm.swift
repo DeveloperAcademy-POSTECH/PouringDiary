@@ -138,7 +138,7 @@ extension CoffeeBeanForm {
             Button(action: {
                 Task {
                     if isEditing {
-                        CoffeeBean.save(
+                        await CoffeeBean.save(
                             objectId: beanId!,
                             input: input,
                             tags: selectedTags,
